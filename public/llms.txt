@@ -1,0 +1,76 @@
+# OOH JAY — Plumbing & Construction
+
+> Specialized Nigerian plumbing engineering and building construction firm based in Lagos. Specializing in high-pressure water systems, plant rooms, pipework manifolds, water treatment, luxury wet areas, and integrated structural building construction across Lagos, Abuja, and nationwide.
+
+## Company Overview
+- **Company Name**: OOH JAY Plumbing & Construction
+- **Headquarters**: Victoria Island & Ikoyi Corridor, Lagos, Nigeria
+- **Service Area**: Lagos (Ikoyi, Victoria Island, Lekki, Ikeja GRA, Eko Atlantic), Abuja (Maitama, Asokoro, Guzape), and nationwide across Nigeria
+- **Phone / WhatsApp**: [+234 903 138 6928](https://wa.me/2349031386928)
+- **Email**: inquiries@oohjay.com
+
+---
+
+## Core Capabilities & Services
+
+### 1. Plumbing & Mechanical Systems
+- Engineered water supply distribution networks utilizing hard-drawn brazed copper, multilayer PPR, and PEX piping.
+- Whole-building water treatment, automated reverse osmosis, iron removal, and UV purification systems.
+- Variable-speed constant-pressure booster pump stations and plant room manifold arrays.
+- Silent acoustic soil, waste, and stormwater drainage stacks.
+- 24-hour 16-bar hydrostatic pressure testing prior to closing walls or pouring slabs.
+
+### 2. Sanitaryware & Luxury Wet Areas
+- Precision installation of concealed thermostatic mixer valves and walk-in shower systems.
+- Multi-layer waterproofing membrane and sealed tanking systems behind tiles.
+- Zero-threshold wet rooms and linear trench drains calibrated to exact laser gradients.
+- Luxury ceramic, natural stone, and sanitaryware fitting.
+
+### 3. Building & Structural Construction
+- Turnkey structural construction handled by in-house building teams.
+- Engineered piling, raft foundations, and reinforced concrete framing.
+- Direct coordination between plumbers and builders so conduits and pipe sleeves are cast without destructive hacking.
+
+### 4. Plant Rooms, Diagnostics & Servicing
+- Central mechanical plant room design, installation, and overhauls.
+- Non-destructive thermal and acoustic leak detection.
+- Water booster pump servicing, tank chlorination, and ongoing maintenance agreements.
+
+---
+
+## Featured Projects
+
+1. **Ikoyi Residence (Lagos)**:
+   - 3-story cantilevered reinforced concrete estate with subterranean basement and post-tensioned slabs.
+   - Built footprint: 750 m². Pressure tested to 16 Bar.
+2. **Victoria Island Home (Lagos)**:
+   - 7 turnkey luxury en-suite bathrooms with concealed thermostatic valving and acoustic mineral-insulated drainage (<18 dB).
+3. **Hydronic System Installation (Eko Atlantic Axis, Lagos)**:
+   - Centralized plant room with brazed copper manifolds, dual expansion vessels, and digital booster arrays.
+4. **Lekki Peninsula Estate Infrastructure (Lagos)**:
+   - Complete estate MEP, subterranean water distribution, and centralized filtration facility serving multiple residential units.
+
+---
+
+## The OOH JAY Engineering Standard
+
+- **Geotechnical Rigor**: Comprehensive soil analysis and borehole chemical testing before structural or plumbing design begins.
+- **Zero Concealed Compromise**: All plumbing joints are pressure-tested at 16 bar for 24 continuous hours before walls or floors are closed.
+- **Material Sourcing**: Certified Grade 60 rebar, BS 8110-compliant concrete aggregates, copper and PEX from certified manufacturers.
+- **Transparent Project Delivery**: Milestone-based deliverables, real-time photographic site logs, and clear bill of quantities (BOQ).
+
+---
+
+## How to Request a Quote or Consultation
+
+Clients, architects, and estate developers can engage OOH JAY directly:
+- **WhatsApp Instant Message**: [+234 903 138 6928](https://wa.me/2349031386928)
+- **Direct Phone Call**: +234 903 138 6928
+- **Email**: inquiries@oohjay.com
+- **Services Covered**: Turnkey Structural Construction, Luxury Plumbing & Hydronics, Architectural Wet Area Finishing, Estate MEP Consultation, Emergency Diagnostic Surveys.
+
+---
+
+## Full Documentation
+For complete technical specifications, project archive, and expanded documentation, refer to:
+- `/llms-full.txt` - Comprehensive reference text for AI agents and research models.

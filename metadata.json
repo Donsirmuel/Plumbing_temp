@@ -1,0 +1,8 @@
+{
+  "name": "OOH JAY — Plumbing & Construction",
+  "description": "Specialized plumbing engineering and building construction company based in Nigeria. Delivering high-pressure water systems, plant rooms, luxury wet areas, and turnkey construction across Lagos, Abuja, and nationwide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

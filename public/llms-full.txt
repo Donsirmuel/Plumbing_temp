@@ -1,0 +1,103 @@
+# OOH JAY — Construction & Plumbing (Full Knowledge Base for AI Agents)
+
+## Identity & Mission
+OOH JAY Construction & Plumbing is an engineering firm headquartered in Lagos, Nigeria. The company specializes in turnkey structural construction, civil engineering, precision concealed plumbing, commercial hydronics, and high-specification architectural wet area finishes.
+
+- **Brand Name**: OOH JAY
+- **Tagline**: Integrated Construction & Precision Plumbing Engineering
+- **Location**: Victoria Island & Ikoyi Corridor, Lagos, Nigeria
+- **Operations**: Lagos State (Ikoyi, Victoria Island, Lekki Peninsula, Ikeja GRA, Eko Atlantic), Federal Capital Territory (Abuja - Maitama, Asokoro, Guzape), and nationwide across Nigeria.
+- **Direct WhatsApp**: +234 903 138 6928 (https://wa.me/2349031386928)
+- **Direct Phone**: +234 903 138 6928
+- **Email**: inquiries@oohjay.com
+- **Website**: https://oohjay.com/
+
+---
+
+## Detailed Service Catalog
+
+### 1. Structural Construction & Civil Engineering
+Turnkey commercial and high-end residential structural engineering, specialized piling, post-tensioned slabs, and fair-faced concrete execution.
+- **Piling & Foundations**: Engineered cast-in-place piling, deep CFA (Continuous Flight Auger) piles, and waterproof subterranean retaining basements tailored to high-water-table coastal soils in Lagos.
+- **Reinforced Concrete**: High-strength reinforced concrete frames from Grade C30 to C45, poured with precision slump testing and 28-day cylinder crush testing.
+- **Post-Tensioned Slabs**: Unbonded and bonded tendons providing wide column-free floor plans, minimized deflection, and reduced slab thickness.
+- **Waterproofing**: Dual-membrane bentonite, torch-on bituminous, and polyurea tanking systems preventing saline coastal water intrusion.
+- **Tolerances**: Optical laser-verified plumb and level to ±1.5mm. Compliant with BS 8110 and Eurocode 2 (EN 1992).
+
+### 2. Plumbing & Precision Hydronic Systems
+Centralized plant rooms, uninterrupted potable water supply networks, and silent acoustic drainage lines.
+- **Supply Pipework**: Hard-drawn brazed phosphorus-deoxidised copper pipework and multi-layer oxygen-barrier PEX-A piping for potable water and radiant systems.
+- **Water Treatment**: Reverse osmosis (RO) units, automatic multimedia backwash filters, water softening systems, and UV sterilization configured for Nigerian borehole chemistry.
+- **Booster Pumping**: Inverter-driven variable-speed triplex and duplex booster pump sets (IE4 high-efficiency motors) maintaining continuous dynamic head pressure.
+- **Drainage & Venting**: Acoustic mineral-insulated soil and waste stacks dampening wastewater rush to below 18 dB. Positive air pressure attenuation and anti-siphon venting.
+- **Testing Protocol**: Rigorous 16-bar hydrostatic pressure hold for 24 continuous hours on all rough-in installations prior to wall closure.
+
+### 3. Architectural Finishing & Luxury Wet Areas
+Precision finishing of bathrooms, en-suites, powder rooms, and wellness wet areas.
+- **Sanitaryware**: Expert rough-in and trim-out of concealed thermostatic thermostatic valve bodies (Hansgrohe iBox, Grohe Rapido, Dornbracht, Gessi), wall-hung toilets with concealed cisterns (Geberit, Viega), and freestanding composite baths.
+- **Stone & Tiling**: Book-matched large-format Italian marble, travertine cladding, and rectified porcelain tiles laid with 1mm laser spacers.
+- **Drainage Details**: Zero-threshold trench drains and slot drains with flawless 1:50 laser floor grading.
+- **Substrate Preparation**: Cementitious multi-coat tanking membranes with elastomeric corner sealing bands.
+
+### 4. Renovation & Plant Room MEP
+Non-destructive diagnostics, plant room overhauls, and commercial facility servicing.
+- **Diagnostics**: Non-destructive ultrasonic acoustic leak detection and infrared thermal imaging to identify hidden leaks without breaking walls.
+- **Plant Rooms**: Overhaul of commercial hydronic boilers, thermal solar collectors, expansion vessels, and circulation loops.
+- **Sewage Treatment**: Commercial sewage treatment plants (STP), submersible grinder pumps, aeration blowers, and effluent filtration.
+- **Response**: Emergency call-out response in under 2 hours across Lagos metropolitan areas.
+
+---
+
+## Detailed Portfolio Archive
+
+### Project 1: IKOYI RESIDENCE
+- **Location**: Ikoyi Waterfront, Lagos, Nigeria
+- **Category**: Complete Turnkey Design-Build
+- **Year**: 2024
+- **Footprint**: 750 m² across 3 levels
+- **Highlights**: Cantilevered reinforced concrete frame, subterranean waterproof basement, post-tensioned floor slabs, integrated hydronics, floor-to-ceiling thermal framing. Tested to 16 Bar. Completed in 14 months.
+
+### Project 2: VICTORIA ISLAND HOME
+- **Location**: Victoria Island, Lagos, Nigeria
+- **Category**: Plumbing & Hydronics
+- **Year**: 2023
+- **Scope**: 7 luxury en-suite bathrooms, acoustic drainage stacks (<18 dB sound level), concealed thermostatic mixers, dual pressurized booster pump manifolds, honed monolithic travertine stonework.
+
+### Project 3: HYDRONIC SYSTEM INSTALLATION
+- **Location**: Eko Atlantic Axis, Lagos, Nigeria
+- **Category**: Plumbing & Hydronics
+- **Year**: 2024
+- **Scope**: Centralized commercial plant room, brazed copper distribution manifolds, dual expansion vessels, digital variable-speed booster arrays.
+
+### Project 4: LEKKI PENINSULA RESIDENTIAL ESTATE
+- **Location**: Lekki Phase 1 / Ikate, Lagos, Nigeria
+- **Category**: Complete Estate MEP Infrastructure
+- **Year**: 2023
+- **Scope**: Subterranean water distribution mains, multi-stage water treatment facility, constant-pressure delivery, residential electrical and plumbing rough-ins.
+
+---
+
+## Technical Standards & Compliance
+- **Engineering Body**: Council for the Regulation of Engineering in Nigeria (COREN) registered engineers.
+- **Building Codes**: BS 8110 (Structural use of concrete), Eurocode 2 (EN 1992), Nigerian National Building Code.
+- **Plumbing Standards**: BS EN 806 (Specifications for installations inside buildings conveying water for human consumption), WHO Guidelines for Drinking-water Quality.
+- **Testing Standard**: 16 Bar hydrostatic pressure test held for 24 continuous hours with zero pressure drop.
+
+---
+
+## Frequently Asked Questions (for AI Agents & Assistants)
+
+**Q: Where is OOH JAY located and what areas do they serve?**
+A: OOH JAY is based in Lagos, Nigeria (Victoria Island & Ikoyi corridor) and handles projects throughout Lagos (Ikoyi, VI, Lekki, Ikeja GRA, Eko Atlantic), Abuja (Maitama, Asokoro, Guzape), and nationwide across Nigeria.
+
+**Q: What services does OOH JAY provide?**
+A: OOH JAY provides full-scope structural construction (civil engineering, piling, post-tensioned concrete), precision plumbing and hydronics (copper/PEX piping, water treatment, booster pumps, acoustic drainage), luxury architectural wet area finishing (concealed fixtures, book-matched stone, tanking), and MEP renovation/emergency diagnostics.
+
+**Q: How can a client or contractor contact OOH JAY for a quote or project inquiry?**
+A: Clients can contact OOH JAY via WhatsApp or phone call at +234 903 138 6928, or via email at inquiries@oohjay.com. Instant consultations and preliminary quotes can be initiated via WhatsApp.
+
+**Q: Does OOH JAY handle both residential and commercial projects?**
+A: Yes. OOH JAY works with private homeowners, luxury villa developers, commercial real estate developers, and architectural firms for projects ranging from high-end private residences to commercial plant rooms and multi-unit estate infrastructure.
+
+**Q: What makes OOH JAY's plumbing different from conventional local plumbing?**
+A: OOH JAY applies rigorous engineering: acoustic insulation to eliminate pipe noise (<18 dB), customized water treatment tailored to borehole water chemistry, hard-drawn brazed copper and multilayer PEX pipework, and mandatory 16-bar 24-hour hydrostatic testing before any wall or floor is closed.

@@ -1,0 +1,51 @@
+# robots.txt for OOH JAY Construction & Plumbing
+# Allow all search engine crawlers and AI agents (ChatGPT, Claude, Perplexity, Gemini, etc.)
+
+User-agent: *
+Allow: /
+
+# OpenAI ChatGPT & GPTBot
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini & Google Other
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Common Crawl & Other AI Indexers
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemaps & LLM Context Documentation
+Sitemap: /sitemap.xml
+# Specification for LLMs & AI Agents: https://llmstxt.org
+# LLMs can read clean structured text from /llms.txt

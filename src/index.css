@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-alabaster: #F9F8F6;
+    --surface-limestone: #EAE7E1;
+    --text-gunmetal: #1C1D1F;
+    --text-taupe: #706B65;
+    --accent-bronze: #A38B6C;
+    --border-structural: rgba(28, 29, 31, 0.10);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-alabaster);
+    color: var(--text-gunmetal);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+  }
+}
+
+/* Custom micro typography and image treatment */
+.font-editorial {
+  font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+}
+
+.font-mono-meta {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Hairline rule utility */
+.border-hairline {
+  border-color: rgba(28, 29, 31, 0.10);
+}
+
+/* Subtle image reveal effect */
+img {
+  text-indent: -9999px;
+}
