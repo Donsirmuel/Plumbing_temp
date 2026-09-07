@@ -1,5 +1,11 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/llms-full.txt", "destination": "/llms-full.txt" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -9,5 +15,6 @@
       "source": "/(.*)",
       "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }]
     }
-  ]
+  ],
+  "cleanUrls": true
 }
