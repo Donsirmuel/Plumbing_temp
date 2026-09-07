@@ -19,9 +19,9 @@ export const SERVICES: ServiceItem[] = [
       'Silent Acoustic Soil, Waste & Stormwater Drainage Stacks',
     ],
     technicalSpecs: [
-      { label: 'Pressure Test', value: '16 Bar 24-Hour Hold' },
-      { label: 'Water Quality', value: 'WHO Potable Standard' },
-      { label: 'Delivery', value: 'Steady Constant Pressure' },
+      { label: 'Tested', value: 'Before walls close' },
+      { label: 'Water Quality', value: 'Clean, treated delivery' },
+      { label: 'Delivery', value: 'Steady pressure' },
     ],
   },
   {

@@ -57,6 +57,21 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
             },
           }
         );
+        // Subtle image storytelling — lead image slowly reveals more crop
+        const firstCardImg = cardsRef.current.querySelector('img') as HTMLImageElement | null;
+        if (firstCardImg) {
+          gsap.to(firstCardImg, {
+            yPercent: -3,
+            scale: 1.04,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.8,
+            },
+          });
+        }
       }
     }, sectionRef);
 
@@ -76,10 +91,10 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
         <div>
           <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">Selected work</p>
           <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
-            Recent work in Nigeria & beyond
+            Recent work
           </h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-[#5B6B7A]">
-            Copper manifolds, plant rooms, wet areas and construction support — shown as they were built, not as renders.
+            Plumbing systems, installations and construction work — shown as built.
           </p>
         </div>
 
@@ -94,19 +109,21 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
 
       <div
         ref={cardsRef}
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6"
+        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8"
       >
         {primaryFour.map((project, index) => (
           <button
             key={project.id}
             onClick={() => onSelectProject(project)}
-            className={`group text-left flex flex-col card-hover ${index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white rounded-[1.25rem] overflow-hidden border border-[#0F1E2D]/8 hover:border-[#0F1E2D]/15 hover:shadow-[0_8px_28px_rgba(15,30,45,0.08)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF]`}
+            className={`group text-left flex flex-col card-hover overflow-hidden bg-white rounded-[1.25rem] border border-[#0F1E2D]/8 hover:border-[#0F1E2D]/15 hover:shadow-[0_12px_32px_rgba(15,30,45,0.08)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF] ${
+              index === 0 ? 'lg:col-span-12' : 'lg:col-span-4'
+            }`}
           >
-            <div className={`relative overflow-hidden bg-[#E8ECEE] w-full ${index === 0 ? 'aspect-[16/10]' : 'aspect-[16/11]'}`}>
+            <div className={`relative overflow-hidden bg-[#E8ECEE] w-full ${index === 0 ? 'aspect-[21/9] sm:aspect-[24/9]' : 'aspect-[4/3]'}`}>
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
               <div className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-medium text-[#0F1E2D] shadow">
@@ -114,19 +131,12 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 space-y-2">
-              <div className="text-xs font-medium text-[#5B6B7A]">
-                {project.category}
-              </div>
-              <h3 className={`font-sans font-bold leading-tight tracking-[-0.03em] text-[#0F1E2D] ${index === 0 ? 'text-xl sm:text-2xl' : 'text-lg'}`}>
+            <div className="p-5 sm:p-6 space-y-1.5">
+              <div className="text-xs font-medium text-[#5B6B7A]">{project.category}</div>
+              <h3 className={`font-sans font-bold leading-tight tracking-[-0.03em] text-[#0F1E2D] ${index === 0 ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg'}`}>
                 {project.title}
               </h3>
-              <p className="text-sm leading-6 text-[#5B6B7A] line-clamp-2">
-                {project.description}
-              </p>
-              <span className="inline-flex items-center gap-1.5 pt-1 text-sm font-medium text-[#1A5CFF] group-hover:gap-2 transition-all duration-150">
-                View details <ArrowRight className="w-3.5 h-3.5" />
-              </span>
+              <p className="text-sm leading-6 text-[#5B6B7A] line-clamp-1">{project.description}</p>
             </div>
           </button>
         ))}

@@ -11,28 +11,28 @@ interface HomePageProps {
 }
 
 const ProofBand: React.FC = () => (
-  <section className="bg-white border-y border-[#0F1E2D]/10">
+  <section className="bg-white border-y border-[#0F1E2D]/8">
     <div className="max-w-360 mx-auto px-6 sm:px-10 md:px-16">
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 py-6 text-sm">
-        <div className="space-y-1">
-          <div className="text-[#0F1E2D] font-semibold">Homes & businesses</div>
-          <div className="text-[#5B6B7A] text-xs leading-5">Everyday repairs to complete systems</div>
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 py-5 text-sm">
+        <div className="space-y-0.5">
+          <div className="text-[#0F1E2D] font-semibold text-sm">Homes & businesses</div>
+          <div className="text-[#5B6B7A] text-xs">Homes · Businesses</div>
         </div>
-        <div className="space-y-1">
-          <div className="text-[#0F1E2D] font-semibold">Nigeria & beyond</div>
-          <div className="text-[#5B6B7A] text-xs leading-5">Project experience across regions</div>
+        <div className="space-y-0.5">
+          <div className="text-[#0F1E2D] font-semibold text-sm">Nigeria & beyond</div>
+          <div className="text-[#5B6B7A] text-xs">Across regions</div>
         </div>
-        <div className="space-y-1">
-          <div className="text-[#0F1E2D] font-semibold">Pressure-tested</div>
-          <div className="text-[#5B6B7A] text-xs leading-5">16-bar hold before walls are closed</div>
+        <div className="space-y-0.5">
+          <div className="text-[#0F1E2D] font-semibold text-sm">Pressure-tested</div>
+          <div className="text-[#5B6B7A] text-xs">Tested before close</div>
         </div>
-        <div className="space-y-1">
-          <div className="text-[#0F1E2D] font-semibold">Repairs & servicing</div>
-          <div className="text-[#5B6B7A] text-xs leading-5">Diagnostics and ongoing care</div>
+        <div className="space-y-0.5">
+          <div className="text-[#0F1E2D] font-semibold text-sm">Repairs & servicing</div>
+          <div className="text-[#5B6B7A] text-xs">Diagnostics · Care</div>
         </div>
-        <div className="space-y-1 col-span-2 lg:col-span-1">
-          <div className="text-[#0F1E2D] font-semibold">Construction support</div>
-          <div className="text-[#5B6B7A] text-xs leading-5">When the job needs one coordinated team</div>
+        <div className="space-y-0.5 col-span-2 lg:col-span-1">
+          <div className="text-[#0F1E2D] font-semibold text-sm">Construction support</div>
+          <div className="text-[#5B6B7A] text-xs">When needed, together</div>
         </div>
       </div>
     </div>

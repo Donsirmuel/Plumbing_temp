@@ -33,13 +33,25 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenQuote }) => {
 
       if (heroRef.current) {
         gsap.to(imageRef.current, {
-          yPercent: 4,
+          yPercent: 6,
+          scale: 1.04,
           ease: 'none',
           scrollTrigger: {
             trigger: heroRef.current,
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.6,
+            scrub: 0.8,
+          },
+        });
+        // Subtle type drift — feels like camera, not animation
+        gsap.to([headlineRef.current, subRef.current, ctaRef.current], {
+          yPercent: -4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.8,
           },
         });
       }
@@ -66,11 +78,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenQuote }) => {
           className="absolute inset-0 h-full w-full object-cover object-center will-change-transform"
           loading="eager"
         />
-        {/* Softer gradient — confident, not muddy */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A2A]/85 via-[#0B1A2A]/40 to-[#0B1A2A]/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A2A]/55 via-transparent to-transparent" />
+        {/* More immersive — pipework fills field, gradient just lifts type */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A2A]/70 via-[#0B1A2A]/35 to-[#0B1A2A]/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1A2A]/60 via-[#0B1A2A]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0B1A2A]/20" />
 
-        <div className="relative min-h-[560px] sm:min-h-[640px] lg:min-h-[72vh] flex flex-col justify-end px-6 py-10 sm:px-10 sm:py-12 lg:px-16 lg:py-14">
+        <div className="relative min-h-[620px] sm:min-h-[700px] lg:min-h-[78vh] flex flex-col justify-end px-6 py-10 sm:px-10 sm:py-12 lg:px-16 lg:py-14">
           <div className="max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium tracking-[0.02em] text-white/90 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-[#7AA8FF]" />
