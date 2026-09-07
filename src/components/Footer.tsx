@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp, Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
   onOpenQuote: () => void;
@@ -10,136 +11,100 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const navOffset = 80;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <footer id="main-footer" className="bg-[#141517] text-white pt-20 pb-12 px-6 sm:px-10 md:px-16 border-t border-white/10">
-      <div className="max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
-          {/* Brand Info */}
-          <div className="md:col-span-5 space-y-5">
+    <footer id="main-footer" className="bg-[#0B1A2A] text-white pt-16 pb-10 px-6 sm:px-10 md:px-16">
+      <div className="max-w-360 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+          <div className="md:col-span-5 space-y-4">
             <div className="flex flex-col">
-              <span className="font-serif text-3xl sm:text-4xl tracking-[0.16em] uppercase font-normal">
+              <span className="font-sans text-2xl font-extrabold tracking-[0.08em] uppercase leading-none">
                 OOH JAY
               </span>
-              <span className="font-mono-meta text-[9.5px] tracking-[0.26em] text-white/70 mt-1">
-                CONSTRUCTION & PLUMBING
+              <span className="text-[11px] font-medium tracking-[0.12em] text-white/60 mt-1.5 uppercase">
+                Plumbing for homes & businesses · Nigeria & beyond
               </span>
             </div>
-            <p className="text-xs sm:text-sm text-white/70 font-light max-w-sm leading-relaxed">
-              Specialized plumbing engineering and building construction across Nigeria.
-              Delivering reliable water systems, pressure networks, plant rooms, and structural execution
-              across Lagos, Abuja, and nationwide.
+            <p className="text-sm text-white/65 leading-6 max-w-sm">
+              Homes and businesses rely on water every day. We install, repair and maintain the systems that keep it flowing — with construction support when the project needs it.
             </p>
             <div className="pt-2">
               <button
                 onClick={onOpenQuote}
-                className="px-5 py-2.5 bg-[#C8B49E] text-[#1C1D1F] font-mono-meta text-[10.5px] tracking-[0.2em] font-semibold hover:bg-white transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#1A5CFF] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1448C6] transition-colors duration-150 cursor-pointer"
               >
-                REQUEST A PROJECT QUOTE →
+                Request a quote →
               </button>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="md:col-span-3 space-y-4">
-            <span className="font-mono-meta text-[10px] tracking-[0.25em] text-[#C8B49E] block uppercase">
-              QUICK NAVIGATION
+          <div className="md:col-span-3 space-y-3">
+            <span className="text-xs font-semibold tracking-[0.14em] text-white/50 uppercase">
+              Navigate
             </span>
-            <ul className="space-y-2.5 text-xs font-mono-meta text-white/70 tracking-[0.16em]">
+            <ul className="space-y-2.5 text-sm text-white/70">
               <li>
-                <button
-                  onClick={() => scrollTo('capabilities-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  CAPABILITIES
-                </button>
+                <Link to="/services" className="hover:text-white transition-colors duration-150">
+                  Services
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('recent-projects-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  PROJECTS & ARCHIVE
-                </button>
+                <Link to="/work" className="hover:text-white transition-colors duration-150">
+                  Gallery
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('why-oohjay-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  THE OOH JAY STANDARD
-                </button>
+                <Link to="/process" className="hover:text-white transition-colors duration-150">
+                  How we work
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('process-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  HOW WE WORK (PROCESS)
-                </button>
+                <Link to="/contact" className="hover:text-white transition-colors duration-150">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="md:col-span-4 space-y-4">
-            <span className="font-mono-meta text-[10px] tracking-[0.25em] text-[#C8B49E] block uppercase">
-              LAGOS HEAD OFFICE & CONTACT
+          <div className="md:col-span-4 space-y-3">
+            <span className="text-xs font-semibold tracking-[0.14em] text-white/50 uppercase">
+              Contact
             </span>
-            <div className="space-y-3 text-xs font-light text-white/80">
-              <div className="flex items-start space-x-2.5">
-                <MapPin className="w-4 h-4 text-[#C8B49E] shrink-0 mt-0.5" />
-                <span>Victoria Island & Ikoyi Corridor, Lagos, Nigeria</span>
+            <div className="space-y-3 text-sm text-white/75">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#7AA8FF] shrink-0 mt-0.5" />
+                <span className="leading-6">Victoria Island & Ikoyi Corridor, Lagos, Nigeria</span>
               </div>
-              <div className="flex items-center space-x-2.5">
-                <Phone className="w-4 h-4 text-[#C8B49E] shrink-0" />
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-[#7AA8FF] shrink-0" />
                 <a
                   href="https://wa.me/2349031386928"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-[#C8B49E] transition-colors font-mono-meta text-[11px]"
+                  className="hover:text-white transition-colors duration-150"
                 >
-                  +234 903 138 6928 (WhatsApp & Calls)
+                  +234 903 138 6928 — WhatsApp & calls
                 </a>
               </div>
-              <div className="flex items-center space-x-2.5">
-                <Mail className="w-4 h-4 text-[#C8B49E] shrink-0" />
-                <a
-                  href="mailto:inquiries@oohjay.com"
-                  className="hover:text-[#C8B49E] transition-colors font-mono-meta text-[11px]"
-                >
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#7AA8FF] shrink-0" />
+                <a href="mailto:inquiries@oohjay.com" className="hover:text-white transition-colors duration-150">
                   inquiries@oohjay.com
                 </a>
               </div>
-              <div className="pt-2 text-[10px] text-white/50 font-mono-meta">
-                PROFESSIONAL PLUMBING &amp; CONSTRUCTION SERVICES • LAGOS &amp; ABUJA
+              <div className="pt-1 text-xs text-white/50">
+                Residential & commercial plumbing · Nigeria & beyond
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono-meta text-white/50 gap-4">
-          <div>
-            © {new Date().getFullYear()} OOH JAY CONSTRUCTION & PLUMBING. ALL RIGHTS RESERVED.
-          </div>
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+          <div>© {new Date().getFullYear()} OOH JAY Plumbing Services. All rights reserved.</div>
           <button
             onClick={scrollToTop}
-            className="flex items-center space-x-2 text-white/70 hover:text-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-150 cursor-pointer"
           >
-            <span>BACK TO TOP</span>
+            <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>

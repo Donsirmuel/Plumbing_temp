@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Phone, MessageSquare } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface CtaSectionProps {
   onOpenQuote: () => void;
@@ -7,56 +7,50 @@ interface CtaSectionProps {
 
 export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuote }) => {
   return (
-    <section className="relative bg-[#1C1D1F] text-white py-28 sm:py-36 px-6 sm:px-10 md:px-16 overflow-hidden">
-      {/* Authentic high-end bathroom & precision plumbing background with balanced cinematic overlay */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+    <section className="relative bg-[#0F1E2D] text-white py-20 sm:py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
         <img
           src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=2400&q=85"
-          alt="Modern luxury finished bathroom with precision plumbing and concealed sanitaryware"
-          className="w-full h-full object-cover object-center filter brightness-[0.42] contrast-[110%]"
+          alt="Finished bathroom with carefully installed plumbing"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1D1F] via-[#1C1D1F]/70 to-[#1C1D1F]/85" />
+        <div className="absolute inset-0 bg-[#0F1E2D]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F1E2D] via-[#0F1E2D]/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-        <div className="inline-flex items-center space-x-2 text-[#C8B49E] font-mono-meta text-[10px] sm:text-[11px] tracking-[0.25em] uppercase">
-          <span>START A CONVERSATION</span>
-          <span>•</span>
-          <span>LAGOS &amp; ABUJA</span>
-        </div>
-
-        <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-normal uppercase tracking-wide leading-[1.08]">
-          Discuss Your Plumbing or Building Project
-        </h2>
-
-        <p className="text-white/80 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-          Whether you need comprehensive plumbing installation for a new property, water filtration,
-          plant room setup, bathroom renovations, or turnkey building construction, our team is ready to help.
+      <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
+        <p className="text-xs font-semibold tracking-[0.14em] text-[#7AA8FF] uppercase">
+          Nigeria & beyond · Residential & commercial
         </p>
 
-        <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.04em] leading-[1.05] text-white">
+          Tell us what needs to work better.
+        </h2>
+
+        <p className="text-sm sm:text-base text-white/70 leading-6 max-w-2xl mx-auto">
+          A leaking line, a new bathroom, a plant room or a full water system — we will help you understand the next step and what it will take.
+        </p>
+
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
           <button
             onClick={onOpenQuote}
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#C8B49E] hover:bg-white text-[#1C1D1F] font-mono-meta text-xs tracking-[0.2em] font-semibold px-8 py-4 transition-all duration-200 cursor-pointer shadow-lg group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#1A5CFF] px-7 py-3 text-sm font-semibold text-white hover:bg-[#1448C6] transition-colors duration-150 cursor-pointer"
           >
-            <span>REQUEST A QUOTE</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            Request a quote
+            <ArrowRight className="w-4 h-4" />
           </button>
 
           <a
-            href="https://wa.me/2349031386928?text=Hello%20Ooh%20Jay%2C%20I%20would%20like%20to%20discuss%20a%20plumbing%20or%20construction%20project."
+            href="https://wa.me/2349031386928?text=Hello%20Ooh%20Jay%2C%20I%20would%20like%20to%20discuss%20a%20plumbing%20project."
             target="_blank"
             rel="noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border border-white/40 hover:border-white hover:bg-white/10 text-white font-mono-meta text-xs tracking-[0.18em] px-8 py-4 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white hover:bg-white/10 hover:border-white/30 transition-colors duration-150"
           >
-            <MessageSquare className="w-4 h-4 text-[#C8B49E]" />
-            <span>WHATSAPP: +234 903 138 6928</span>
+            WhatsApp: +234 903 138 6928
           </a>
         </div>
 
-        <div className="pt-6 text-xs text-white/50 font-mono-meta tracking-[0.14em]">
-          AVERAGE QUOTE TURNAROUND: UNDER 24 HOURS
-        </div>
+        <p className="text-xs text-white/50">Average quote turnaround — under 24 hours</p>
       </div>
     </section>
   );

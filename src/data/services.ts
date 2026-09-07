@@ -48,31 +48,8 @@ export const SERVICES: ServiceItem[] = [
     ],
   },
   {
-    id: 'structural-construction',
-    number: '03',
-    title: 'Building & Structural Construction',
-    subtitle: 'Turnkey Civil Engineering & Reinforced Concrete',
-    shortDesc:
-      'Solid structural construction, engineered foundations, reinforced concrete framing, masonry, and full building envelopes handled by our construction team.',
-    detailedDesc:
-      'Our construction team handles residential estates and commercial buildings from the ground up. Because our builders and plumbers work as one unified team, pipe penetrations and conduits are planned directly into the structural drawings—eliminating destructive wall chiseling and ensuring structural integrity.',
-    image:
-      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85',
-    highlights: [
-      'Engineered Piling, Raft Foundations & Retaining Structures',
-      'High-Strength Reinforced Concrete Slabs, Beams & Columns',
-      'Unified Coordination with Concealed MEP Conduits',
-      'Rigorous Material Testing & Structural Supervision',
-    ],
-    technicalSpecs: [
-      { label: 'Foundation Work', value: 'Engineered Soil Compliance' },
-      { label: 'Structural Concrete', value: 'Supervised Grade Mixes' },
-      { label: 'Coordination', value: 'Direct In-House Integration' },
-    ],
-  },
-  {
     id: 'maintenance-renovation',
-    number: '04',
+    number: '03',
     title: 'Plant Rooms, Diagnostics & Servicing',
     subtitle: 'Booster Stations, Filtration & Preventative Care',
     shortDesc:
@@ -91,6 +68,29 @@ export const SERVICES: ServiceItem[] = [
       { label: 'Testing Method', value: 'Non-Destructive Diagnostic' },
       { label: 'Response Team', value: 'Rapid Direct Dispatch' },
       { label: 'Workmanship', value: 'Full Guarantee on Work' },
+    ],
+  },
+  {
+    id: 'structural-construction',
+    number: '04',
+    title: 'Construction Support',
+    subtitle: 'When the project needs a coordinated building team',
+    shortDesc:
+      'Construction support when a plumbing project needs it — structural work, foundations, concrete framing and masonry planned together with the plumbing so pipe penetrations and services are built in, not chased in later.',
+    detailedDesc:
+      'For projects that need more than plumbing alone, our building team works with our plumbers from the drawings. That means sleeves, risers and drainage are coordinated early — no destructive chasing and cleaner finishes.',
+    image:
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85',
+    highlights: [
+      'Foundations, concrete framing & masonry when required',
+      'Pipe penetrations and sleeves coordinated in the structure',
+      'One team for plumbing and building — fewer handoffs',
+      'Supervised workmanship and clear handover',
+    ],
+    technicalSpecs: [
+      { label: 'Role', value: 'Support when needed' },
+      { label: 'Coordination', value: 'Plumbing + building together' },
+      { label: 'Finish', value: 'Clean, coordinated handover' },
     ],
   },
 ];

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import gsap from 'gsap';
 
 interface NavbarProps {
   onOpenQuote: () => void;
@@ -8,162 +10,145 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
+  useEffect(() => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      const navOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!mobileRef.current) return;
+    if (mobileMenuOpen) {
+      gsap.fromTo(
+        mobileRef.current,
+        { opacity: 0, y: -8 },
+        { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out', overwrite: true }
+      );
+      if (mobileRef.current.children.length) {
+        gsap.fromTo(
+          mobileRef.current.children,
+          { opacity: 0, y: 6 },
+          { opacity: 1, y: 0, duration: 0.24, stagger: 0.03, ease: 'power2.out', delay: 0.06, overwrite: true }
+        );
+      }
     }
-  };
+  }, [mobileMenuOpen]);
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header
       id="main-navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-[#1C1D1F]/90 backdrop-blur-md border-b border-white/10 py-3 shadow-lg'
-          : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-5'
+          ? 'bg-[#F6F5F2]/90 backdrop-blur-md border-b border-[#0F1E2D]/10 py-3 shadow-[0_4px_24px_rgba(15,30,45,0.06)]'
+          : 'bg-[#F6F5F2]/80 backdrop-blur-md py-4 border-b border-transparent'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-16 flex items-center justify-between">
-        {/* Brand identity matching the attached image */}
-        <a
+      <div className="max-w-360 mx-auto px-6 sm:px-10 md:px-16 flex items-center justify-between">
+        <Link
           id="nav-brand-logo"
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-          className="group flex flex-col text-left focus:outline-none"
+          to="/"
+          onClick={closeMobileMenu}
+          className="flex flex-col text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF] focus-visible:ring-offset-2 rounded-sm"
         >
-          <span className="font-serif text-2xl sm:text-[1.75rem] tracking-[0.16em] text-white font-normal uppercase">
+          <span className="font-sans text-[22px] font-extrabold tracking-[0.08em] text-[#0F1E2D] uppercase leading-none">
             OOH JAY
           </span>
-          <span className="font-mono-meta text-[8.5px] sm:text-[9.5px] tracking-[0.26em] text-white/75 mt-0.5">
-            CONSTRUCTION & PLUMBING
+          <span className="text-[10px] font-semibold tracking-[0.14em] text-[#5B6B7A] mt-1 uppercase">
+            Plumbing for homes & businesses · Nigeria & beyond
           </span>
-        </a>
+        </Link>
 
-        {/* Center navigation links */}
-        <nav className="hidden md:flex items-center space-x-10" aria-label="Main Navigation">
-          <button
-            id="nav-link-capabilities"
-            onClick={() => scrollToSection('capabilities-section')}
-            className="text-[12px] font-mono-meta tracking-[0.2em] text-white/80 hover:text-white transition-colors cursor-pointer"
-          >
-            CAPABILITIES
-          </button>
-          <button
-            id="nav-link-projects"
-            onClick={() => scrollToSection('recent-projects-section')}
-            className="text-[12px] font-mono-meta tracking-[0.2em] text-white/80 hover:text-white transition-colors cursor-pointer"
-          >
-            PROJECTS
-          </button>
-          <button
-            id="nav-link-process"
-            onClick={() => scrollToSection('process-section')}
-            className="text-[12px] font-mono-meta tracking-[0.2em] text-white/80 hover:text-white transition-colors cursor-pointer"
-          >
-            PROCESS
-          </button>
-          <button
-            id="nav-link-about"
-            onClick={() => scrollToSection('why-oohjay-section')}
-            className="text-[12px] font-mono-meta tracking-[0.2em] text-white/80 hover:text-white transition-colors cursor-pointer"
-          >
-            ABOUT
-          </button>
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+          {[
+            ['Services', '/services'],
+            ['Gallery', '/work'],
+            ['Process', '/process'],
+            ['Contact', '/contact'],
+          ].map(([label, path]) => (
+            <NavLink
+              key={path}
+              to={path}
+              onClick={closeMobileMenu}
+              className={({ isActive }) =>
+                `text-[13px] font-medium tracking-[-0.01em] transition-colors duration-150 ${isActive ? 'text-[#0F1E2D]' : 'text-[#5B6B7A] hover:text-[#0F1E2D]'}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
         </nav>
 
-        {/* Right CTA Button (bordered outline as seen in image) */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center gap-3">
           <button
             id="nav-quote-btn"
             onClick={onOpenQuote}
-            className="hidden sm:inline-flex items-center space-x-2 text-[11px] font-mono-meta tracking-[0.18em] text-white border border-white/40 hover:border-white hover:bg-white/10 px-5 py-2.5 transition-all duration-200 cursor-pointer"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#1A5CFF] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors duration-150 hover:bg-[#1448C6] active:bg-[#123AA3] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF] focus-visible:ring-offset-2"
           >
-            <span>REQUEST A QUOTE</span>
+            <span>Request a quote</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
 
-          {/* Mobile toggle */}
           <button
             id="nav-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-[#C8B49E] transition-colors focus:outline-none cursor-pointer"
+            className="md:hidden p-2 text-[#0F1E2D] hover:text-[#1A5CFF] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF] rounded-full cursor-pointer"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 stroke-[1.5]" /> : <Menu className="w-6 h-6 stroke-[1.5]" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 stroke-[1.7]" /> : <Menu className="w-6 h-6 stroke-[1.7]" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div
           id="nav-mobile-menu"
-          className="md:hidden bg-[#1C1D1F] border-b border-white/15 px-6 py-8 shadow-2xl text-white animate-in fade-in duration-200"
+          ref={mobileRef}
+          className="md:hidden bg-[#F6F5F2] border-t border-[#0F1E2D]/10 px-6 py-6 shadow-lg"
         >
-          <div className="flex flex-col space-y-6">
-            <button
-              onClick={() => scrollToSection('capabilities-section')}
-              className="text-left font-mono-meta text-xs tracking-[0.22em] text-white/90 hover:text-[#C8B49E] transition-colors"
-            >
-              CAPABILITIES
-            </button>
-            <button
-              onClick={() => scrollToSection('recent-projects-section')}
-              className="text-left font-mono-meta text-xs tracking-[0.22em] text-white/90 hover:text-[#C8B49E] transition-colors"
-            >
-              PROJECTS
-            </button>
-            <button
-              onClick={() => scrollToSection('process-section')}
-              className="text-left font-mono-meta text-xs tracking-[0.22em] text-white/90 hover:text-[#C8B49E] transition-colors"
-            >
-              PROCESS
-            </button>
-            <button
-              onClick={() => scrollToSection('why-oohjay-section')}
-              className="text-left font-mono-meta text-xs tracking-[0.22em] text-white/90 hover:text-[#C8B49E] transition-colors"
-            >
-              ABOUT
-            </button>
+          <div className="flex flex-col">
+            {[
+              ['Services', '/services'],
+              ['Gallery', '/work'],
+              ['Process', '/process'],
+              ['Contact', '/contact'],
+            ].map(([label, path]) => (
+              <Link
+                key={path}
+                to={path}
+                onClick={closeMobileMenu}
+                className="py-3 text-[15px] font-medium text-[#2D3A4A] hover:text-[#0F1E2D] transition-colors border-b border-[#0F1E2D]/5 last:border-0"
+              >
+                {label}
+              </Link>
+            ))}
 
-            <div className="pt-4 border-t border-white/10 flex flex-col space-y-3">
+            <div className="pt-5 mt-2 flex flex-col gap-3">
               <button
                 onClick={() => {
-                  setMobileMenuOpen(false);
+                  closeMobileMenu();
                   onOpenQuote();
                 }}
-                className="w-full text-center py-3 bg-[#C8B49E] text-[#1C1D1F] font-mono-meta text-[11px] tracking-[0.2em] font-semibold hover:bg-white transition-colors"
+                className="w-full rounded-full py-3.5 bg-[#1A5CFF] text-white text-[14px] font-semibold hover:bg-[#1448C6] transition-colors cursor-pointer"
               >
-                REQUEST A QUOTE →
+                Request a quote →
               </button>
               <a
                 href="https://wa.me/2349031386928"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full text-center py-3 border border-white/30 text-white font-mono-meta text-[11px] tracking-[0.2em] flex items-center justify-center space-x-2"
+                className="w-full rounded-full py-3.5 border border-[#0F1E2D]/15 text-[#0F1E2D] text-[13px] font-medium text-center hover:border-[#0F1E2D]/30 hover:bg-white transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 text-[#C8B49E]" />
-                <span>WHATSAPP: +234 903 138 6928</span>
+                WhatsApp: +234 903 138 6928
               </a>
             </div>
           </div>

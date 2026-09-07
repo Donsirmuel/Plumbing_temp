@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Plus } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Project } from '../types';
@@ -10,32 +11,26 @@ interface RecentProjectsProps {
 }
 
 export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject }) => {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
-  const [showAllModal, setShowAllModal] = useState<boolean>(false);
-
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const primaryFour = PROJECTS.slice(0, 4);
 
-  const filteredProjects =
-    activeCategory === 'All'
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.category.toLowerCase().includes(activeCategory.toLowerCase()));
-
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
     const ctx = gsap.context(() => {
-      // Header subtle fade-in and upward slide
       if (headerRef.current) {
         gsap.fromTo(
           headerRef.current,
-          { opacity: 0, y: 32 },
+          { opacity: 0, y: 12 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.95,
-            ease: 'power3.out',
+            duration: 0.5,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: sectionRef.current,
               start: 'top 85%',
@@ -45,17 +40,16 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
         );
       }
 
-      // Projects card row staggered upward slide
       if (cardsRef.current) {
         gsap.fromTo(
           cardsRef.current.children,
-          { opacity: 0, y: 40 },
+          { opacity: 0, y: 16 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.9,
-            stagger: 0.12,
-            ease: 'power3.out',
+            duration: 0.5,
+            stagger: 0.08,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: cardsRef.current,
               start: 'top 88%',
@@ -73,159 +67,70 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
     <section
       id="recent-projects-section"
       ref={sectionRef}
-      className="bg-[#F9F8F6] text-[#1C1D1F] py-20 sm:py-24 px-6 sm:px-10 md:px-16 max-w-[1440px] mx-auto"
+      className="bg-[#F6F5F2] text-[#0F1E2D] py-16 sm:py-20 lg:py-24 px-6 sm:px-10 md:px-16 max-w-360 mx-auto"
     >
-      {/* Top Header Row matching the attached screenshot */}
       <div
         ref={headerRef}
-        className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-[rgba(28,29,31,0.1)] gap-4"
+        className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-5 border-b border-[#0F1E2D]/10 gap-4"
       >
         <div>
-          <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-mono-meta tracking-[0.25em] text-[#706B65] uppercase">
-            <span>SELECTED WORK</span>
-            <span className="w-6 h-[1px] bg-[#706B65]" />
-          </div>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#1C1D1F] font-normal tracking-[-0.01em] mt-1">
-            Recent Projects
+          <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">Selected work</p>
+          <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+            Recent work in Nigeria & beyond
           </h2>
+          <p className="mt-3 max-w-xl text-sm leading-6 text-[#5B6B7A]">
+            Copper manifolds, plant rooms, wet areas and construction support — shown as they were built, not as renders.
+          </p>
         </div>
 
-        <button
-          onClick={() => setShowAllModal(true)}
-          className="group inline-flex items-center space-x-2 font-mono-meta text-[11px] sm:text-[12px] tracking-[0.2em] text-[#1C1D1F] hover:text-[#A38B6C] transition-colors cursor-pointer py-1"
+        <Link
+          to="/work"
+          className="group inline-flex items-center gap-2 text-sm font-semibold text-[#0F1E2D] hover:text-[#1A5CFF] transition-colors duration-150"
         >
-          <span>VIEW ALL PROJECTS</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-        </button>
+          <span>View gallery</span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5" />
+        </Link>
       </div>
 
-      {/* The 4-Card Row */}
       <div
         ref={cardsRef}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 lg:gap-7"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-6"
       >
-        {primaryFour.map((project) => (
-          <div
+        {primaryFour.map((project, index) => (
+          <button
             key={project.id}
             onClick={() => onSelectProject(project)}
-            className="group flex flex-col cursor-pointer transition-all duration-300"
+            className={`group text-left flex flex-col card-hover ${index === 0 ? 'lg:col-span-7' : 'lg:col-span-5'} bg-white rounded-[1.25rem] overflow-hidden border border-[#0F1E2D]/8 hover:border-[#0F1E2D]/15 hover:shadow-[0_8px_28px_rgba(15,30,45,0.08)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5CFF]`}
           >
-            {/* Image Container with subtle framing */}
-            <div className="relative overflow-hidden bg-[#EAE7E1] aspect-[4/3] w-full border border-[rgba(28,29,31,0.08)]">
+            <div className={`relative overflow-hidden bg-[#E8ECEE] w-full ${index === 0 ? 'aspect-[16/10]' : 'aspect-[16/11]'}`}>
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 filter brightness-[0.98] group-hover:brightness-100"
+                className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
               />
-              
-              {/* Category pill on image */}
-              <div className="absolute top-3 left-3 z-10">
-                <span className="bg-[#1C1D1F]/80 backdrop-blur-xs text-white/90 font-mono-meta text-[8.5px] tracking-[0.18em] px-2.5 py-1 uppercase">
-                  {project.category}
-                </span>
-              </div>
-
-              {/* Subtle hover overlay with indicator */}
-              <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="bg-[#1C1D1F] text-white font-mono-meta text-[9px] tracking-[0.2em] px-3.5 py-2 flex items-center space-x-1.5 shadow-md">
-                  <span>VIEW PROJECT</span>
-                  <Plus className="w-3 h-3" />
-                </span>
+              <div className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-medium text-[#0F1E2D] shadow">
+                {project.location} · {project.year}
               </div>
             </div>
 
-            {/* Project Metadata below image */}
-            <div className="mt-4 flex flex-col space-y-1.5 text-left">
-              <div className="flex items-center justify-between text-[10px] font-mono-meta text-[#706B65] tracking-[0.2em]">
-                <span>{project.number}</span>
-                <span>{project.location}</span>
+            <div className="p-5 sm:p-6 space-y-2">
+              <div className="text-xs font-medium text-[#5B6B7A]">
+                {project.category}
               </div>
-              <h3 className="font-mono-meta text-xs sm:text-[13px] tracking-[0.14em] text-[#1C1D1F] font-semibold group-hover:text-[#A38B6C] transition-colors uppercase leading-snug">
+              <h3 className={`font-sans font-bold leading-tight tracking-[-0.03em] text-[#0F1E2D] ${index === 0 ? 'text-xl sm:text-2xl' : 'text-lg'}`}>
                 {project.title}
               </h3>
-              <p className="text-xs text-[#706B65] font-light line-clamp-2 leading-relaxed pt-0.5">
+              <p className="text-sm leading-6 text-[#5B6B7A] line-clamp-2">
                 {project.description}
               </p>
+              <span className="inline-flex items-center gap-1.5 pt-1 text-sm font-medium text-[#1A5CFF] group-hover:gap-2 transition-all duration-150">
+                View details <ArrowRight className="w-3.5 h-3.5" />
+              </span>
             </div>
-          </div>
+          </button>
         ))}
       </div>
-
-      {/* Extended All Projects Modal / Drawer */}
-      {showAllModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-[#F9F8F6] w-full max-w-5xl max-h-[90vh] overflow-y-auto p-6 sm:p-10 shadow-2xl border border-[rgba(28,29,31,0.15)] flex flex-col">
-            <div className="flex items-center justify-between pb-6 border-b border-[rgba(28,29,31,0.1)]">
-              <div>
-                <span className="font-mono-meta text-[10px] tracking-[0.25em] text-[#706B65]">
-                  OOH JAY PORTFOLIO
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#1C1D1F] mt-1">
-                  Commissioned Architecture & MEP Archive
-                </h3>
-              </div>
-              <button
-                onClick={() => setShowAllModal(false)}
-                className="font-mono-meta text-xs tracking-[0.2em] text-[#1C1D1F] hover:text-[#A38B6C] p-2 cursor-pointer"
-              >
-                CLOSE [×]
-              </button>
-            </div>
-
-            {/* Filter Tabs */}
-            <div className="flex items-center space-x-4 sm:space-x-8 py-4 border-b border-[rgba(28,29,31,0.08)] overflow-x-auto text-xs font-mono-meta tracking-[0.18em]">
-              {['All', 'Construction', 'Plumbing', 'Design-Build'].map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`py-1 cursor-pointer transition-colors ${
-                    activeCategory === cat
-                      ? 'text-[#1C1D1F] border-b-2 border-[#1C1D1F] font-semibold'
-                      : 'text-[#706B65] hover:text-[#1C1D1F]'
-                  }`}
-                >
-                  {cat.toUpperCase()}
-                </button>
-              ))}
-            </div>
-
-            {/* Full grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
-              {filteredProjects.map((proj) => (
-                <div
-                  key={proj.id}
-                  onClick={() => {
-                    setShowAllModal(false);
-                    onSelectProject(proj);
-                  }}
-                  className="group cursor-pointer flex flex-col space-y-2 border border-[rgba(28,29,31,0.08)] p-3 bg-white hover:border-[#1C1D1F] transition-all"
-                >
-                  <div className="aspect-[16/11] overflow-hidden bg-[#EAE7E1]">
-                    <img
-                      src={proj.image}
-                      alt={proj.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="pt-2 flex justify-between items-baseline text-[9px] font-mono-meta text-[#706B65]">
-                    <span>{proj.number}</span>
-                    <span>{proj.category}</span>
-                  </div>
-                  <h4 className="font-mono-meta text-xs tracking-[0.14em] font-semibold text-[#1C1D1F]">
-                    {proj.title}
-                  </h4>
-                  <p className="text-xs text-[#706B65] font-light line-clamp-2">{proj.description}</p>
-                  <div className="flex justify-between items-center text-[10px] font-mono-meta text-[#1C1D1F] pt-2 border-t border-[rgba(28,29,31,0.06)]">
-                    <span>{proj.location}</span>
-                    <span>{proj.year}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

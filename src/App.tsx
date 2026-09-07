@@ -1,25 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { RecentProjects } from './components/RecentProjects';
-import { WhyOohJay } from './components/WhyOohJay';
-import { CapabilitiesSection } from './components/CapabilitiesSection';
-import { BeforeAfterSlider } from './components/BeforeAfterSlider';
-import { ProcessSection } from './components/ProcessSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { RequestQuoteModal } from './components/RequestQuoteModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { HomePage } from './pages/HomePage';
+import { ServicesPage } from './pages/ServicesPage';
+import { WorkPage } from './pages/WorkPage';
+import { ProcessPage } from './pages/ProcessPage';
+import { ContactPage } from './pages/ContactPage';
 import { Project } from './types';
 
 // Register ScrollTrigger globally for the application
 gsap.registerPlugin(ScrollTrigger);
 
-export function App() {
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    ScrollTrigger.refresh();
+  }, [pathname]);
+
+  return null;
+}
+
+function Site() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [quoteModalOpen, setQuoteModalOpen] = useState<boolean>(false);
   const [quoteDefaultService, setQuoteDefaultService] = useState<string>('');
@@ -40,46 +49,23 @@ export function App() {
 
   const handleExploreClick = () => {
     const el = document.getElementById('recent-projects-section');
-    if (el) {
-      const navOffset = 70;
-      const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F8F6] text-[#1C1D1F] font-sans antialiased selection:bg-[#1C1D1F] selection:text-white">
-      {/* Sticky Main Navigation */}
+    <div className="min-h-screen bg-[#F6F5F2] text-[#0F1E2D] font-sans antialiased selection:bg-[#0F1E2D] selection:text-white">
+      <ScrollToTop />
       <Navbar onOpenQuote={() => handleOpenQuote()} />
 
       <main>
-        {/* Hero Section matching the exact visual styling in the attached image with Parallax & GSAP */}
-        <Hero onExploreClick={handleExploreClick} onOpenQuote={() => handleOpenQuote()} />
-
-        {/* Recent Projects Row matching the exact 4-card row in the attached image */}
-        <RecentProjects onSelectProject={(project) => setSelectedProject(project)} />
-
-        {/* Why Ooh Jay: Engineering Standard & Nigerian Trust Metrics */}
-        <WhyOohJay />
-
-        {/* Capabilities Section: Interactive tabbed exploration inspired by Glide's simplicity */}
-        <CapabilitiesSection onOpenQuote={(svc) => handleOpenQuote(svc)} />
-
-        {/* The Transformation: Interactive Before/After Tactile Slider */}
-        <BeforeAfterSlider />
-
-        {/* Process Section: Structured 5-stage delivery methodology */}
-        <ProcessSection onOpenQuote={() => handleOpenQuote()} />
-
-        {/* Testimonials: Nigerian Architects & Developers Endorsements */}
-        <TestimonialsSection />
-
-        {/* Call to Action Banner */}
-        <CtaSection onOpenQuote={() => handleOpenQuote()} />
+        <Routes>
+          <Route path="/" element={<HomePage onExploreClick={handleExploreClick} onOpenQuote={() => handleOpenQuote()} onSelectProject={setSelectedProject} />} />
+          <Route path="/services" element={<ServicesPage onOpenQuote={handleOpenQuote} />} />
+          <Route path="/work" element={<WorkPage onSelectProject={setSelectedProject} />} />
+          <Route path="/process" element={<ProcessPage onOpenQuote={() => handleOpenQuote()} />} />
+          <Route path="/contact" element={<ContactPage onOpenQuote={() => handleOpenQuote()} />} />
+          <Route path="*" element={<HomePage onExploreClick={handleExploreClick} onOpenQuote={() => handleOpenQuote()} onSelectProject={setSelectedProject} />} />
+        </Routes>
       </main>
 
       {/* Main Footer */}
@@ -102,6 +88,14 @@ export function App() {
         defaultService={quoteDefaultService}
       />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Site />
+    </BrowserRouter>
   );
 }
 

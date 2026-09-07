@@ -1,50 +1,67 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { TESTIMONIALS } from '../data/testimonials';
 import { Quote } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const TestimonialsSection: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    const ctx = gsap.context(() => {
+      if (gridRef.current) {
+        gsap.fromTo(
+          gridRef.current.children,
+          { opacity: 0, y: 14 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.45,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: gridRef.current, start: 'top 88%', toggleActions: 'play none none none' },
+          }
+        );
+      }
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-[#EAE7E1]/50 py-24 sm:py-32 px-6 sm:px-10 md:px-16 border-t border-[rgba(28,29,31,0.08)]">
-      <div className="max-w-[1440px] mx-auto space-y-16">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[rgba(28,29,31,0.1)]">
+    <section ref={sectionRef} className="bg-[#F6F5F2] py-16 sm:py-20 px-6 sm:px-10 md:px-16 border-t border-[#0F1E2D]/8">
+      <div className="max-w-360 mx-auto space-y-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#0F1E2D]/10">
           <div>
-            <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-mono-meta tracking-[0.25em] text-[#706B65] uppercase">
-              <span>COMMERCIAL TRUST</span>
-              <span className="w-6 h-[1px] bg-[#706B65]" />
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#1C1D1F] font-normal tracking-[-0.01em] mt-1">
-              Endorsed by Architects & Developers
+            <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">Trust</p>
+            <h2 className="font-sans text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+              Trusted by partners in Nigeria & beyond
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-[#706B65] font-light max-w-md leading-relaxed">
-            Real feedback from commercial partners who rely on our structural precision and MEP engineering
-            in Lagos and across Nigeria.
+          <p className="text-sm text-[#5B6B7A] leading-6 max-w-md">
+            Real words from architects, developers and homeowners who rely on our work.
           </p>
         </div>
 
-        {/* Testimonials 3-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((t) => (
             <div
               key={t.id}
-              className="bg-white p-8 sm:p-10 border border-[rgba(28,29,31,0.08)] hover:border-[#1C1D1F] transition-all flex flex-col justify-between space-y-8 shadow-xs"
+              className="bg-white p-7 sm:p-8 rounded-2xl border border-[#0F1E2D]/8 hover:border-[#0F1E2D]/15 hover:shadow-[0_8px_24px_rgba(15,30,45,0.08)] transition-all duration-200 flex flex-col justify-between gap-6 card-hover"
             >
-              <div className="space-y-5">
-                <Quote className="w-7 h-7 text-[#C8B49E] stroke-[1.2]" />
-                <p className="font-serif text-lg sm:text-xl text-[#1C1D1F] font-normal leading-relaxed italic">
-                  "{t.quote}"
-                </p>
+              <div className="space-y-4">
+                <Quote className="w-6 h-6 text-[#1A5CFF]" />
+                <p className="text-[15px] text-[#0F1E2D] leading-7">“{t.quote}”</p>
               </div>
 
-              <div className="pt-6 border-t border-[rgba(28,29,31,0.08)] space-y-1">
-                <div className="font-sans text-sm font-semibold text-[#1C1D1F]">{t.author}</div>
-                <div className="text-xs font-mono-meta text-[#706B65] tracking-[0.12em]">
-                  {t.role} • {t.organization}
+              <div className="pt-5 border-t border-[#0F1E2D]/8 space-y-1">
+                <div className="text-sm font-semibold text-[#0F1E2D]">{t.author}</div>
+                <div className="text-xs text-[#5B6B7A]">
+                  {t.role} · {t.organization}
                 </div>
-                <div className="text-[10px] font-mono-meta text-[#A38B6C] tracking-[0.16em] uppercase">
-                  {t.location}
-                </div>
+                <div className="text-xs font-medium text-[#1A5CFF]">{t.location}</div>
               </div>
             </div>
           ))}

@@ -1,11 +1,35 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ChevronsLeftRight } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import rawPipesImg from '../assets/images/hero_copper_plumbing_1788680078325.jpg';
 
 export const BeforeAfterSlider: React.FC = () => {
-  const [sliderPos, setSliderPos] = useState<number>(50); // percentage 0-100
+  const [sliderPos, setSliderPos] = useState<number>(50);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isDragging = useRef<boolean>(false);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    const ctx = gsap.context(() => {
+      if (sectionRef.current) {
+        gsap.fromTo(
+          sectionRef.current,
+          { opacity: 0, y: 12 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: sectionRef.current, start: 'top 85%', toggleActions: 'play none none none' },
+          }
+        );
+      }
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
 
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
@@ -27,9 +51,7 @@ export const BeforeAfterSlider: React.FC = () => {
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
-    if (isDragging.current) {
-      handleMove(e.clientX);
-    }
+    if (isDragging.current) handleMove(e.clientX);
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
@@ -42,25 +64,20 @@ export const BeforeAfterSlider: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#EAE7E1]/40 py-24 sm:py-32 px-6 sm:px-10 md:px-16 border-t border-[rgba(28,29,31,0.08)]">
-      <div className="max-w-[1440px] mx-auto space-y-12">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[rgba(28,29,31,0.1)]">
+    <section ref={sectionRef} className="bg-white py-16 sm:py-20 px-6 sm:px-10 md:px-16 border-y border-[#0F1E2D]/8">
+      <div className="max-w-360 mx-auto space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#0F1E2D]/10">
           <div>
-            <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-mono-meta tracking-[0.25em] text-[#706B65] uppercase">
-              <span>SYSTEMS &amp; FINISH</span>
-              <span className="w-6 h-[1px] bg-[#706B65]" />
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#1C1D1F] font-normal tracking-[-0.01em] mt-1">
-              From Pipework Rough-In to Handover
+            <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">From rough-in to handover</p>
+            <h2 className="font-sans text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+              What is built and what runs through it
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-[#706B65] font-light max-w-md leading-relaxed">
-            Drag the tactile slider horizontally to inspect our work: what is built, the plumbing running through it, and the commissioned finished space.
+          <p className="text-sm text-[#5B6B7A] leading-6 max-w-md">
+            Drag to compare — the pipework behind the walls and the finished space you live in.
           </p>
         </div>
 
-        {/* Comparison Stage */}
         <div className="space-y-3">
           <div
             ref={containerRef}
@@ -68,51 +85,48 @@ export const BeforeAfterSlider: React.FC = () => {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onTouchMove={handleTouchMove}
-            className="relative overflow-hidden bg-[#1C1D1F] aspect-[16/10] sm:aspect-[21/10] w-full select-none cursor-ew-resize border border-[rgba(28,29,31,0.15)] shadow-lg"
+            className="relative overflow-hidden bg-[#0F1E2D] aspect-[16/10] sm:aspect-[21/10] w-full select-none cursor-ew-resize rounded-2xl border border-[#0F1E2D]/10"
           >
-            {/* Base Layer: Finished Sanitaryware & Wet Area */}
             <img
               src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=2200&q=85"
-              alt="Completed commissioned luxury bathroom with precision sanitaryware"
-              className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+              alt="Completed bathroom — finished space"
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               loading="lazy"
             />
 
-            {/* Top Layer: Clipped Raw Pipework & Conduits Infrastructure */}
             <div
               className="absolute inset-0 overflow-hidden pointer-events-none"
               style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
             >
               <img
                 src={rawPipesImg}
-                alt="Active rough-in copper pipework, valves and mechanical water infrastructure"
-                className="absolute inset-0 w-full h-full object-cover object-center filter contrast-[105%]"
+                alt="Pipework behind the walls"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-[#0F1E2D]/10" />
             </div>
 
-            {/* Hairline Divider & Minimal Drag Handle */}
             <div
-              className="absolute top-0 bottom-0 w-[2px] bg-white shadow-xl z-20 pointer-events-none"
+              className="absolute top-0 bottom-0 w-[2px] bg-white z-20 pointer-events-none"
               style={{ left: `${sliderPos}%` }}
             >
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#1C1D1F] text-white flex items-center justify-center shadow-lg border border-white/50">
-                <ChevronsLeftRight className="w-4 h-4 stroke-[1.5]" />
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-white text-[#0F1E2D] flex items-center justify-center shadow-lg border border-[#0F1E2D]/10">
+                <ChevronsLeftRight className="w-4 h-4" />
               </div>
             </div>
 
-            {/* Clean, Non-Intrusive Indicators */}
-            <div className="absolute bottom-5 left-5 z-10 bg-[#1C1D1F]/90 text-white px-3 py-1.5 text-[9.5px] font-mono-meta tracking-[0.2em] pointer-events-none shadow backdrop-blur-xs">
-              RAW PIPEWORK &amp; INFRASTRUCTURE
+            <div className="absolute bottom-4 left-4 z-10 rounded-full bg-[#0F1E2D]/90 text-white px-3 py-1 text-xs font-medium backdrop-blur pointer-events-none">
+              Pipework
             </div>
-            <div className="absolute bottom-5 right-5 z-10 bg-white/95 text-[#1C1D1F] px-3 py-1.5 text-[9.5px] font-mono-meta tracking-[0.2em] pointer-events-none shadow backdrop-blur-xs">
-              COMPLETED COMMISSIONED SPACE
+            <div className="absolute bottom-4 right-4 z-10 rounded-full bg-white/95 text-[#0F1E2D] px-3 py-1 text-xs font-medium shadow pointer-events-none">
+              Finished space
             </div>
           </div>
 
-          <div className="flex justify-between items-center text-[10px] font-mono-meta text-[#706B65] pt-1">
-            <span>DRAG HORIZONTALLY TO REVEAL TRANSFORMATION</span>
-            <span className="text-[#1C1D1F]">WHAT IS BUILT • WHAT RUNS THROUGH IT • THE RESULT</span>
+          <div className="flex justify-between items-center text-xs text-[#5B6B7A]">
+            <span>Drag horizontally</span>
+            <span className="text-[#0F1E2D] font-medium">Infrastructure · Result</span>
           </div>
         </div>
       </div>

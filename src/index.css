@@ -2,43 +2,89 @@
 
 @layer base {
   :root {
-    --bg-alabaster: #F9F8F6;
-    --surface-limestone: #EAE7E1;
-    --text-gunmetal: #1C1D1F;
-    --text-taupe: #706B65;
-    --accent-bronze: #A38B6C;
-    --border-structural: rgba(28, 29, 31, 0.10);
+    --bg-canvas: #F6F5F2;
+    --bg-soft: #EFEDE8;
+    --surface-card: #FFFFFF;
+    --ink: #0F1E2D;
+    --ink-soft: #2D3A4A;
+    --muted: #5B6B7A;
+    --water: #1A5CFF;
+    --water-hover: #1448C6;
+    --amber: #C78D3F;
+    --amber-soft: #F0D9B0;
+    --border: rgba(15, 30, 45, 0.10);
+    --border-strong: rgba(15, 30, 45, 0.14);
+  }
+
+  html {
+    scrollbar-gutter: stable;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg-alabaster);
-    color: var(--text-gunmetal);
+    background-color: var(--bg-canvas);
+    color: var(--ink);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+  /* Contemporary sans as the display voice — no global serif */
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  /* Serif reserved for occasional accent, not default */
+  .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 }
 
-/* Custom micro typography and image treatment */
+/* Quiet label — replaces overused font-mono-meta uppercase tracking */
+.eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .font-editorial {
-  font-family: 'Cormorant Garamond', Garamond, Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
+/* Legacy alias kept but toned down — do not use for generic labels */
 .font-mono-meta {
-  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  letter-spacing: 0.22em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-/* Hairline rule utility */
 .border-hairline {
-  border-color: rgba(28, 29, 31, 0.10);
+  border-color: var(--border);
 }
 
-/* Subtle image reveal effect */
 img {
   text-indent: -9999px;
+}
+
+/* Motion: purposeful, quick, no scale(0) pops — Emil taste */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle card hover lift — no layout shift */
+.card-hover {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms, border-color 220ms;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
 }
