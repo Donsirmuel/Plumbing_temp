@@ -47,13 +47,64 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
 
     // reveal-entry with IntersectionObserver, 0.8s per stitch, respects reduced-motion via CSS but also JS guard
     const revealEls = root.querySelectorAll<HTMLElement>('.reveal-entry');
-    // hero entries visible immediately with stagger (matches stitch script)
+    // Premium hero intro — cinematic, split-line, noticeable
     const heroSection = document.getElementById('hero-section');
     if (heroSection) {
-      const heroEntries = heroSection.querySelectorAll<HTMLElement>('.reveal-entry');
-      heroEntries.forEach((entry, i) => {
-        window.setTimeout(() => entry.classList.add('is-visible'), 120 + i * 120);
-      });
+      const heroBg = heroSection.querySelector('#hero-bg-wrapper img') as HTMLElement | null;
+      const heroLines = heroSection.querySelectorAll<HTMLElement>('.hero-line-inner');
+      const heroSub = heroSection.querySelector('.hero-sub') as HTMLElement | null;
+      const heroPill = heroSection.querySelector('#hero-text-layer .reveal-entry') as HTMLElement | null;
+      const heroCtas = heroSection.querySelectorAll<HTMLElement>('#hero-text-layer .reveal-entry');
+      // For reduced motion, keep it simple fade
+      if (prefersReduced) {
+        const allHero = heroSection.querySelectorAll<HTMLElement>('.hero-line-inner, .hero-sub, .reveal-entry');
+        gsap.set(allHero, { opacity: 0, y: 12 });
+        gsap.to(allHero, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: 'power2.out',
+          onComplete: () => heroSection.querySelectorAll('.reveal-entry').forEach((el) => el.classList.add('is-visible')),
+        });
+        if (heroBg) gsap.fromTo(heroBg, { opacity: 0 }, { opacity: 0.7, duration: 0.6, ease: 'power2.out' });
+      } else {
+        // Background cinematic
+        if (heroBg) {
+          gsap.fromTo(
+            heroBg,
+            { scale: 1.18, opacity: 0, filter: 'blur(8px)' },
+            { scale: 1, opacity: 0.7, filter: 'blur(0px)', duration: 1.8, ease: 'power3.out' }
+          );
+        }
+        // Hero lines: clip + y reveal — most noticeable
+        gsap.set(heroLines, { yPercent: 100, opacity: 0 });
+        gsap.to(heroLines, {
+          yPercent: 0,
+          opacity: 1,
+          duration: 1.0,
+          stagger: 0.18,
+          ease: 'power4.out',
+          delay: 0.3,
+        });
+        // Sub + CTAs stagger after lines
+        const heroRest = heroSection.querySelectorAll<HTMLElement>('.hero-sub, #hero-text-layer .reveal-entry:not(.hero-line)');
+        gsap.set(heroRest, { opacity: 0, y: 32 });
+        gsap.to(heroRest, {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          stagger: 0.1,
+          ease: 'power3.out',
+          delay: 0.9,
+          onComplete: () => heroSection.querySelectorAll('.reveal-entry').forEach((el) => el.classList.add('is-visible')),
+        });
+        // Cards layer subtle parallax in
+        const cardsLayer = document.getElementById('hero-cards-layer') as HTMLElement | null;
+        if (cardsLayer) {
+          gsap.fromTo(cardsLayer, { opacity: 0, y: 24, scale: 0.98 }, { opacity: 1, y: 0, scale: 1, duration: 1.0, ease: 'power3.out', delay: 0.7 });
+        }
+      }
     }
 
     if (prefersReduced) {
@@ -85,20 +136,25 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
     }
   }, []);
 
-  // Premium storytelling parallax: background, text and cards move at different speeds on scroll
+  // Premium depth on scroll — background, text and cards drift at different speeds for cinematic depth (always on, reduced motion = softer)
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    const intensity = prefersReduced ? 0.4 : 1;
     const hero = document.getElementById('hero-section');
     const bg = document.getElementById('hero-bg-wrapper');
+    const bgImg = bg?.querySelector('img') as HTMLElement | null;
     const textLayer = document.getElementById('hero-text-layer');
     const cardsLayer = document.getElementById('hero-cards-layer');
     const metrics = document.getElementById('metrics-grid');
     if (!hero) return;
     const ctx = gsap.context(() => {
-      if (bg) gsap.to(bg, { yPercent: -8, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
-      if (textLayer) gsap.to(textLayer, { yPercent: -6, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
-      if (cardsLayer) gsap.to(cardsLayer, { yPercent: -10, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
+      // Background deepest — slowest, subtle scale
+      if (bgImg) gsap.to(bgImg, { yPercent: -12 * intensity, scale: 1 + 0.06 * intensity, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 + 0.2 * intensity } });
+      else if (bg) gsap.to(bg, { yPercent: -12 * intensity, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.8 } });
+      // Text mid-layer
+      if (textLayer) gsap.to(textLayer, { yPercent: -6 * intensity, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.9 } });
+      // Cards foreground — fastest
+      if (cardsLayer) gsap.to(cardsLayer, { yPercent: -16 * intensity, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.7 } });
       if (metrics) {
         const counters = metrics.querySelectorAll<HTMLElement>('.counter-value');
         counters.forEach((el) => {
@@ -128,9 +184,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
     if (window.innerWidth <= 768) return;
     const heroSection = document.getElementById('hero-section') as HTMLElement | null;
     const tiltFeatured = document.getElementById('tilt-featured') as HTMLElement | null;
-    const tiltBadge1 = document.getElementById('tilt-badge-1') as HTMLElement | null;
-    const tiltBadge2 = document.getElementById('tilt-badge-2') as HTMLElement | null;
-    if (!heroSection) return;
+    if (!heroSection || !tiltFeatured) return;
 
     const onMove = (e: MouseEvent) => {
       const rect = heroSection.getBoundingClientRect();
@@ -140,14 +194,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
       const centerY = rect.height / 2;
       const deltaX = (x - centerX) / centerX;
       const deltaY = (y - centerY) / centerY;
-      if (tiltFeatured) tiltFeatured.style.transform = `perspective(1000px) rotateY(${deltaX * 5}deg) rotateX(${-deltaY * 5}deg) translateZ(10px)`;
-      if (tiltBadge1) tiltBadge1.style.transform = `perspective(800px) rotateY(${deltaX * 8}deg) rotateX(${-deltaY * 8}deg) translate3d(${deltaX * 6}px, ${deltaY * 6}px, 20px)`;
-      if (tiltBadge2) tiltBadge2.style.transform = `perspective(800px) rotateY(${deltaX * -7}deg) rotateX(${-deltaY * 7}deg) translate3d(${deltaX * -5}px, ${deltaY * -5}px, 15px)`;
+      tiltFeatured.style.transform = `perspective(1000px) rotateY(${deltaX * 4}deg) rotateX(${-deltaY * 4}deg) translateZ(8px)`;
     };
     const onLeave = () => {
-      if (tiltFeatured) tiltFeatured.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0)';
-      if (tiltBadge1) tiltBadge1.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
-      if (tiltBadge2) tiltBadge2.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+      tiltFeatured.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0)';
     };
     heroSection.addEventListener('mousemove', onMove);
     heroSection.addEventListener('mouseleave', onLeave);
@@ -177,7 +227,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         </div>
 
         {/* Hero Content Grid Layer */}
-        <div className="relative z-10 max-w-[1200px] w-full mx-auto px-5 md:px-12 pt-12 md:pt-24 pb-6 flex-1 flex items-center">
+        <div className="relative z-10 max-w-[1200px] w-full mx-auto px-5 sm:px-6 md:px-12 pt-12 md:pt-24 pb-6 flex-1 flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full">
             {/* Left Column — midground parallax */}
             <div id="hero-text-layer" className="lg:col-span-7 flex flex-col items-start gap-4">
@@ -190,14 +240,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                 <span className="text-[11px] font-semibold tracking-[0.08em] uppercase">Tidy, Honest Plumbing · Nigeria & Abroad</span>
               </div>
 
-              <h1 className="reveal-entry font-['Newsreader',serif] text-[38px] md:text-[56px] leading-[1.08] tracking-tight text-[#f6f0ea] font-normal">
-                Plumbing done right.
-                <br />
-                <span className="italic font-normal text-[#ffdcbd]">Clean, quiet,</span> and built to last.
+              <h1 className="font-['Newsreader',serif] text-[38px] md:text-[56px] leading-[1.08] tracking-tight text-[#f6f0ea] font-normal overflow-hidden">
+                <span className="hero-line block overflow-hidden"><span className="hero-line-inner block">Plumbing done right.</span></span>
+                <span className="hero-line block overflow-hidden"><span className="hero-line-inner block"><span className="font-normal text-[#ffdcbd]">Clean, quiet,</span> and built to last.</span></span>
               </h1>
 
-              <p className="reveal-entry text-[15px] md:text-[18px] leading-7 text-[#e7e1dc] max-w-xl">
-                From fixing stubborn leaks and low shower pressure to fitting complete bespoke bathrooms. Reliable, considerate plumbers across Lagos — without the headache or technical excuses.
+              <p className="hero-sub text-[15px] md:text-[18px] leading-7 text-[#e7e1dc] max-w-xl opacity-0">
+                From fixing stubborn leaks and low shower pressure to handling plumbing jobs for personal homes and commercial sites. Reliable and Professional plumbing done right across Nigeria and Overseas.
               </p>
 
               <div className="reveal-entry pt-1 flex flex-wrap items-center gap-3 w-full sm:w-auto">
@@ -230,68 +279,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                 </span>
                 <span className="text-white/30">•</span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> 1-Year guarantee
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> 1-Year warranty
                 </span>
               </div>
             </div>
 
             {/* Right Column: foreground parallax + tilt */}
             <div id="hero-cards-layer" className="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
-              <div
-                id="tilt-featured"
-                className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/10 backdrop-blur-md group tilt-card"
-              >
+              <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-white/10 bg-[#f3ede7]">
                 <img
                   src={HERO_IMG}
-                  alt="Editorial close up photograph of a minimalist luxury bathroom featuring brushed copper thermostatic tap fittings against soft microcement plaster wall with natural golden sunlight"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  alt="Abeokuta site — clean, well-laid pipework and finished space"
+                  className="w-full h-full object-cover"
                   loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#141210]/90 via-[#141210]/30 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 p-3 bg-white/90 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 flex items-center justify-between text-[#1d1b18]">
-                  <div>
-                    <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Recent Fitting</p>
-                    <p className="text-[16px] font-semibold tracking-tight text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                      Ikoyi Private Residence
-                    </p>
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#7b542b] bg-[#f3ede7] px-3 py-1 rounded-full">Completed in 4 Days</span>
-                </div>
-              </div>
-
-              {/* Floating Story Card 1 — lifted to avoid header overlap */}
-              <div
-                id="tilt-badge-1"
-                className="absolute -top-4 -right-2 sm:-right-4 animate-float-1 hidden sm:flex items-center gap-3 p-4 bg-white/90 backdrop-blur-xl border border-white/40 rounded-2xl shadow-2xl text-[#1d1b18] max-w-[260px] tilt-card"
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#d4e7d8] flex items-center justify-center shrink-0 text-[#516257]">
-                  <span className="material-symbols-outlined text-[22px]">cleaning_services</span>
-                </div>
-                <div>
-                  <p className="text-[13px] font-semibold text-[#1d1b18]">Clean floor promise</p>
-                  <p className="text-[13px] leading-tight text-[#58423c]">Shoe covers & dust sheets down before work.</p>
-                </div>
-              </div>
-
-              {/* Floating Story Card 2 — repositioned to avoid bottom trust bar */}
-              <div
-                id="tilt-badge-2"
-                className="absolute -bottom-4 -left-2 sm:-left-4 animate-float-2 flex items-center gap-3 p-4 bg-white/95 backdrop-blur-xl border border-white/40 rounded-2xl shadow-2xl text-[#1d1b18] max-w-[270px] tilt-card"
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#ffdbd1] flex items-center justify-center shrink-0 text-[#a43716]">
-                  <span className="material-symbols-outlined text-[22px]">water_drop</span>
-                </div>
-                <div>
-                  <p className="text-[13px] font-semibold text-[#1d1b18]">Calibrated Pressure</p>
-                  <p className="text-[13px] leading-tight text-[#58423c]">Quiet pumps, no airlock, zero dripping taps.</p>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Hero Transition: Integrated Live Trust Milestones Bar */}
-        <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 md:px-12">
+        <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 sm:px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto flex flex-wrap items-center justify-between gap-4 text-[#e7e1dc] text-[13px]">
             <div className="flex items-center mx-auto gap-2 text-[#f6f0ea]">
               <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified_user</span>
@@ -302,176 +310,143 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
           </div>
         </div>
       </section>
+      <div id="recent-projects-section" className="sr-only" aria-hidden="true" />
 
-      {/* Metric / Confidence Ribbon — verified real metrics per user */}
-      <section className="w-full bg-[#f9f2ed] py-10 border-b border-[#dfc0b7]/20">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
-          {/* compat anchor for previous App handler that scrolled to recent-projects-section */}
-          <div id="recent-projects-section" className="sr-only" aria-hidden="true" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left" id="metrics-grid">
-            <div className="flex flex-col gap-1 p-2 reveal-entry">
-              <span
-                className="counter-value text-[#a43716] tracking-tight leading-none"
-                data-target="9"
-                data-suffix="+"
-                style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '48px', lineHeight: '52px', letterSpacing: '-0.02em', fontWeight: 500 }}
-              >
-                0+
-              </span>
-              <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Years Experience</span>
-              <span className="text-[13px] leading-5 text-[#58423c]">Serving homes & commercial offices</span>
-            </div>
-            <div className="flex flex-col gap-1 p-2 reveal-entry">
-              <span
-                className="counter-value text-[#a43716] tracking-tight leading-none"
-                data-target="1399"
-                data-suffix="+"
-                style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '48px', lineHeight: '52px', letterSpacing: '-0.02em', fontWeight: 500 }}
-              >
-                0+
-              </span>
-              <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Jobs Completed</span>
-              <span className="text-[13px] leading-5 text-[#58423c]">Bathrooms, boilers & water lines</span>
-            </div>
-            <div className="flex flex-col gap-1 p-2 reveal-entry">
-              <span
-                className="counter-value text-[#a43716] tracking-tight leading-none"
-                data-target="89"
-                data-prefix="< "
-                data-suffix="m"
-                style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '48px', lineHeight: '52px', letterSpacing: '-0.02em', fontWeight: 500 }}
-              >
-                &lt; 0m
-              </span>
-              <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Emergency Callout</span>
-              <span className="text-[13px] leading-5 text-[#58423c]">Typical response for urgent jobs</span>
-            </div>
-            <div className="flex flex-col gap-1 p-2 reveal-entry">
-              <span
-                className="counter-value text-[#a43716] tracking-tight leading-none"
-                data-target="11"
-                data-suffix=" Mos"
-                style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: '48px', lineHeight: '52px', letterSpacing: '-0.02em', fontWeight: 500 }}
-              >
-                0 Mos
-              </span>
-              <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Full Guarantee</span>
-              <span className="text-[13px] leading-5 text-[#58423c]">If it drips, we return free of charge</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Everyday Services */}
-      <section className="w-full bg-[#fff8f3] py-14 md:py-20">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
+      {/* Everyday Services — photo-hero cards */}
+      <section className="w-full bg-[#fff8f3] py-20 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-entry">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Everyday Craft</span>
+                <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Everyday Craft</span>
                 <span className="w-8 h-px bg-[#dfc0b7]" />
               </div>
-              <h2 className="font-['Newsreader',serif] text-[32px] md:text-[40px] leading-none tracking-tight text-[#1d1b18]">What we sort out for you</h2>
+              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold tracking-[-0.04em] text-[32px] md:text-[40px] leading-none text-[#1d1b18]">What We Do</h2>
             </div>
-            <p className="text-[15px] leading-6 text-[#58423c] max-w-md">
-              From new builds and first-fix pipework to repairs in lived-in homes — complex installations don't intimidate us. We arrive with the right parts ready in the van.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Link
               to="/services"
-              className="reveal-entry bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 border border-[#dfc0b7]/15"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#a43716] mb-4 group-hover:bg-[#ffdbd1] transition-colors">
-                  <span className="material-symbols-outlined text-[26px]">water_drop</span>
-                </div>
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Service 01 � New & Existing</span>
-                <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mt-1 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <div className="relative h-56 w-full overflow-hidden bg-[#f3ede7]">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEhPlWNJIKNSSFJa2aSm8P9OPaAI6jrlnfHZGpGy6-nC2yPmu2hShq71JZU0wDJ5aH1cVqsvTEqj1O2Www_cadvPkFcRgCFVma5mljsJB6WHByf3fF923mKhkKO_ArR8uppL5zpAZtK7KFo0WRB2SibK5g0fAobWO-TvjiwDXOLkNMqQ_A89gdQS4BhlFDbGD4RO7e9c4-wFtrC4L5iDyIKFIY_RX_H3ct9x1KlJ_T22bFTOXChWGw"
+                  alt="Copper pipe repair and leak detection in a tiled bathroom wall"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 backdrop-blur-md text-[#a43716] shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">water_drop</span>
+                </span>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Leaks & Burst Pipes
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   New pipework for new builds and quick fixes for running toilets, dripping taps, hidden leaks and burst mains — before they damage walls or woodwork.
                 </p>
-              </div>
-              <div className="mt-6 pt-3 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">New builds & repairs</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
+                  <span className="text-[14px] font-semibold text-[#a43716]">New builds & repairs</span>
+                  <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                    arrow_forward
+                  </span>
+                </div>
               </div>
             </Link>
 
             <Link
               to="/services"
-              className="reveal-entry bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 border border-[#dfc0b7]/15"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#a43716] mb-4 group-hover:bg-[#ffdbd1] transition-colors">
-                  <span className="material-symbols-outlined text-[26px]">shower</span>
-                </div>
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Service 02 � New & Existing</span>
-                <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mt-1 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <div className="relative h-56 w-full overflow-hidden bg-[#f3ede7]">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDly6EehIsiUUwbAnc78f7jbXbg-VgVho-latSGXwSGN9fcSMUzf4r8XwT0TNiPTHttTLMKL-xazuqgrz2CqeP2-w5eR8vPKwU_rfeB55CV-Qb0IEMtq1KP2cLXoImJpwHdcW6HoVWiDoOk_YoEvI9IAOqRtIlU2Aaj1DTicoy_p0HwY5gCQmGGstn7AyO2dtZDeM9nzD7ZWgmS9e4NvNuqAK_gEO9P1bSs9Tw80E034rY15Iaf_4La"
+                  alt="Modern rainfall shower with matte black mixer and glass partition"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 backdrop-blur-md text-[#a43716] shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">shower</span>
+                </span>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Bathroom & Kitchen Fitting
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   New fits and refits: from first-fix in new builds to fitting modern showers, basin taps, sinks, tubs and toilets with watertight seals.
                 </p>
-              </div>
-              <div className="mt-6 pt-3 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Full fitout or replacements</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
+                  <span className="text-[14px] font-semibold text-[#a43716]">Full fitout or replacements</span>
+                  <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                    arrow_forward
+                  </span>
+                </div>
               </div>
             </Link>
 
             <Link
               to="/services"
-              className="reveal-entry bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 border border-[#dfc0b7]/15"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#a43716] mb-4 group-hover:bg-[#ffdbd1] transition-colors">
-                  <span className="material-symbols-outlined text-[26px]">speed</span>
-                </div>
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Service 03 � New & Existing</span>
-                <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mt-1 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <div className="relative h-56 w-full overflow-hidden bg-[#f3ede7]">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1953DnPaS09R6DKgsthWxCih-5clJdHKmQRbSc6QBsk_6IZARMeGOfcU00i4szbTaI69eaMpDF4FBCO97WzjcqTsCCEFUvQ5bhHyFCuBfiBjjRKT-IXxmbFdylnJgEzfsvPhf6YcZk4ypMK-3VZoO-_SoSwewlRgKUD0mYnhdHreGpGqQMYfQOaXDErrHaQabRSvgMoOTghSHjlpd_KpSmoPf76OfhfgZGRUNwDpf4CLB"
+                  alt="Booster pump with brass valves in a tidy utility room"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 backdrop-blur-md text-[#a43716] shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">speed</span>
+                </span>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Pressure & Water Pumps
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   From new pump sets in new sites to servicing weak showers — we install, clear sediment lines and balance pressure across every floor.
                 </p>
-              </div>
-              <div className="mt-6 pt-3 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Pressure calibration</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
+                  <span className="text-[14px] font-semibold text-[#a43716]">Pressure calibration</span>
+                  <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                    arrow_forward
+                  </span>
+                </div>
               </div>
             </Link>
 
             <Link
               to="/services"
-              className="reveal-entry bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 border border-[#dfc0b7]/15"
             >
-              <div>
-                <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#a43716] mb-4 group-hover:bg-[#ffdbd1] transition-colors">
-                  <span className="material-symbols-outlined text-[26px]">local_fire_department</span>
-                </div>
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Service 04 � New & Existing</span>
-                <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mt-1 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <div className="relative h-56 w-full overflow-hidden bg-[#f3ede7]">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqZkbJzwxRkixHBD3SpKGZPtDBxr_2eCJ6ll-wsG9rtWr8cqwWngwGiARqX4Wu4TtjQK6ISPItMlGqJ7h9FZ1x1cUGS82HwKBsIqepUx02Gmfm7BNB68cJpIcOaV_1a6HTVCSmnlcJqxtvKmmYVXz8XLQS9arcv6A8TMqA-T_omI9nxSNn9kE57TbGpoY46fhtIxMWcrGzRbFpn0uSg0Ri3Elhuxt-y8qpZ1ZTFuhqUJz96FGbspRJ"
+                  alt="Water filtration system with clear housings and overhead tank manifold"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/90 backdrop-blur-md text-[#a43716] shadow-sm">
+                  <span className="material-symbols-outlined text-[20px]">local_fire_department</span>
+                </span>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Water Heaters & Tanks
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   New installs and servicing: safe fitting and descaling of heaters, overhead tanks, ball valves and filtration — hygienic on new and existing sites.
                 </p>
-              </div>
-              <div className="mt-6 pt-3 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Safe electrical isolation</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
+                  <span className="text-[14px] font-semibold text-[#a43716]">Safe electrical isolation</span>
+                  <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                    arrow_forward
+                  </span>
+                </div>
               </div>
             </Link>
           </div>
@@ -479,46 +454,43 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
       </section>
 
       {/* Recent jobs around Lagos — stitch visuals with lh3 placeholders, wired to onSelectProject */}
-      <section id="recent-jobs" className="w-full bg-[#f9f2ed] py-14 md:py-20">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-entry">
+      <section id="recent-jobs" className="w-full bg-[#f9f2ed] py-20 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-entry">
             <div>
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Evidence of Care</span>
-              <h2 className="font-['Newsreader',serif] text-[32px] md:text-[40px] leading-none tracking-tight text-[#1d1b18] mt-1">Recent jobs</h2>
-              <p className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#8b716a] mt-1">Recent jobs — Abeokuta, Lagos & nationwide</p>
+              <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Evidence of Job Well Done</span>
+              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold tracking-[-0.04em] text-[32px] md:text-[40px] leading-none text-[#1d1b18] mt-1">Recent Jobs</h2>
             </div>
-            <p className="text-[14px] leading-6 text-[#58423c] max-w-sm">We take a photo after cleaning up, never before. Every job tested thoroughly under pressure.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Master Ensuite Refit — Ikoyi */}
             <button
               onClick={() => onSelectProject(PROJECTS[2] ?? PROJECTS[0])}
-              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer border border-black/5"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-[#f3ede7] relative">
+              <div className="aspect-[4/3] h-64 w-full overflow-hidden bg-[#f3ede7] relative">
                 <img
                   src={RECENT_IMAGES.ensuite}
                   alt="Modern master bathroom installation in Ikoyi with warm neutral stone tiles, matte black shower set, freestanding tub and flawlessly neat silicone joins with natural window light"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-medium text-[#1d1b18]">Ikoyi</span>
+                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-semibold text-[#1d1b18]">Ikoyi</span>
               </div>
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mb-1" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     Master Ensuite Refit
                   </h3>
-                  <p className="text-[14px] leading-6 text-[#58423c]">
+                  <p className="text-[16px] leading-7 text-[#58423c]">
                     Replaced aging galvanised lines with silent multi-layer copper, fitted a concealed dual mixer, and created a seamless wet-room drain.
                   </p>
                 </div>
-                <div className="mt-4 pt-2 flex items-center justify-between text-[#7b542b] text-[13px]">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">check_circle</span> Tested at 4.5 bar
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[18px]">check_circle</span> Pressure tested
                   </span>
-                  <span className="text-[#8b716a]">4 days on site</span>
                 </div>
               </div>
             </button>
@@ -526,31 +498,30 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
             {/* Silent Water Pump & Manifold — VI */}
             <button
               onClick={() => onSelectProject(PROJECTS[1] ?? PROJECTS[0])}
-              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer border border-black/5"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-[#f3ede7] relative">
+              <div className="aspect-[4/3] h-64 w-full overflow-hidden bg-[#f3ede7] relative">
                 <img
                   src={RECENT_IMAGES.pump}
                   alt="Meticulously organized utility and plumbing manifold room with gleaming copper pipes, brass non-return valves and silent booster water pump in a luxury Victoria Island apartment"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-medium text-[#1d1b18]">Victoria Island</span>
+                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-semibold text-[#1d1b18]">Victoria Island</span>
               </div>
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mb-1" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     Silent Water Pump & Manifold
                   </h3>
-                  <p className="text-[14px] leading-6 text-[#58423c]">
+                  <p className="text-[16px] leading-7 text-[#58423c]">
                     Stripped out a vibrating 1.5HP pump that rattled bedroom walls. Installed rubber anti-vibration mountings and tidy, labeled shutoff valves.
                   </p>
                 </div>
-                <div className="mt-4 pt-2 flex items-center justify-between text-[#7b542b] text-[13px]">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">volume_off</span> Whisper quiet
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[18px]">volume_off</span> Whisper quiet
                   </span>
-                  <span className="text-[#8b716a]">1 day turnaround</span>
                 </div>
               </div>
             </button>
@@ -558,31 +529,30 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
             {/* Kitchen & Laundry Supply Re-Route — Lekki */}
             <button
               onClick={() => onSelectProject(PROJECTS[0] ?? PROJECTS[2])}
-              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer"
+              className="reveal-entry bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] cursor-pointer border border-black/5"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden bg-[#f3ede7] relative">
+              <div className="aspect-[4/3] h-64 w-full overflow-hidden bg-[#f3ede7] relative">
                 <img
                   src={RECENT_IMAGES.kitchen}
                   alt="Clean renovated kitchen island with newly installed designer brass tap and undermount sink in a home in Abeokuta, spotless and water tested"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-medium text-[#1d1b18]">Abeokuta</span>
+                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[12px] font-semibold text-[#1d1b18]">Abeokuta</span>
               </div>
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-7 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[18px] font-semibold tracking-tight text-[#1d1b18] mb-1" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  <h3 className="text-[20px] font-bold tracking-tight text-[#1d1b18] mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     Kitchen & Laundry Supply Re-Route
                   </h3>
-                  <p className="text-[14px] leading-6 text-[#58423c]">
+                  <p className="text-[16px] leading-7 text-[#58423c]">
                     Resolved chronic low pressure affecting washing machines and kitchen sinks. Re-routed supply without damaging existing cabinetry or tiles.
                   </p>
                 </div>
-                <div className="mt-4 pt-2 flex items-center justify-between text-[#7b542b] text-[13px]">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[16px]">sentiment_satisfied</span> Zero tile breakage
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
+                  <span className="flex items-center gap-1.5">
+                    <span className="material-symbols-outlined text-[18px]">sentiment_satisfied</span> Zero tile breakage
                   </span>
-                  <span className="text-[#8b716a]">2 days on site</span>
                 </div>
               </div>
             </button>
@@ -591,70 +561,69 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
       </section>
 
       {/* How We Work — Four simple rules */}
-      <section className="w-full bg-[#fff8f3] py-14 md:py-20">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
-          <div className="max-w-2xl mb-10 reveal-entry">
-            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">The Standard</span>
-            <h2 className="font-['Newsreader',serif] text-[32px] md:text-[40px] leading-tight tracking-tight text-[#1d1b18] mt-1">Four simple rules we never compromise on.</h2>
-            <p className="text-[14px] leading-6 text-[#58423c] mt-2">Plumbing is about peace of mind. We don&apos;t cut corners on pipes hidden behind tiles where you can&apos;t see them.</p>
+      <section className="w-full bg-[#fff8f3] py-20 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
+          <div className="max-w-2xl mb-12 reveal-entry">
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">The Standard</span>
+            <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold tracking-[-0.04em] text-[32px] md:text-[40px] leading-tight text-[#1d1b18] mt-1">Four simple rules we never compromise on.</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl flex flex-col justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="reveal-entry bg-[#f3ede7] p-7 rounded-2xl flex flex-col justify-between">
               <div>
-                <span className="font-['Newsreader',serif] text-[28px] leading-none italic text-[#7b542b]">01</span>
-                <h3 className="text-[18px] font-semibold text-[#1d1b18] mt-3 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">01</span>
+                <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Clear pricing first
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   We look at the problem and state the cost before picking up a spanner. No sudden inflated bills once work is dismantled.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[11px] font-semibold tracking-[0.08em] uppercase">
+              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
                 <span className="material-symbols-outlined text-[#a43716] text-[18px]">verified</span> Written quote upfront
               </div>
             </div>
 
-            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl flex flex-col justify-between">
+            <div className="reveal-entry bg-[#f3ede7] p-7 rounded-2xl flex flex-col justify-between">
               <div>
-                <span className="font-['Newsreader',serif] text-[28px] leading-none italic text-[#7b542b]">02</span>
-                <h3 className="text-[18px] font-semibold text-[#1d1b18] mt-3 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">02</span>
+                <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   We respect your home
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   Protective covers on our boots, heavy dust cloths across your floorboards, and everything vacuumed or mopped before we say goodbye.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[11px] font-semibold tracking-[0.08em] uppercase">
+              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
                 <span className="material-symbols-outlined text-[#a43716] text-[18px]">sanitizer</span> Tidy workspaces
               </div>
             </div>
 
-            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl flex flex-col justify-between">
+            <div className="reveal-entry bg-[#f3ede7] p-7 rounded-2xl flex flex-col justify-between">
               <div>
-                <span className="font-['Newsreader',serif] text-[28px] leading-none italic text-[#7b542b]">03</span>
-                <h3 className="text-[18px] font-semibold text-[#1d1b18] mt-3 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">03</span>
+                <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   Proper materials only
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   Heavy gauge brass valves, quality solvent welds, and durable fittings. We refuse cheap brittle plastics that crack in six months.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[11px] font-semibold tracking-[0.08em] uppercase">
+              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
                 <span className="material-symbols-outlined text-[#a43716] text-[18px]">handyman</span> Genuine components
               </div>
             </div>
 
-            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl flex flex-col justify-between">
+            <div className="reveal-entry bg-[#f3ede7] p-7 rounded-2xl flex flex-col justify-between">
               <div>
-                <span className="font-['Newsreader',serif] text-[28px] leading-none italic text-[#7b542b]">04</span>
-                <h3 className="text-[18px] font-semibold text-[#1d1b18] mt-3 mb-2" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">04</span>
+                <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                   1-Year Guarantee
                 </h3>
-                <p className="text-[14px] leading-6 text-[#58423c]">
+                <p className="text-[16px] leading-7 text-[#58423c]">
                   If anything drips, weeps, or comes loose from our installation during the next 12 months, we return and put it right at zero expense to you.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[11px] font-semibold tracking-[0.08em] uppercase">
+              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
                 <span className="material-symbols-outlined text-[#a43716] text-[18px]">shield</span> No-quibble warranty
               </div>
             </div>
@@ -664,11 +633,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
 
       {/* Interactive Direct Booking / Contact Section — Dark Contrast Band */}
       <section id="booking-form" className="w-full bg-[#32302d] text-[#f6f0ea] py-14 md:py-24">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 flex flex-col gap-4 reveal-entry">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffb5a0]">Immediate Assistance</span>
-              <h2 className="font-['Newsreader',serif] text-[36px] md:text-[48px] leading-[1.05] tracking-tight text-[#f6f0ea]">Got a leak, or planning something new?</h2>
+              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold tracking-[-0.04em] text-[36px] md:text-[48px] leading-[1.05] text-[#f6f0ea]">Got a leak, or planning something new?</h2>
               <p className="text-[16px] md:text-[18px] leading-7 text-[#e7e1dc]">
                 Send us a quick message with what you&apos;re dealing with. A qualified plumber will reply with straightforward advice and a transparent quote within the hour.
               </p>
@@ -704,7 +673,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   <h3 className="text-[18px] font-semibold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
                     Request a Plumber Visit
                   </h3>
-                  <p className="text-[13px] leading-5 text-[#58423c]">We never spam, and we provide clear estimates before visit.</p>
+                  <p className="text-[15px] leading-6 text-[#58423c]">We never spam, and we provide clear estimates before visit.</p>
                 </div>
                 <span className="material-symbols-outlined text-[#a43716] text-[28px]">plumbing</span>
               </div>
@@ -793,26 +762,26 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
       </section>
 
       {/* FAQ 3 cols */}
-      <section className="w-full bg-[#fff8f3] py-12 md:py-16">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12">
-          <div className="max-w-xl mx-auto text-center mb-8 reveal-entry">
-            <h3 className="text-[18px] font-semibold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <section className="w-full bg-[#fff8f3] py-16 md:py-20">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
+          <div className="max-w-xl mx-auto text-center mb-10 reveal-entry">
+            <h3 className="text-[20px] font-bold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Common everyday questions
             </h3>
-            <p className="text-[13px] leading-5 text-[#58423c] mt-1">Honest answers before you pick up the phone.</p>
+            <p className="text-[16px] leading-7 text-[#58423c] mt-2">Honest answers before you pick up the phone.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            <div className="reveal-entry bg-[#f3ede7] p-5 rounded-2xl">
-              <h4 className="text-[13px] font-semibold text-[#1d1b18] mb-1">Do you charge for quotations?</h4>
-              <p className="text-[13px] leading-5 text-[#58423c]">No. For standard jobs described over phone or WhatsApp, we give transparent quotations and estimates free of charge.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl">
+              <h4 className="text-[14px] font-semibold text-[#1d1b18] mb-2">Do you charge for quotations?</h4>
+              <p className="text-[16px] leading-7 text-[#58423c]">No. For standard jobs described over phone or WhatsApp, we give transparent quotations and estimates free of charge.</p>
             </div>
-            <div className="reveal-entry bg-[#f3ede7] p-5 rounded-2xl">
-              <h4 className="text-[13px] font-semibold text-[#1d1b18] mb-1">How fast do you reach us?</h4>
-              <p className="text-[13px] leading-5 text-[#58423c]">From our base on Abiola Way, Abeokuta and field teams in Lagos, we typically arrive within 30–90 minutes in priority areas.</p>
+            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl">
+              <h4 className="text-[14px] font-semibold text-[#1d1b18] mb-2">How fast do you reach us?</h4>
+              <p className="text-[16px] leading-7 text-[#58423c]">From our base on Abiola Way, Abeokuta and field teams in Lagos, we typically arrive within 30–90 minutes in priority areas.</p>
             </div>
-            <div className="reveal-entry bg-[#f3ede7] p-5 rounded-2xl">
-              <h4 className="text-[13px] font-semibold text-[#1d1b18] mb-1">What if the leak returns?</h4>
-              <p className="text-[13px] leading-5 text-[#58423c]">Every repair is covered by our written 1-year guarantee. We come straight back and resolve it free of charge.</p>
+            <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl">
+              <h4 className="text-[14px] font-semibold text-[#1d1b18] mb-2">What if the leak returns?</h4>
+              <p className="text-[16px] leading-7 text-[#58423c]">Every repair is covered by our written 1-year guarantee. We come straight back and resolve it free of charge.</p>
             </div>
           </div>
         </div>

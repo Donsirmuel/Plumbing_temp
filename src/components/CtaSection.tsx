@@ -50,7 +50,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuote }) => {
           </a>
         </div>
 
-        <p className="text-xs text-white/50">Average quote turnaround — under 24 hours</p>
+        <p className="text-xs text-white/50">We reply with a clear quotation after reviewing your photos</p>
       </div>
     </section>
   );

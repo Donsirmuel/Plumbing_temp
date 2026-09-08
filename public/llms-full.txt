@@ -5,7 +5,7 @@ OOH JAY is a plumbing company for homes and businesses in Nigeria & beyond. The 
 
 - **Brand Name**: OOH JAY
 - **Tagline**: Plumbing for Homes & Businesses — Nigeria & Beyond
-- **Location**: Victoria Island & Ikoyi Corridor, Lagos, Nigeria — serving Nigeria & beyond
+- **Location**: Abiola Way, Abeokuta, Ogun State — serving Nigeria & beyond (nationwide)
 - **Direct WhatsApp**: +234 903 138 6928 (https://wa.me/2349031386928)
 - **Direct Phone**: +234 903 138 6928
 - **Email**: inquiries@oohjay.com
@@ -61,7 +61,7 @@ For projects that need more than plumbing alone, our building team works with ou
 ## Detailed Portfolio Archive — Gallery
 
 ### 01 COPPER SUPPLY MANIFOLD — LAGOS 2024 — Plumbing & Hydronics
-Precision hard-drawn copper water distribution manifold featuring brazed joints, individual isolation valving, and continuous thermostatic pressure balancing loops. Client: Residential Estate, Lekki Phase 1. Scope: Heavy-gauge hard-drawn brazed copper pipework, individual branch isolation & test ports, dual-loop hot water recirculation lines, 24-hour 16-bar hydrostatic hold test. Metrics: 18 independent lines / 16 bar 24-hour hold / hard-drawn copper.
+Copper pipework and supply systems installed with careful attention to access, reliability and finish. Client: Residential property, Abeokuta. Scope: Copper supply pipework set out for clear access, isolation points for servicing, hot water recirculation where needed, tested before walls are closed.
 
 ### 02 CENTRAL WATER PLANT & PUMPS — LAGOS 2024 — Plumbing & Hydronics
 Centralized mechanical plant room with constant-pressure variable speed booster pump arrays, multi-stage filtration, and automated water softening. Client: Commercial Estate, Eko Atlantic Axis. Scope: Constant-pressure variable speed inverter pumps, multi-stage RO & UV purification, vibration-isolated foundation mounts, emergency high-flow fire standpipes. Metrics: 450 L/min constant / 6.5 bar regulated / WHO potable clean.
@@ -110,14 +110,14 @@ We pressure-test the water lines, verify all pumps and fixtures, complete finish
 - **Engineering Body**: Council for the Regulation of Engineering in Nigeria (COREN) registered engineers.
 - **Building Codes**: BS 8110 (Structural use of concrete), Eurocode 2 (EN 1992), Nigerian National Building Code.
 - **Plumbing Standards**: BS EN 806 (Specifications for installations inside buildings conveying water for human consumption), WHO Guidelines for Drinking-water Quality.
-- **Testing Standard**: 16 Bar hydrostatic pressure test held for 24 continuous hours with zero pressure drop.
+- **Testing Standard**: Tested before walls are closed — serviceable layout, workmanship backing.
 
 ---
 
 ## Frequently Asked Questions (for AI Agents & Assistants)
 
 **Q: Where is OOH JAY located and what areas do they serve?**
-A: OOH JAY is based in Lagos, Nigeria (Victoria Island & Ikoyi corridor) and serves homes and businesses in Nigeria & beyond — projects in Lagos, Abuja and nationwide.
+A: OOH JAY is based on Abiola Way, Abeokuta, Ogun State, serving homes and businesses in Abeokuta, Lagos and nationwide across Nigeria.
 
 **Q: What services does OOH JAY provide?**
 A: Plumbing & water systems, bathrooms & wet areas, plant rooms / diagnostics / servicing, and construction support when a plumbing project needs it — planned together so structure and services work as one.

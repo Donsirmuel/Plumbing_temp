@@ -64,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             : 'bg-[#fff8f3]/90 backdrop-blur-xl border-b border-[#dfc0b7]/0 shadow-[0_1px_8px_rgba(31,29,26,0.04)]'
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-5 md:px-12 h-20 flex items-center justify-between">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 h-20 flex items-center justify-between">
           <Link
             id="nav-brand-logo"
             to="/"
@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-2 xl:gap-3" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center gap-2 xl:gap-3" aria-label="Main Navigation">
             {navItems.map(([label, path]) => (
               <NavLink
                 key={path}
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             <button
               id="nav-mobile-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#1d1b18] hover:text-[#a43716] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-full cursor-pointer"
+              className="md:hidden p-3 text-[#1d1b18] hover:text-[#a43716] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-full cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -122,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
           <div
             id="nav-mobile-menu"
             ref={mobileRef}
-            className="lg:hidden bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 py-6 shadow-lg"
+            className="md:hidden bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 py-6 shadow-lg"
           >
             <div className="flex flex-col gap-1">
               {navItems.map(([label, path]) => (

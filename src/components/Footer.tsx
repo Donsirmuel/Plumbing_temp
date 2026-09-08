@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = () => {
 
   return (
     <footer id="main-footer" className="w-full bg-[#f9f2ed] border-t border-[#dfc0b7]/30 text-[#1d1b18]">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-12 py-12 md:py-14">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-12 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Col 1: OOH JAY */}
           <div className="md:col-span-3 flex flex-col gap-3">
@@ -23,10 +23,10 @@ export const Footer: React.FC<FooterProps> = () => {
               >
                 OOH JAY
               </span>
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Abeokuta · Lagos</span>
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Abeokuta · Nigeria</span>
             </div>
             <p className="text-[14px] leading-6 text-[#58423c] max-w-sm">
-              Dependable plumbing for homes and businesses. Based on Abiola Way, Abeokuta — serving Lagos, Abeokuta and beyond with clear quotations and calm workmanship.
+              Dependable plumbing for homes and businesses. Based on Abiola Way, Abeokuta and serving Nigeria and abroad with clear quotations and calm workmanship.
             </p>
             <div className="mt-2 flex flex-col gap-1">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#8b716a]">Direct Line &amp; WhatsApp</span>

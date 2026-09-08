@@ -59,7 +59,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
       >
         <div className="flex items-center justify-between pb-5 border-b border-[#0F1E2D]/10">
           <div>
-            <p className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">Direct inquiry</p>
+            <p className="text-xs font-semibold tracking-[0.12em] text-[#a43716] uppercase">Direct inquiry</p>
             <h3 className="font-sans text-xl sm:text-2xl font-extrabold tracking-[-0.03em] text-[#0F1E2D] mt-1">Request a quote</h3>
           </div>
           <button onClick={onClose} className="p-2 rounded-full hover:bg-[#F6F5F2] text-[#5B6B7A] hover:text-[#0F1E2D] transition-colors duration-150 cursor-pointer" aria-label="Close modal">
@@ -69,7 +69,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
 
         {submitted ? (
           <div className="py-10 text-center space-y-6">
-            <div className="w-14 h-14 bg-[#1A5CFF] text-white rounded-full flex items-center justify-center mx-auto">
+            <div className="w-14 h-14 bg-[#a43716] text-white rounded-full flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-7 h-7" />
             </div>
             <div className="space-y-2">
@@ -84,7 +84,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 bg-[#1A5CFF] text-white text-sm font-semibold hover:bg-[#1448C6] transition-colors duration-150"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 bg-[#a43716] text-white text-sm font-semibold hover:bg-[#a43716] transition-colors duration-150"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Continue on WhatsApp</span>
@@ -111,7 +111,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Adeleke / Prime Estates"
-                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#1A5CFF] focus:ring-2 focus:ring-[#1A5CFF]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none transition-all duration-150"
+                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#a43716] focus:ring-2 focus:ring-[#1A5CFF]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none transition-all duration-150"
                 />
               </div>
 
@@ -123,7 +123,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+234 80..."
-                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#1A5CFF] focus:ring-2 focus:ring-[#1A5CFF]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none transition-all duration-150"
+                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#a43716] focus:ring-2 focus:ring-[#1A5CFF]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none transition-all duration-150"
                 />
               </div>
             </div>
@@ -134,7 +134,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                 <select
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#1A5CFF] px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none cursor-pointer"
+                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#a43716] px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none cursor-pointer"
                 >
                   <option value="Lagos, Nigeria">Lagos, Nigeria</option>
                   <option value="Abuja, Nigeria">Abuja, Nigeria</option>
@@ -149,7 +149,7 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#1A5CFF] px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none cursor-pointer"
+                  className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#a43716] px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none cursor-pointer"
                 >
                   <option value="Plumbing Installation & Water Systems">Plumbing Installation & Water Systems</option>
                   <option value="Bathrooms & Wet Rooms">Bathrooms & Wet Rooms</option>
@@ -167,14 +167,14 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                 placeholder="Share dimensions, storeys/bathrooms, drawings availability, timeline..."
-                className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#1A5CFF] focus:ring-2 focus:ring-[#1A5CFF]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none resize-none"
+                className="w-full rounded-xl bg-white border border-[#0F1E2D]/12 focus:border-[#a43716] focus:ring-2 focus:ring-[#a43716]/15 px-3.5 py-2.5 text-sm text-[#0F1E2D] outline-none resize-none"
               ></textarea>
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <button
                 type="submit"
-                className="flex-1 rounded-full py-3.5 bg-[#1A5CFF] text-white text-sm font-semibold hover:bg-[#1448C6] transition-colors duration-150 cursor-pointer inline-flex items-center justify-center gap-2"
+                className="flex-1 rounded-full py-3.5 bg-[#a43716] text-white text-sm font-semibold hover:bg-[#a43716] transition-colors duration-150 cursor-pointer inline-flex items-center justify-center gap-2"
               >
                 Submit for review <ArrowRight className="w-4 h-4" />
               </button>
@@ -185,12 +185,12 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 border border-[#0F1E2D]/15 text-[#0F1E2D] text-sm font-medium hover:bg-[#F6F5F2] transition-colors duration-150"
               >
-                <MessageSquare className="w-4 h-4 text-[#1A5CFF]" />
+                <MessageSquare className="w-4 h-4 text-[#a43716]" />
                 <span>Chat via WhatsApp</span>
               </a>
             </div>
 
-            <div className="text-xs text-[#5B6B7A] text-center">OOH JAY · Nigeria & beyond</div>
+            <div className="text-xs text-[#5B6B7A] text-center">OOH JAY · Nigeria & Abroad</div>
           </form>
         )}
       </div>
