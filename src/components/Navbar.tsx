@@ -125,22 +125,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* overlay — fades, pointer-events toggled */}
-        <button
-          aria-label="Close navigation menu"
-          aria-hidden={!mobileMenuOpen}
-          tabIndex={mobileMenuOpen ? 0 : -1}
-          onClick={closeMobileMenu}
-          className={`md:hidden fixed left-0 right-0 bottom-0 top-20 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        />
-        <div
-          id="nav-mobile-menu"
-          ref={mobileRef}
-          aria-hidden={!mobileMenuOpen}
-          className={`md:hidden fixed top-20 inset-x-0 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)] transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
-        >
-            <div className="flex flex-col gap-1">
+      {/* overlay — fades, pointer-events toggled — outside backdrop-blur wrapper so fixed is relative to viewport, not the blurred container */}
+      <button
+        aria-label="Close navigation menu"
+        aria-hidden={!mobileMenuOpen}
+        tabIndex={mobileMenuOpen ? 0 : -1}
+        onClick={closeMobileMenu}
+        className={`md:hidden fixed left-0 right-0 bottom-0 top-20 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      />
+      <div
+        id="nav-mobile-menu"
+        ref={mobileRef}
+        aria-hidden={!mobileMenuOpen}
+        className={`md:hidden fixed left-0 right-0 top-20 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)] transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+      >
+        <div className="flex flex-col gap-1">
               {navItems.map(([label, path]) => (
                 <NavLink
                   key={path}
@@ -181,7 +182,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               </div>
             </div>
         </div>
-      </div>
     </header>
   );
 };
