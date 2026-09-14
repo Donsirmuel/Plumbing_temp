@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import gsap from 'gsap';
 
 interface NavbarProps {
   onOpenQuote: () => void;
@@ -32,22 +31,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
     }
   }, [mobileMenuOpen]);
 
+  // Close on Escape
   useEffect(() => {
-    if (!mobileRef.current) return;
-    if (mobileMenuOpen) {
-      gsap.fromTo(
-        mobileRef.current,
-        { opacity: 0, y: -8 },
-        { opacity: 1, y: 0, duration: 0.22, ease: 'power2.out', overwrite: true }
-      );
-      if (mobileRef.current.children.length) {
-        gsap.fromTo(
-          mobileRef.current.children,
-          { opacity: 0, y: 6 },
-          { opacity: 1, y: 0, duration: 0.2, stagger: 0.03, ease: 'power2.out', delay: 0.05, overwrite: true }
-        );
-      }
-    }
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, [mobileMenuOpen]);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -135,19 +126,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
           </div>
         </div>
 
-        {mobileMenuOpen && (
-          <>
-            {/* overlay */}
-            <button
-              aria-label="Close navigation menu"
-              onClick={closeMobileMenu}
-              className="md:hidden fixed inset-0 top-20 bg-black/30 backdrop-blur-sm z-40"
-            />
-            <div
-              id="nav-mobile-menu"
-              ref={mobileRef}
-              className="md:hidden fixed top-20 inset-x-0 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)]"
-            >
+        {/* overlay — fades, pointer-events toggled */}
+        <button
+          aria-label="Close navigation menu"
+          aria-hidden={!mobileMenuOpen}
+          tabIndex={mobileMenuOpen ? 0 : -1}
+          onClick={closeMobileMenu}
+          className={`md:hidden fixed left-0 right-0 bottom-0 top-20 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        />
+        <div
+          id="nav-mobile-menu"
+          ref={mobileRef}
+          aria-hidden={!mobileMenuOpen}
+          className={`md:hidden fixed top-20 inset-x-0 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)] transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+        >
             <div className="flex flex-col gap-1">
               {navItems.map(([label, path]) => (
                 <NavLink
@@ -188,9 +180,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
                 </a>
               </div>
             </div>
-            </div>
-            </>
-        )}
+        </div>
       </div>
     </header>
   );

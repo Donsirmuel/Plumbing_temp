@@ -249,46 +249,45 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               <span className="hero-line block overflow-hidden"><span className="hero-line-inner block"><span className="font-normal text-[#ffdcbd]">Clean</span> and built to last.</span></span>
             </h1>
 
-            <p className="hero-sub text-[12px] md:text-[15px] leading-7 text-[#e7e1dc] max-w-2xl text-center opacity-0">
-              From stubborn leaks and low water pressure to complete plumbing installations for homes and businesses.
-            </p>
+              <p className="hero-sub text-[15px] md:text-[18px] leading-7 text-[#e7e1dc] max-w-2xl text-center opacity-0">
+                From stubborn leaks and low water pressure to complete plumbing installations for homes and businesses.
+              </p>
 
-            <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
-              <button
-                onClick={onOpenQuote}
-                className="shine-button inline-flex items-center justify-center px-8 py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_12px_24px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_16px_32px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
-              >
-                Book a Visit
-                <span className="material-symbols-outlined text-[18px] ml-2 group-hover:translate-x-1 transition-transform">calendar_today</span>
-              </button>
-              <a
-                href="https://wa.me/2349031386928"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-4 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
-              >
-                <span className="material-symbols-outlined text-[18px] mr-2 text-[#ffdcbd] group-hover:scale-110 transition-transform">chat</span>
-                WhatsApp Us Directly
-              </a>
+              <div className="reveal-entry pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+                <button
+                  onClick={onOpenQuote}
+                  className="shine-button inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_12px_24px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_16px_32px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
+                >
+                  Book a Visit
+                  <span className="material-symbols-outlined text-[18px] ml-2 group-hover:translate-x-1 transition-transform">calendar_today</span>
+                </button>
+                <a
+                  href="https://wa.me/2349031386928"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
+                >
+                  <span className="material-symbols-outlined text-[18px] mr-2 text-[#ffdcbd] group-hover:scale-110 transition-transform">chat</span>
+                  WhatsApp Us Directly
+                </a>
+              </div>
+
+              {/* Micro Trust Chips — centred */}
+              <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[#e7e1dc] text-[13px]">
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">schedule</span> Arrive on agreed time
+                </span>
+                <span className="text-white/30">•</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">receipt_long</span> Upfront clear quotes
+                </span>
+                <span className="text-white/30">•</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> 1-Year warranty
+                </span>
+              </div>
+              </div>
             </div>
-
-            {/* Micro Trust Chips — centred */}
-            <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[#e7e1dc] text-[13px]">
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">schedule</span> Arrive on agreed time
-              </span>
-              <span className="text-white/30">•</span>
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">receipt_long</span> Upfront clear quotes
-              </span>
-              <span className="text-white/30">•</span>
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> 1-Year warranty
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Hero Transition: Trust bar — honest */}
         <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 sm:px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto flex flex-wrap items-center justify-center gap-2 text-[#e7e1dc] text-[13px]">
