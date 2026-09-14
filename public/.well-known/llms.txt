@@ -1,2 +1,0 @@
-# OOH JAY Construction & Plumbing - LLMs Discovery File
-See /llms.txt for full markdown context.
