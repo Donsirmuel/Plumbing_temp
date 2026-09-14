@@ -231,14 +231,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
               <div className="p-4 rounded-xl bg-[#f3ede7] flex items-start gap-4">
                 <img
                   src={AVATAR_IMG}
-                  alt="Plumber laying pipes — neat supply manifold as fitted, Abiola Way Abeokuta base nationwide"
+                  alt="Plumber laying pipes — neat supply manifold as fitted"
                   className="w-14 h-14 rounded-full object-cover flex-shrink-0 shadow-sm bg-white"
                   loading="lazy"
                 />
                 <div className="flex flex-col gap-1">
                   <p className="text-[14px] font-semibold text-[#1d1b18] leading-5">“You will never deal with an unverified middleman.”</p>
                   <p className="text-[15px] leading-6 text-[#58423c]">
-                    Every call and site check is handled or directly supervised by a qualified plumber; honest about costs, tidy on site, clear on warranty.
+                    Every call and site check is handled or directly supervised by a qualified plumber; honest about costs, tidy on site, high-grade workmanship assured.
                   </p>
                 </div>
               </div>
@@ -450,7 +450,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
               <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
                 The OOH JAY House Standard
               </h4>
-              <p className="text-[15px] leading-6 text-[#58423c]">Tidy workspaces, Satisfactory job, clear quotation first with workmanship backing and warranty doc on request.</p>
+              <p className="text-[15px] leading-6 text-[#58423c]">Tidy workspaces, satisfactory job, clear quotation first with high-grade workmanship assured.</p>
             </div>
           </div>
           <a

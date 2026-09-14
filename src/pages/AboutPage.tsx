@@ -321,7 +321,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   We pick up the phone when you call.
                 </h3>
                 <ReadMore
-                  text="Courtesy at payment is guaranteed and still exists months later. We answer, attend, and correct issues that come up long after completion; up to a year warranty — warranty doc on request."
+                  text="Courtesy at payment is guaranteed and still exists months later. We answer, attend, and correct issues with our workmanship — high-grade workmanship assured, every joint checked."
                   clampLines={2}
                 />
               </div>
@@ -330,7 +330,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
                     verified
                   </span>{' '}
-                  Workmanship backing — warranty doc on request
+                  High-grade workmanship assured
                 </span>
               </div>
             </div>

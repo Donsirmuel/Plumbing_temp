@@ -132,10 +132,10 @@ const HOW_WE_WORK = [
   },
   {
     n: 5,
-    title: "Workmanship Backing",
-    desc: "You get a work receipt and warranty doc on request. Workmanship backing — warranty doc on request.",
+    title: "High-Grade Workmanship",
+    desc: "Every joint checked under load and finished clean — we stand behind our high-grade workmanship, no shortcuts.",
     footIcon: "verified_user",
-    foot: "Warranty doc on request",
+    foot: "High-grade workmanship assured",
   },
 ] as const;
 
@@ -254,7 +254,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                 <img
                   className="w-full h-full object-cover"
                   src="/plumber-working-in-kitchen.jfif"
-                  alt="Plumber working in kitchen — tidy pipework install documented for new and existing homes, Abiola Way Abeokuta base nationwide"
+                  alt="Plumber working in kitchen — tidy pipework install documented for new and existing homes"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#32302d]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="flex items-center gap-2 mb-2 ">
@@ -363,7 +363,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                     <div className="mb-6 space-y-4">
                       <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-7 text-[#58423c] border-l-2 border-[#d4e7d8] pl-3">
                         Weak upstairs showers, humming pumps or tanks that overflow? We clear airlocks, calibrate boosters and set auto float switches so every floor holds
-                        steady pressure — for new sites and lived-in homes, nationwide from our Abiola Way base. Quotations free.
+                        steady pressure — for new sites and lived-in homes, nationwide. Quotations free.
                       </p>
                       <div className="grid grid-cols-3 gap-2">
                         {[
@@ -390,7 +390,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                           <div className="h-36 sm:h-40 overflow-hidden">
                             <img
                               src="/bathroom-installation.jfif"
-                              alt="Bathroom installation as finished — level set-out before sealing, Abiola Way Abeokuta base"
+                              alt="Bathroom installation as finished — level set-out before sealing"
                               className="w-full h-full object-cover"
                               loading="lazy"
                             />
@@ -612,7 +612,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
             <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white border border-[#dfc0b7]/20 shadow-sm self-stretch min-h-[280px]">
               <img
                 src="/plumber-working-in-kitchen.jfif"
-                alt="Plumber at work — Abiola Way base, serving nationwide, new builds and lived-in homes"
+                alt="Plumber at work — serving nationwide, new builds and lived-in homes"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

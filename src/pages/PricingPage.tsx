@@ -20,8 +20,8 @@ const FAQS: Faq[] = [
     a: "For multi-day bathroom or repiping jobs we use three simple milestones so you stay in control: 50% to mobilise and run the first-fix pipework, 30% after the pressure test and wall sealing, and the final 20% only when fixtures are set, water runs clean, and the space is left tidy. Labour and materials are always listed separately on the quotation.",
   },
   {
-    q: "What happens if a leak develops during my guarantee period?",
-    a: "Call or WhatsApp your project reference and we place you at the top of the board. If the joint, weld or seal is ours, we make it right at no extra charge — workmanship backing — warranty doc on request. Based from Abiola Way, Abeokuta with field teams in Lagos, we cover Abeokuta, Lagos and nationwide follow-ups.",
+    q: "What happens if a leak develops after the job?",
+    a: "Call or WhatsApp your project reference and we place you at the top of the board. If the joint, weld or seal is ours, we make it right at no extra charge — high-grade workmanship assured. Based from Abiola Way, Abeokuta with field teams in Lagos, we cover Abeokuta, Lagos and nationwide.",
   },
   {
     q: "Can I buy the plumbing materials and sanitary wares myself?",
@@ -29,7 +29,7 @@ const FAQS: Faq[] = [
   },
   {
     q: "How do you support clients managing renovations from overseas?",
-    a: "Many of our larger sanitary jobs are for Nigerians in the diaspora. We share timestamped photos and videos at each stage, hold pipes under pressure on camera before walls are closed, and send a guarantee certificate by email. Payments by straightforward bank transfer, with clear quotations before any spend.",
+    a: "Many of our larger sanitary jobs are for Nigerians in the diaspora. We share timestamped photos and videos at each stage and hold pipes under pressure on camera before walls are closed. Payments by straightforward bank transfer, with clear quotations before any spend.",
   },
 ];
 
@@ -230,7 +230,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
                   loading="lazy"
                 />
                 <div className="px-3 py-2 flex items-center justify-between bg-white">
-                  <span className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#7b542b]">As fitted — Abiola Way · Lagos</span>
+                  <span className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#7b542b]">As fitted — Lagos</span>
                   <span className="text-[11px] font-semibold text-[#a43716]">Silent mount</span>
                 </div>
               </div>
@@ -331,7 +331,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
                   <span className="material-symbols-outlined text-[18px] text-[#516257] shrink-0 mt-0.5" aria-hidden="true">
                     check_circle
                   </span>
-                  <span>Workmanship backing — warranty doc on request</span>
+                  <span>High-grade workmanship assured</span>
                 </li>
               </ul>
             </div>
@@ -346,128 +346,19 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
         </div>
       </section>
 
-      {/* Guarantee Band */}
-      <section className="w-full bg-[#32302d] text-[#f6f0ea] py-20 md:py-28 relative overflow-hidden reveal-entry">
-        <div aria-hidden="true" className="absolute -right-12 sm:-right-20 -bottom-12 sm:-bottom-20 w-64 sm:w-96 h-64 sm:h-96 max-w-[60vw] rounded-full bg-white/5 blur-2xl pointer-events-none" />
-        <div aria-hidden="true" className="absolute -left-12 sm:-left-20 -top-12 sm:-top-20 w-64 sm:w-80 h-64 sm:h-80 max-w-[60vw] rounded-full bg-[#c54f2c]/10 blur-3xl pointer-events-none" />
+      {/* High-Grade Workmanship — assurance without warranty documents */}
+      <section className="w-full bg-[#32302d] text-[#f6f0ea] py-16 md:py-20 relative overflow-hidden reveal-entry">
+        <div aria-hidden="true" className="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-white/5 blur-2xl pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 flex flex-col">
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#d4e7d8] mb-2">Workmanship Backing</span>
-              <h2
-                className="font-['Fraunces',serif] text-[#f6f0ea] text-[28px] md:text-[36px] leading-[1.15] font-semibold tracking-[-0.03em] mb-6"
-              >
-                Workmanship backing — warranty doc on request.
-              </h2>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#e7e1dc] mb-8">
-                Too many warranties are just talk. Ours is written and signed. If any joint, weld or seal we fitted fails, we come back
-                and set it right — workmanship backing — warranty doc on request. From our
-                base on Abiola Way, Abeokuta to Lagos and nationwide, for new and existing work.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 bg-white/[0.06] rounded-2xl p-6 border border-white/10">
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-[#ffb5a0]">
-                    <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
-                      shield
-                    </span>
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] font-semibold text-[#f6f0ea]">
-                      Warranty Doc
-                    </span>
-                  </div>
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#e7e1dc]">
-                    Workmanship backing — warranty doc on request, issued from our Abeokuta office.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-[#ffb5a0]">
-                    <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
-                      public
-                    </span>
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] font-semibold text-[#f6f0ea]">
-                      Diaspora Assurance
-                    </span>
-                  </div>
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#e7e1dc]">
-                    Away from site? We share timestamped pressure-test videos and email a certificate for your records.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Proof of Workmanship card — differentiated toward proof: real pressure-test thumbnail + warranty scan */}
-            <div className="lg:col-span-5">
-              <div className="bg-white text-[#1d1b18] rounded-2xl p-6 md:p-7 shadow-xl relative overflow-hidden flex flex-col border border-[#dfc0b7]/20">
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div>
-                    <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[20px] leading-8 font-bold tracking-[-0.04em]">
-                      Proof of Workmanship
-                    </h4>
-                    <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 text-[#58423c] mt-1">
-                      Workmanship backing — warranty doc on request · Abiola Way, Abeokuta
-                    </p>
-                  </div>
-                  <div className="w-11 h-11 rounded-full bg-[#a43716]/10 flex items-center justify-center text-[#a43716] shrink-0 border border-[#a43716]/15">
-                    <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
-                      shield
-                    </span>
-                  </div>
-                </div>
-
-                {/* Pressure-test video thumbnail — real site photo with play affordance */}
-                <div className="rounded-xl overflow-hidden border border-[#dfc0b7]/20 mb-4 group relative bg-[#f3ede7]">
-                  <img
-                    src="/plumbing-installation.jfif"
-                    alt="Pressure test holding at 6 bar before tiling — manifold under test, Abeokuta site"
-                    className="w-full h-44 object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-[#1d1b18]/15 group-hover:bg-[#1d1b18]/25 transition-colors flex items-center justify-center">
-                    <span className="w-12 h-12 rounded-full bg-white/95 text-[#a43716] flex items-center justify-center shadow-lg border border-white">
-                      <span className="material-symbols-outlined text-[28px] ml-0.5" aria-hidden="true">
-                        play_arrow
-                      </span>
-                    </span>
-                  </div>
-                  <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between gap-2">
-                    <span className="bg-[#1d1b18]/85 backdrop-blur-sm text-white text-[11px] font-semibold tracking-[0.04em] px-2.5 py-1 rounded-full">
-                      6 bar hold · before walls closed
-                    </span>
-                    <span className="bg-white/95 text-[#1d1b18] text-[11px] font-semibold px-2.5 py-1 rounded-full">Video on request</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-[12px] font-semibold tracking-[0.04em] uppercase text-[#516257] mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
-                  Timestamped on site · shared on WhatsApp for diaspora handovers
-                </div>
-
-                {/* Warranty doc scanpreview — warm paper, stamp */}
-                <div className="rounded-xl bg-[#fffaf7] border border-[#dfc0b7]/20 p-4 flex gap-3 items-start">
-                  <div className="w-12 h-14 rounded bg-white border border-[#dfc0b7]/30 shadow-sm flex flex-col items-center justify-center shrink-0 p-1">
-                    <span className="material-symbols-outlined text-[#a43716] text-[18px]" aria-hidden="true">
-                      description
-                    </span>
-                    <span className="text-[8px] font-bold tracking-[0.06em] uppercase text-[#7b542b] leading-none mt-1 text-center">Warranty Doc</span>
-                    <span className="w-8 h-px bg-[#a43716]/40 mt-1" aria-hidden="true" />
-                    <span className="text-[7px] font-semibold text-[#516257] mt-1">OOH JAY · Abeokuta</span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-semibold text-[#1d1b18] leading-5">Signed guarantee certificate — issued from Abiola Way</p>
-                    <p className="text-[13px] leading-5 text-[#58423c] mt-1">
-                      Covers every joint, weld & seal we fitted. Emailed as scan for your records; original stamped on site.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-4 p-3.5 rounded-xl bg-[#f9f2ed] flex items-start gap-3 border border-[#dfc0b7]/15">
-                  <span className="material-symbols-outlined text-[#a43716] text-[20px] shrink-0 mt-0.5" aria-hidden="true">
-                    handshake
-                  </span>
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 text-[#58423c]">
-                    “If we fitted it, we stand behind it — nationwide. Leak during guarantee? Top of the board, made right.”
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#d4e7d8] mb-3 block">High-Grade Workmanship</span>
+            <h2 className="font-['Fraunces',serif] text-[#f6f0ea] text-[28px] md:text-[36px] leading-[1.15] font-semibold tracking-[-0.03em] mb-4">
+              Built to last and every joint checked.
+            </h2>
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#e7e1dc]">
+              We don&apos;t tender warranty documents. We assure high-grade workmanship that is every joint, weld and seal checked
+              under load before handover, finished clean and documented on site.
+            </p>
           </div>
         </div>
       </section>
@@ -480,7 +371,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
           </h2>
           <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-3">
             Plumbing in Nigeria has earned its mistrust with rushed cover-ups and shifting bills. Here are four
-            habits you will never see from OOH JAY — Abiola Way, Abeokuta.
+            habits you will never see from OOH JAY.
           </p>
         </div>
 
@@ -578,7 +469,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               Frequently asked questions on pricing
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-2">
-              Payment, site visits and guarantee claims explained plainly — nationwide from Abeokuta.
+              Payment, site visits and workmanship explained plainly — nationwide from Abeokuta.
             </p>
           </div>
 

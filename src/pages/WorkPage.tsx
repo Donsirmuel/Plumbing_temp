@@ -79,7 +79,7 @@ const GALLERY_META: GalleryMeta[] = [
     key: 'remote-new-build',
     title: 'Remote New Build Complete Plumbing',
     description:
-      'New build plumbing — neat supply runs documented for remote client review. From Abiola Way, Abeokuta for diaspora and local clients.',
+      'New build plumbing — neat supply runs documented for remote client review.',
     location: 'Nationwide',
     year: '2024',
     category: 'piping',
@@ -468,9 +468,9 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                     </span>
                   </div>
                   <div className="flex flex-col text-center sm:text-left">
-                    <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">Workmanship backing with warranty doc on request</h4>
+                    <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">High-grade workmanship assured</h4>
                     <p className="text-[16px] leading-7 text-[#58423c] mt-1">
-                      We provide documented warranty docs on resquest for every job done covering up to 1 year.
+                      Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our work.
                     </p>
                   </div>
                 </div>

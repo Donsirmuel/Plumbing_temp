@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = () => {
               </li>
               <li>
                 <Link to="/pricing" className="hover:text-[#1d1b18] transition-colors">
-                  Pricing &amp; Guarantee
+                  Pricing
                 </Link>
               </li>
               <li>
@@ -93,9 +93,9 @@ export const Footer: React.FC<FooterProps> = () => {
             <div className="mt-1 p-4 bg-[#fff8f3] rounded-xl border border-[#dfc0b7]/30 flex items-start gap-3 shadow-sm">
               <span className="material-symbols-outlined text-[#a43716] text-[22px] mt-0.5 shrink-0">verified</span>
               <div>
-                <p className="text-[13px] font-semibold tracking-[0.02em] text-[#1d1b18]">1-Year Guarantee</p>
+                <p className="text-[13px] font-semibold tracking-[0.02em] text-[#1d1b18]">High-Grade Workmanship Assured</p>
                 <p className="text-[13px] leading-5 text-[#58423c] mt-0.5">
-                  Every fitting, pipe repair, and sanitary valve is warrantied against failures, we return free of charge if it drips.
+                  Every fitting and pipe we fix is finished with care — checked under load and left clean, nationwide.
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = () => {
               Direct Line
             </a>
             <Link to="/pricing" className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors">
-              Warranty Terms
+              Workmanship
             </Link>
             <button onClick={scrollToTop} className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors cursor-pointer inline-flex items-center gap-1">
               Back to top <span className="material-symbols-outlined text-[16px]">arrow_upward</span>

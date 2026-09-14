@@ -283,7 +283,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                 </span>
                 <span className="text-white/30">•</span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> 1-Year warranty
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> High-grade workmanship
                 </span>
               </div>
               </div>
@@ -575,14 +575,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               <div className="min-w-0">
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">04</span>
                 <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  1-Year Guarantee
+                  High-Grade Workmanship
                 </h3>
                 <p className="text-[16px] leading-7 text-[#58423c]">
-                  If anything drips, weeps, or comes loose from our installation during the next 12 months, we return and put it right at zero expense to you.
+                  Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our high-grade workmanship.
                 </p>
               </div>
               <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
-                <span className="material-symbols-outlined text-[#a43716] text-[18px]">shield</span> No-quibble warranty
+                <span className="material-symbols-outlined text-[#a43716] text-[18px]">shield</span> Assured workmanship
               </div>
             </div>
           </div>
@@ -739,7 +739,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
             </div>
             <div className="reveal-entry bg-[#f3ede7] p-6 rounded-2xl min-w-0 max-w-full">
               <h4 className="text-[14px] font-semibold text-[#1d1b18] mb-2">What if the leak returns?</h4>
-              <p className="text-[16px] leading-7 text-[#58423c]">Every repair is covered by our written 1-year guarantee. We come straight back and resolve it free of charge.</p>
+              <p className="text-[16px] leading-7 text-[#58423c]">Every joint we fit is finished with high-grade workmanship — checked under load and left clean. If our work fails, we put it right.</p>
             </div>
           </div>
         </div>

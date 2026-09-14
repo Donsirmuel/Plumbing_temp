@@ -64,7 +64,7 @@ export const SERVICES: ServiceItem[] = [
     technicalSpecs: [
       { label: 'Testing Method', value: 'Non-Destructive Diagnostic' },
       { label: 'Response Team', value: 'Rapid Response' },
-      { label: 'Workmanship', value: 'Full Guarantee on Work' },
+      { label: 'Workmanship', value: 'High-Grade Workmanship Assured' },
     ],
   },
   {
