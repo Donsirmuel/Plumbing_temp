@@ -19,7 +19,8 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
       if (headerRef.current) {
@@ -90,7 +91,7 @@ export const RecentProjects: React.FC<RecentProjectsProps> = ({ onSelectProject 
       >
         <div>
           <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">Selected work</p>
-          <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+          <h2 className="font-['Fraunces',serif] text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-[#0F1E2D] mt-2">
             Recent work
           </h2>
           <p className="mt-3 max-w-xl text-sm leading-6 text-[#5B6B7A]">

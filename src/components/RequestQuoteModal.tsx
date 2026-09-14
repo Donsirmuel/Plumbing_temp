@@ -29,7 +29,8 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
   useEffect(() => {
     if (!isOpen) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     if (overlayRef.current && cardRef.current) {
       gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: 'power2.out' });
       gsap.fromTo(

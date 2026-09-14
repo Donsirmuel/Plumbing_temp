@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { ChevronsLeftRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import rawPipesImg from '../assets/images/hero_copper_plumbing_1788680078325.jpg';
+
 
 export const BeforeAfterSlider: React.FC = () => {
   const [sliderPos, setSliderPos] = useState<number>(50);
@@ -12,7 +12,8 @@ export const BeforeAfterSlider: React.FC = () => {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     const ctx = gsap.context(() => {
       if (sectionRef.current) {
         gsap.fromTo(
@@ -69,7 +70,7 @@ export const BeforeAfterSlider: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#0F1E2D]/10">
           <div>
             <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">From rough-in to handover</p>
-            <h2 className="font-sans text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+            <h2 className="font-['Fraunces',serif] text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-[#0F1E2D] mt-2">
               What is built and what runs through it
             </h2>
           </div>
@@ -88,8 +89,8 @@ export const BeforeAfterSlider: React.FC = () => {
             className="relative overflow-hidden bg-[#0F1E2D] aspect-[16/10] sm:aspect-[21/10] w-full select-none cursor-ew-resize rounded-2xl border border-[#0F1E2D]/10"
           >
             <img
-              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=2200&q=85"
-              alt="Completed bathroom — finished space"
+              src="/bathroom-ikoyi.jfif"
+              alt="Master ensuite bathroom as finished — basin and shower with watertight finish, Abeokuta"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               loading="lazy"
             />
@@ -99,8 +100,8 @@ export const BeforeAfterSlider: React.FC = () => {
               style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
             >
               <img
-                src={rawPipesImg}
-                alt="Pipework behind the walls"
+                src="/plumbing-installation.jfif"
+                alt="Pipework behind the walls — plumber laying neat supply runs before close-up"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />

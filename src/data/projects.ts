@@ -1,19 +1,17 @@
 import { Project } from '../types';
-import copperManifoldImg from '../assets/images/hero_copper_plumbing_1788680078325.jpg';
-import centralPlantImg from '../assets/images/central_water_plant_1788680129797.jpg';
-import pressureTestingImg from '../assets/images/plumbing_pressure_testing_1788680092524.jpg';
 
 export const PROJECTS: Project[] = [
   {
     id: 'copper-manifold-installation',
     number: '01',
     title: 'Copper Supply Manifold',
-    location: 'LAGOS',
+    location: 'ABEOKUTA',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: copperManifoldImg,
-    description: 'Copper pipework and supply systems installed with careful attention to access, reliability and finish.',
-    client: 'Residential Estate, Lekki Phase 1',
+    image: '/plumber-laying-pipes.jfif',
+    description:
+      'Plumber laying copper pipes for a new supply manifold — neat runs set out for access and tested before walls close. For new builds and repairs on existing homes,',
+    client: 'Residential build, Abeokuta — new manifold & supply rework',
     scope: [
       'Copper supply pipework set out for clear access',
       'Isolation points positioned for servicing',
@@ -33,9 +31,10 @@ export const PROJECTS: Project[] = [
     location: 'LAGOS',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: centralPlantImg,
-    description: 'Plant room and water systems set up for steady pressure and clean delivery, with attention to service access and upkeep.',
-    client: 'Commercial Estate, Eko Atlantic Axis',
+    image: '/pressure-pump-installs.jfif',
+    description:
+      'Pressure pump and filter array in a plant room — silent install set for steady pressure and clean delivery. New plant builds and servicing of existing pump sets',
+    client: 'Residential compound, Lagos — plant room & filtration',
     scope: [
       'Booster pumps set for steady pressure',
       'Filtration and water treatment where required',
@@ -52,12 +51,13 @@ export const PROJECTS: Project[] = [
     id: 'victoria-island-master-bath',
     number: '03',
     title: 'Wet Room & Sanitaryware',
-    location: 'LAGOS',
+    location: 'ABEOKUTA',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85',
-    description: 'Bathroom and wet area with concealed pipework, waterproofing and sanitaryware fitted for daily use and easy maintenance.',
-    client: 'Victoria Island Compound',
+    image: '/master-bathroom-ensuite.jfif',
+    description:
+      'Master bathroom ensuite — basin, shower and watertight finish as installed. Concealed pipework and waterproofing for daily use, for new bathrooms and refits on existing homes.',
+    client: 'Residential ensuite, Abeokuta',
     scope: [
       'Concealed mixers and shower bodies',
       'Drainage set for quiet, reliable flow',
@@ -74,12 +74,13 @@ export const PROJECTS: Project[] = [
     id: 'pressure-testing-valving',
     number: '04',
     title: 'Pressure Testing & Valving',
-    location: 'LAGOS',
+    location: 'ABEOKUTA',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: pressureTestingImg,
-    description: 'Pipework tested and valved to confirm integrity before close-up, with balancing for even distribution.',
-    client: 'Ikoyi Waterfront Compound',
+    image: '/leak-tester.jpg',
+    description:
+      'Leak detection tester and pressure gauge on site — pipework tested and valved to confirm integrity before close-up. For new runs and repairs on existing lines',
+    client: 'Site testing, Abeokuta — new & existing pipework',
     scope: [
       'Isolation valving positioned for access',
       'Pressure hold before concealment',
@@ -96,12 +97,13 @@ export const PROJECTS: Project[] = [
     id: 'subterranean-drainage-build',
     number: '05',
     title: 'Drainage & Integrated Build',
-    location: 'LAGOS',
+    location: 'OGUN STATE',
     year: '2024',
     category: 'Complete Design-Build',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85',
-    description: 'Drainage and building work coordinated so services run cleanly through the structure and finish well.',
-    client: 'Banana Island Waterfront Zone',
+    image: '/soakaways.jfif',
+    description:
+      'Soakaway and drainage chamber as built — drainage and building work coordinated so services run cleanly. New soakaway builds and fixes for blocked or smelly existing drains,',
+    client: 'Residential site, Ogun State — soakaway & drainage',
     scope: [
       'Storm drainage set within the structure',
       'Sleeves coordinated with foundations',
@@ -121,9 +123,10 @@ export const PROJECTS: Project[] = [
     location: 'ABUJA',
     year: '2023',
     category: 'Plumbing & Hydronics',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85',
-    description: 'Risers, plant and drainage coordinated for a multi-storey commercial building, with attention to access and ongoing operation.',
-    client: 'Commercial Holdings, Abuja FCT',
+    image: '/industrial-plumbing.jfif',
+    description:
+      'Industrial overhead pipework in a commercial plant — risers, plant and drainage coordinated for ongoing operation. New commercial installs and remedial work on existing systems, serving nationwide.',
+    client: 'Commercial building, Abuja FCT — risers & plant',
     scope: [
       'Risers and pressure control where needed',
       'Drainage and ejector arrangements',

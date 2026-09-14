@@ -10,8 +10,8 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuote }) => {
     <section className="relative bg-[#0F1E2D] text-white py-20 sm:py-24 px-6 sm:px-10 md:px-16 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=2400&q=85"
-          alt="Finished bathroom with carefully installed plumbing"
+          src="/master-bathroom-ensuite.jfif"
+          alt="Master bathroom ensuite in Abeokuta — basin, shower and watertight finish as installed"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-[#0F1E2D]/75" />
@@ -23,7 +23,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuote }) => {
           Nigeria & beyond · Residential & commercial
         </p>
 
-        <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.04em] leading-[1.05] text-white">
+        <h2 className="font-['Fraunces',serif] text-3xl sm:text-4xl md:text-5xl font-semibold tracking-[-0.03em] leading-[1.05] text-white">
           Tell us what needs to work better.
         </h2>
 

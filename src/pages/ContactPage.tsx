@@ -4,11 +4,9 @@ export interface ContactPageProps {
   onOpenQuote?: (serviceTitle?: string) => void;
 }
 
-const MAP_PLACEHOLDER =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDCvnF8mH4uxBUz7Gt_taJT8Z6w2h6kwKC1LAI4qnCYh8NjGjJrTxaspoLMHwXLGlmkUzoIgOJdfLXGfCsF-9hnrD9vLkZBzF21IJhVbnRvLQ7PZl-RZp3ovzp7xz_cvGSxisW1WmEJXuVTQdDCbcH6D6-hMyO6nLDxe426zDxCCAhHQ5qpUyFJw3va1fiIQ5sTihMURL8EXaSWG5NNNv_M4GeQ7VIegvEBoK7d_LuGGWU-zuzuvTUS';
+const MAP_PLACEHOLDER = '/overhead-water-tank.jfif';
 
-const AVATAR_IMG =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuApYnsuYHbT8lJeAkrv4HTXxCSrfRIURlPc-nZNxaafc9g7qDxouySgqOMm665M9PSa0NJl54vNx-j3ddTTGg10RI1Bthy4KB-ZUbo-j6E_0TWt_IWuU66nvGIxh1dty7yX_ppbPa_FaGYhc_IkJyejHuXb0vdnhub87a9kbN51d8VtkQDK6yajxvohJ300Ohu7tARV07GOz_LvXxScfprxImON3bJYGsneV8SHshKDGUwAMRpUxIJc';
+const AVATAR_IMG = '/plumber-laying-pipes.jfif';
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -31,7 +29,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const els = root.querySelectorAll<HTMLElement>('.reveal-entry');
 
-    if (prefersReduced) {
+    if (false) { // reduced-motion disabled
       els.forEach((el) => el.classList.add('is-visible'));
       return;
     }
@@ -75,34 +73,25 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
   return (
     <div ref={rootRef} className="w-full bg-[#fff8f3] text-[#1d1b18]">
       {/* ambient warm glows */}
-      <div className="relative w-full overflow-hidden">
-        <div className="absolute -top-32 right-1/4 w-96 h-96 bg-[#ffdbd1]/40 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="absolute top-80 -left-20 w-80 h-80 bg-[#d4e7d8]/40 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="relative w-full max-w-full overflow-hidden min-w-0">
+        <div className="absolute -top-32 right-1/4 w-72 sm:w-96 h-72 sm:h-96 max-w-[80vw] bg-[#ffdbd1]/40 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div className="absolute top-80 -left-20 w-64 sm:w-80 h-64 sm:h-80 max-w-[80vw] bg-[#d4e7d8]/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
-        {/* Editorial Header */}
-        <div id="contact-hero" className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 pt-8 pb-12 md:pb-16 reveal-entry">
-          <div className="max-w-3xl flex flex-col gap-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#f3ede7] rounded-full w-fit border border-[#dfc0b7]/30">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a43716] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a43716]" />
-              </span>
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#58423c]">
-                Get in touch · Direct line & WhatsApp
-              </span>
-            </div>
-
+        {/* Editorial Header — simplified: no pill eyebrow, tighter hierarchy */}
+        <div id="contact-hero" className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 pt-10 pb-8 md:pb-12 reveal-entry">
+          <div className="max-w-3xl flex flex-col gap-3">
             <h1
-              className="text-[#1d1b18] tracking-[-0.04em] leading-[1.05] font-bold"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: '1.08' }}
+              className="text-[#1d1b18] tracking-[-0.03em] leading-[1.05] font-semibold"
+              style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(32px, 5vw, 56px)', lineHeight: '1.08' }}
             >
               Got a leak, or planning something new?{' '}
-              <span className="font-bold text-[#a43716]">Talk straight to a plumber.</span>
+              <span className="font-semibold text-[#a43716]">Talk straight to a plumber.</span>
             </h1>
 
             <p className="text-[15px] md:text-[16px] leading-7 text-[#58423c] max-w-2xl">
               No queue, no jargon. Send a photo or brief note and a senior plumber replies plainly — with practical next steps and a clear quotation before any work begins for new builds or repairs.
             </p>
+            <p className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#7b542b]">Abiola Way, Abeokuta · Lagos field teams · Nationwide</p>
           </div>
         </div>
       </div>
@@ -112,74 +101,93 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column */}
           <div className="lg:col-span-7 flex flex-col gap-6 reveal-entry">
-            {/* Emergency Desk */}
-            <div className="bg-[#a43716] text-white p-6 md:p-8 rounded-xl shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-              <div className="flex flex-col gap-2 max-w-md">
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffdbd1]">Active Emergency Desk</span>
-                <h2 className="font-['Plus_Jakarta_Sans',sans-serif] text-[20px] md:text-[22px] leading-tight font-bold tracking-[-0.04em] text-white">
+            {/* Emergency Desk — singular visual anchor, bigger, more direct */}
+            <div className="bg-[#a43716] text-white rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row">
+              <div className="p-8 md:p-10 flex-1 flex flex-col gap-4 justify-center">
+                <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#ffdbd1]">
+                  <span className="w-6 h-px bg-white/35" aria-hidden="true"></span>Active Emergency Desk · Abiola Way
+                </span>
+                <h2 className="font-['Fraunces',serif] text-[26px] md:text-[32px] leading-[1.1] font-semibold tracking-[-0.03em] text-white">
                   Need to stop water fast?
                 </h2>
-                <p className="text-[15px] leading-6 text-white/85">
-                  We will talk you through a safe shut-off on the phone while we process a physical visit.
+                <p className="text-[15px] md:text-[16px] leading-7 text-white/90 max-w-lg">
+                  We will talk you through a safe shut-off on the phone while we dispatch from Abiola Way. For new builds and urgent repairs — nationwide follow-ups.
                 </p>
+                <div className="pt-2 flex flex-col gap-2">
+                  <a
+                    href="tel:+2349031386928"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#a43716] text-[16px] font-bold tracking-[-0.01em] rounded-full shadow-md hover:bg-[#fff8f3] transition-all whitespace-nowrap active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
+                  >
+                    <span className="material-symbols-outlined text-[20px]">call</span>
+                    Call Direct — 0903 138 6928
+                  </a>
+                  <span className="text-[13px] text-white/75">Average pickup &lt; 60 seconds · 7am–7pm, emergency after hours</span>
+                </div>
               </div>
-              <a
-                href="tel:+2349031386928"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#a43716] text-[14px] font-semibold tracking-[0.03em] rounded-full shadow-sm hover:bg-[#fff8f3] transition-all whitespace-nowrap active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
-              >
-                <span className="material-symbols-outlined text-[18px]">call</span>
-                Call Direct
-              </a>
+              <div className="lg:w-[40%] relative min-h-[240px] lg:min-h-[360px] bg-[#7a1f0a] overflow-hidden">
+                <img
+                  src={MAP_PLACEHOLDER}
+                  alt="Overhead water tank as installed — example of tidy tank work we respond to urgently"
+                  className="w-full h-full object-cover opacity-90"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#a43716]/60 via-transparent to-transparent lg:bg-gradient-to-r" aria-hidden="true" />
+                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center gap-3 shadow-md">
+                  <span className="w-9 h-9 rounded-full bg-[#d4e7d8] flex items-center justify-center text-[#516257] shrink-0">
+                    <span className="material-symbols-outlined text-[18px]">location_on</span>
+                  </span>
+                  <div className="flex flex-col">
+                    <span className="text-[13px] font-bold text-[#1d1b18] leading-none">Abiola Way, Abeokuta</span>
+                    <span className="text-[12px] text-[#58423c]">Ogun State · serving nationwide</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Contact Channels Stack */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#dfc0b7]/20 flex flex-col justify-between gap-6">
-                <div className="flex flex-col gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#d4e7d8] flex items-center justify-center text-[#516257]">
-                    <span className="material-symbols-outlined text-[24px]">chat</span>
-                  </div>
-                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
+            {/* Contact Channels — simplified two-item list without card chrome */}
+            <div className="bg-white rounded-2xl border border-[#dfc0b7]/15 divide-y divide-[#f3ede7]">
+              <div className="p-6 flex gap-4 items-start">
+                <span className="shrink-0 w-9 h-9 rounded-full bg-[#f3ede7] flex items-center justify-center text-[#516257] border border-[#dfc0b7]/15" aria-hidden="true">
+                  <span className="material-symbols-outlined text-[18px]">chat</span>
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
                     WhatsApp Priority Line
                   </h3>
-                  <p className="text-[15px] leading-6 text-[#58423c]">
-                    Send a photo or short video: leaking joint, weak pressure, heater noise. A senior plumber replies with honest analysis and quotation guidance.
+                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
+                    Send a photo or short video: leaking joint, weak pressure, heater noise. A senior plumber replies with honest analysis and free quotation guidance — no photo-review fee.
                   </p>
-                </div>
-                <div className="flex flex-col gap-2 pt-4 bg-[#f9f2ed] -mx-6 -mb-6 p-6 rounded-b-xl">
                   <a
                     href="https://wa.me/2349031386928?text=Hello%20OOH%20JAY%2C%20I%20have%20a%20plumbing%20issue%20I%20need%20help%20with"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[#a43716] text-[14px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
+                    className="mt-3 inline-flex items-center gap-1.5 text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
                   >
                     Start WhatsApp Chat
-                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                   </a>
+                  <p className="text-[12px] text-[#8b716a] mt-1">Fastest reply — usually within the hour</p>
                 </div>
               </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-[#dfc0b7]/20 flex flex-col justify-between gap-6">
-                <div className="flex flex-col gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#ffdcbd] flex items-center justify-center text-[#2c1600]">
-                    <span className="material-symbols-outlined text-[24px]">public</span>
-                  </div>
-                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
+              <div className="p-6 flex gap-4 items-start">
+                <span className="shrink-0 w-9 h-9 rounded-full bg-[#f3ede7] flex items-center justify-center text-[#2c1600] border border-[#dfc0b7]/15" aria-hidden="true">
+                  <span className="material-symbols-outlined text-[18px]">public</span>
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
                     Diaspora Property Desk
                   </h3>
-                  <p className="text-[15px] leading-6 text-[#58423c]">
-                    Managing a home from the UK, US, Canada or Europe. We do video checks, clear parts lists and tidy photo handovers for new and existing work.
+                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
+                    Managing a home from the UK, US, Canada or Europe. We do video checks, clear parts lists and tidy photo handovers for new and existing work — WhatsApp updates on your hours.
                   </p>
-                </div>
-                <div className="flex flex-col gap-2 pt-4 bg-[#f9f2ed] -mx-6 -mb-6 p-6 rounded-b-xl">
                   <a
                     href="https://wa.me/2349031386928?text=Hello%2C%20I%20am%20calling%20from%20abroad%20regarding%20my%20property%20in%20Nigeria"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[#a43716] text-[14px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
+                    className="mt-3 inline-flex items-center gap-1.5 text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
                   >
                     Diaspora Consultation
-                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                   </a>
                 </div>
               </div>
@@ -223,7 +231,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
               <div className="p-4 rounded-xl bg-[#f3ede7] flex items-start gap-4">
                 <img
                   src={AVATAR_IMG}
-                  alt="Senior plumber inspecting copper pipe joints"
+                  alt="Plumber laying pipes — neat supply manifold as fitted, Abiola Way Abeokuta base nationwide"
                   className="w-14 h-14 rounded-full object-cover flex-shrink-0 shadow-sm bg-white"
                   loading="lazy"
                 />
@@ -237,11 +245,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
             </div>
           </div>
 
-          {/* Right Column: Direct Intake Form */}
-          <div className="lg:col-span-5 bg-white p-6 md:p-8 rounded-xl shadow-md border border-[#dfc0b7]/20 flex flex-col gap-6 reveal-entry">
+          {/* Right Column: Direct Intake Form — lighter design language, underline inputs */}
+          <div className="lg:col-span-5 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-[#dfc0b7]/15 flex flex-col gap-6 reveal-entry">
             <div className="flex flex-col gap-1">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Direct Intake</span>
-              <h2 className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] font-bold tracking-[-0.04em] text-[#1d1b18]">
+              <h2 className="font-['Fraunces',serif] text-[22px] font-semibold tracking-[-0.03em] text-[#1d1b18]">
                 Request a Clear Quote
               </h2>
               <p className="text-[15px] leading-6 text-[#58423c]">
@@ -250,9 +258,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
             </div>
 
             {!submitted ? (
-              <form className="flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="full-name" className="text-[14px] font-semibold text-[#1d1b18]">
+              <form className="flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="full-name" className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">
                     Your Full Name
                   </label>
                   <input
@@ -263,12 +271,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                     required
                     type="text"
                     autoComplete="name"
-                    className="w-full px-4 py-3 bg-[#f9f2ed] text-[#1d1b18] rounded-lg text-[14px] outline-none focus:bg-white focus:ring-2 focus:ring-[#a43716]/20 focus:border-[#dfc0b7] border border-transparent transition-all placeholder:text-[#8b716a]"
+                    className="w-full px-0 py-3 bg-transparent text-[#1d1b18] border-0 border-b border-[#dfc0b7]/60 rounded-none text-[15px] outline-none focus:border-[#a43716] focus:ring-0 transition-colors placeholder:text-[#8b716a]/70"
                   />
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="phone-number" className="text-[14px] font-semibold text-[#1d1b18]">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="phone-number" className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">
                     Phone or WhatsApp Number
                   </label>
                   <input
@@ -279,12 +287,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                     required
                     type="tel"
                     autoComplete="tel"
-                    className="w-full px-4 py-3 bg-[#f9f2ed] text-[#1d1b18] rounded-lg text-[14px] outline-none focus:bg-white focus:ring-2 focus:ring-[#a43716]/20 focus:border-[#dfc0b7] border border-transparent transition-all placeholder:text-[#8b716a]"
+                    className="w-full px-0 py-3 bg-transparent text-[#1d1b18] border-0 border-b border-[#dfc0b7]/60 rounded-none text-[15px] outline-none focus:border-[#a43716] focus:ring-0 transition-colors placeholder:text-[#8b716a]/70"
                   />
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-[14px] font-semibold text-[#1d1b18]">Property Category</span>
+                <div className="flex flex-col gap-2">
+                  <span className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">Property Category</span>
                   <div className="grid grid-cols-3 gap-2" role="group" aria-label="Property Category">
                     {(
                       [
@@ -298,10 +306,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                         type="button"
                         onClick={() => setPropertyCategory(value)}
                         aria-pressed={propertyCategory === value}
-                        className={`py-2.5 px-2 text-center rounded-lg text-[13px] font-semibold tracking-[0.02em] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] ${
+                        className={`min-h-11 py-3 px-2 text-center rounded-full text-[12px] font-semibold tracking-[0.03em] transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] border ${
                           propertyCategory === value
-                            ? 'bg-[#a43716] text-white shadow-sm'
-                            : 'bg-[#f3ede7] text-[#58423c] hover:bg-[#ede7e2]'
+                            ? 'bg-[#1d1b18] text-white border-[#1d1b18] shadow-sm'
+                            : 'bg-white text-[#58423c] border-[#dfc0b7]/30 hover:border-[#dfc0b7]/50 hover:bg-[#fffaf7]'
                         }`}
                       >
                         {label}
@@ -310,15 +318,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="service-location" className="text-[14px] font-semibold text-[#1d1b18]">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="service-location" className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">
                     Neighbourhood / City
                   </label>
                   <select
                     id="service-location"
                     value={form.location}
                     onChange={(e) => setForm((p) => ({ ...p, location: e.target.value }))}
-                    className="w-full px-4 py-3 bg-[#f9f2ed] text-[#1d1b18] rounded-lg text-[14px] outline-none focus:bg-white focus:ring-2 focus:ring-[#a43716]/20 border border-transparent transition-all cursor-pointer"
+                    className="w-full px-0 py-3 bg-transparent text-[#1d1b18] border-0 border-b border-[#dfc0b7]/60 rounded-none text-[14px] outline-none focus:border-[#a43716] focus:ring-0 transition-colors cursor-pointer"
                   >
                     <option>Abeokuta — Abiola Way & Environs (Priority base)</option>
                     <option>Abeokuta — Adigbe / Obantoko / Laderin</option>
@@ -333,15 +341,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                   </select>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="service-scope" className="text-[14px] font-semibold text-[#1d1b18]">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="service-scope" className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">
                     What Needs Sorting?
                   </label>
                   <select
                     id="service-scope"
                     value={form.scope}
                     onChange={(e) => setForm((p) => ({ ...p, scope: e.target.value }))}
-                    className="w-full px-4 py-3 bg-[#f9f2ed] text-[#1d1b18] rounded-lg text-[14px] outline-none focus:bg-white focus:ring-2 focus:ring-[#a43716]/20 border border-transparent transition-all cursor-pointer"
+                    className="w-full px-0 py-3 bg-transparent text-[#1d1b18] border-0 border-b border-[#dfc0b7]/60 rounded-none text-[14px] outline-none focus:border-[#a43716] focus:ring-0 transition-colors cursor-pointer"
                   >
                     <option>Leaking, burst pipe or urgent shut-off</option>
                     <option>Low water pressure or booster pump concern</option>
@@ -352,8 +360,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                   </select>
                 </div>
 
-                <div className="flex flex-col gap-1.5">
-                  <label htmlFor="issue-notes" className="text-[14px] font-semibold text-[#1d1b18]">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="issue-notes" className="text-[12px] font-semibold tracking-[0.06em] uppercase text-[#58423c]">
                     Brief Note on What&apos;s Happening
                   </label>
                   <textarea
@@ -362,7 +370,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                     onChange={(e) => setForm((p) => ({ ...p, note: e.target.value }))}
                     placeholder="e.g. Damp patch behind master bath, pump reading zero, new house needs full first-fix..."
                     rows={3}
-                    className="w-full px-4 py-3 bg-[#f9f2ed] text-[#1d1b18] rounded-lg text-[14px] outline-none focus:bg-white focus:ring-2 focus:ring-[#a43716]/20 border border-transparent transition-all placeholder:text-[#8b716a] resize-none"
+                    className="w-full px-3 py-3 bg-[#fffaf7] text-[#1d1b18] rounded-xl text-[14px] outline-none border border-[#dfc0b7]/25 focus:border-[#a43716]/30 focus:bg-white focus:ring-0 transition-all placeholder:text-[#8b716a]/60 resize-none"
                   />
                 </div>
 

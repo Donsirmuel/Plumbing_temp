@@ -20,7 +20,8 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onSelectProject }) => 
   useEffect(() => {
     if (!gridRef.current) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -48,7 +49,8 @@ export const WorkGallery: React.FC<WorkGalleryProps> = ({ onSelectProject }) => 
   useEffect(() => {
     if (!gridRef.current) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     gsap.fromTo(gridRef.current, { opacity: 0.94 }, { opacity: 1, duration: 0.2, ease: 'power2.out' });
   }, [active]);
 

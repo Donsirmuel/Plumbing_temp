@@ -22,7 +22,8 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenQuote }) => {
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const ctx = gsap.context(() => {
-      if (prefersReduced) return;
+      // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
 
       const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
       tl.fromTo(frameRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.45 })
@@ -92,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick, onOpenQuote }) => {
 
             <h1
               ref={headlineRef}
-              className="font-sans text-[clamp(2rem,6.2vw,4.75rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white"
+              className="font-['Fraunces',serif] text-[clamp(2rem,6.2vw,4.75rem)] font-semibold leading-[0.95] tracking-[-0.03em] text-white"
             >
               Plumbing that
               <br />

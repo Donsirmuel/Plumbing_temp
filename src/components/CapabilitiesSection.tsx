@@ -19,7 +19,8 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
 
     const ctx = gsap.context(() => {
       if (headerRef.current) {
@@ -70,7 +71,8 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
   useEffect(() => {
     if (!cardRef.current) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     gsap.fromTo(cardRef.current, { opacity: 0.92 }, { opacity: 1, duration: 0.22, ease: 'power2.out', overwrite: true });
   }, [activeTab]);
 
@@ -83,7 +85,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
       <div ref={headerRef} className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 pb-5 border-b border-[#0F1E2D]/10">
         <div>
           <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">What we do</p>
-          <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+          <h2 className="font-['Fraunces',serif] text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-[#0F1E2D] mt-2">
             Plumbing for every situation
           </h2>
         </div>

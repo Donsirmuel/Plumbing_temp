@@ -10,7 +10,8 @@ export const TestimonialsSection: React.FC = () => {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     const ctx = gsap.context(() => {
       if (gridRef.current) {
         gsap.fromTo(
@@ -36,7 +37,7 @@ export const TestimonialsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#0F1E2D]/10">
           <div>
             <p className="text-xs font-semibold tracking-[0.14em] text-[#1A5CFF] uppercase">Trust</p>
-            <h2 className="font-sans text-3xl sm:text-4xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] mt-2">
+            <h2 className="font-['Fraunces',serif] text-3xl sm:text-4xl font-semibold tracking-[-0.03em] text-[#0F1E2D] mt-2">
               Trusted by partners in Nigeria & beyond
             </h2>
           </div>

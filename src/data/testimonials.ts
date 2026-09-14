@@ -1,6 +1,4 @@
 import { Testimonial, ProcessStep } from '../types';
-import copperRoughInImg from '../assets/images/hero_copper_plumbing_1788680078325.jpg';
-import pressureTestingImg from '../assets/images/plumbing_pressure_testing_1788680092524.jpg';
 
 export const TESTIMONIALS: Testimonial[] = [
   {
@@ -44,8 +42,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Site parameters & project objective review',
       'Preliminary timeline & feasibility guidance',
     ],
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85',
-    imageCaption: 'On-site technical inspection of water supply, borehole lines & routing',
+    image: '/plumber-working-in-kitchen.jfif',
+    imageCaption: 'On-site technical inspection — plumber at work in kitchen, checking supply lines & routing (Abiola Way, Abeokuta base, nationwide)',
   },
   {
     number: '02',
@@ -58,8 +56,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Coordinated pipework & construction drawings',
       'Transparent, itemized Bill of Quantities (BOQ)',
     ],
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85',
-    imageCaption: 'Hydraulic flow calculations, pipe sizing & manifold schematic layout',
+    image: '/industrial-plumbing.jfif',
+    imageCaption: 'Industrial overhead pipework and manifold layout — planning risers and pressure zones before install',
   },
   {
     number: '03',
@@ -72,8 +70,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Supervised concrete, masonry & structural framing',
       'Regular photo and video progress updates',
     ],
-    image: copperRoughInImg,
-    imageCaption: 'Hard-drawn copper manifold assembly, brazed joints & rough-in pipework',
+    image: '/plumber-laying-pipes.jfif',
+    imageCaption: 'Plumber laying pipes for new supply manifold — neat, serviceable runs before close-up',
   },
   {
     number: '04',
@@ -86,7 +84,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Sanitaryware & pump commissioning',
       'Laminated pipe conduit diagrams & handover documentation',
     ],
-    image: pressureTestingImg,
-    imageCaption: '16-bar hydrostatic pressure testing with calibrated diagnostic gauges',
+    image: '/leak-tester.jpg',
+    imageCaption: 'Leak detection tester and pressure gauge on site — verifying integrity before handover',
   },
 ];

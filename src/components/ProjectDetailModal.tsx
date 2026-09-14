@@ -16,7 +16,8 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
   useEffect(() => {
     if (!project) return;
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) return;
+    // reduced-motion commented out — always animate
+    // if (prefersReduced) return;
     if (overlayRef.current && cardRef.current) {
       gsap.fromTo(overlayRef.current, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: 'power2.out' });
       gsap.fromTo(
@@ -64,7 +65,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
 
           <div className="space-y-3">
             <p className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">{project.category}</p>
-            <h2 className="font-sans text-2xl sm:text-3xl font-extrabold tracking-[-0.04em] text-[#0F1E2D] leading-tight">
+            <h2 className="font-['Fraunces',serif] text-2xl sm:text-3xl font-semibold tracking-[-0.03em] text-[#0F1E2D] leading-tight">
               {project.title}
             </h2>
             <p className="text-sm text-[#5B6B7A] leading-6 max-w-3xl">{project.description}</p>

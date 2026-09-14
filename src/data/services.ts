@@ -7,11 +7,10 @@ export const SERVICES: ServiceItem[] = [
     title: 'Plumbing & Mechanical Systems',
     subtitle: 'Water Infrastructure, Pipework & Pressure Systems',
     shortDesc:
-      'Engineered water supply networks, brazed copper and PPR pipework, constant-pressure booster pumps, multi-stage water filtration, and silent drainage systems.',
+      'Engineered water supply networks, brazed copper and PPR pipework, constant-pressure booster pumps, multi-stage water filtration, and silent drainage systems',
     detailedDesc:
-      'Water systems in Nigeria require specialized engineering to handle aggressive borehole chemistry, pressure fluctuations, and sediment. We design and install durable distribution networks using hard-drawn copper, multi-layer piping, and calibrated booster arrays to guarantee clean, steady water throughout your property.',
-    image:
-      'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1600&q=85',
+      'Water systems in Nigeria require specialized engineering to handle aggressive borehole chemistry, pressure fluctuations, and sediment. We design and install durable distribution networks using hard-drawn copper, multi-layer piping, and calibrated booster arrays to guarantee clean, steady water throughout your property — whether it is a new site or an occupied home.',
+    image: '/pressure-pump-installs.jfif',
     highlights: [
       'Hard-Drawn Brazed Copper & Multilayer PPR/PEX Supply Lines',
       'Whole-Building Water Treatment, Softening & UV Purification',
@@ -30,11 +29,10 @@ export const SERVICES: ServiceItem[] = [
     title: 'Sanitaryware & Luxury Wet Areas',
     subtitle: 'Bathrooms, Concealed Mixers & Waterproofing',
     shortDesc:
-      'Precision installation of concealed thermostatic valves, walk-in wet rooms, flush floor drains, freestanding tubs, and premium bathroom sanitaryware.',
+      'Precision installation of concealed thermostatic valves, walk-in wet rooms, flush floor drains, freestanding tubs, and premium bathroom sanitaryware — new fits and watertight refits alike.',
     detailedDesc:
-      'We bring meticulous craftsmanship to bathrooms and wet rooms. By handling both the in-wall plumbing rough-in and the waterproofing membrane, we prevent leaks, ensure precise drainage slope, and guarantee flawless alignment with tiles, niches, and luxury brassware.',
-    image:
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85',
+      'We bring meticulous craftsmanship to bathrooms and wet rooms. By handling both the in-wall plumbing rough-in and the waterproofing membrane, we prevent leaks, ensure precise drainage slope, and guarantee flawless alignment with tiles, niches, and luxury brassware — for new builds and refurbishments nationwide from Abeokuta.',
+    image: '/bathroom-installation.jfif',
     highlights: [
       'In-Wall Concealed Thermostatic Shower & Basin Rough-Ins',
       'Multi-Layer Waterproofing Membrane & Tanking Systems',
@@ -53,11 +51,10 @@ export const SERVICES: ServiceItem[] = [
     title: 'Plant Rooms, Diagnostics & Servicing',
     subtitle: 'Booster Stations, Filtration & Preventative Care',
     shortDesc:
-      'Central plant room installations, water pump servicing, leak diagnostics, pipework retrofitting, and ongoing facility support.',
+      'Central plant room installations, water pump servicing, leak diagnostics, pipework retrofitting, and ongoing facility support — new installs and servicing of existing systems.',
     detailedDesc:
-      'We design, overhaul, and maintain central mechanical plant rooms for residential compounds and commercial properties. From variable-speed pumps and filtration tanks to non-destructive leak diagnostics, our technical teams keep building systems running smoothly.',
-    image:
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1600&q=85',
+      'We design, overhaul, and maintain central mechanical plant rooms for residential compounds and commercial properties. From variable-speed pumps and filtration tanks to non-destructive leak diagnostics, our technical teams keep building systems running smoothly',
+    image: '/leak-tester.jpg',
     highlights: [
       'Central Water Booster Pump & Filtration Plant Overhauls',
       'Non-Destructive Thermal & Acoustic Leak Detection',
@@ -76,11 +73,10 @@ export const SERVICES: ServiceItem[] = [
     title: 'Construction Support',
     subtitle: 'When the project needs a coordinated building team',
     shortDesc:
-      'Construction support when a plumbing project needs it — structural work, foundations, concrete framing and masonry planned together with the plumbing so pipe penetrations and services are built in, not chased in later.',
+      'Construction support when a plumbing project needs it — structural work, foundations, concrete framing and masonry planned together with the plumbing so pipe penetrations and services are built in, not chased in later. New builds and coordinated repairs.',
     detailedDesc:
-      'For projects that need more than plumbing alone, our building team works with our plumbers from the drawings. That means sleeves, risers and drainage are coordinated early — no destructive chasing and cleaner finishes.',
-    image:
-      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=85',
+      'For projects that need more than plumbing alone, our building team works with our plumbers from the drawings. That means sleeves, risers and drainage are coordinated early — no destructive chasing and cleaner finishes — for both new structures and existing property upgrades, nationwide.',
+    image: '/plumbing-installation.jfif',
     highlights: [
       'Foundations, concrete framing & masonry when required',
       'Pipe penetrations and sleeves coordinated in the structure',

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { PROJECTS } from '../data/projects';
 import { TESTIMONIALS } from '../data/testimonials';
 import { Project } from '../types';
+import { ReadMore } from '../components/ReadMore';
 
 interface WorkPageProps {
   onSelectProject: (project: Project) => void;
@@ -27,84 +28,76 @@ const GALLERY_META: GalleryMeta[] = [
     key: 'master-ensuite',
     title: 'Master Ensuite Re-pipe & Mixer Upgrade',
     description:
-      'Replaced cracked underground PVC with solid, silent copper piping. Concealed shower mixer fitted with laser alignment and zero moisture seepage behind tiles.',
-    location: 'Ikoyi, Lagos',
+      'Master bathroom ensuite — basin, shower and watertight finish as installed. New bathroom and refit work.',
+    location: 'Abeokuta',
     year: '2024',
     category: 'bathrooms',
     categoryLabel: 'Sanitary Architecture',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDdQtoVJ2R0vwxDBgL1lAzzzgun1AmuWkpIJMDu3QRux4OUK_LTtomPjsUEjOYrWE0-7ew2TGRjPXR6pjgSEViN5EI03k--prQ71aWW0gybIvu4kdm460yoPSm0kYRgqRJA-BSEqRIGvykgrntYgQLDEne5872XjzFM9A1QTvw11zVAh7orVg-mxW1XzFl_2yJCs-9rvpMTznFeYAIEV0YwWI7YTcM8dDoo7uXZZTa_7viqerhVk4oU',
-    alt: 'High-end minimalist master bathroom in Ikoyi Lagos with brushed bronze concealed mixer taps, warm terracotta textured tiles, fresh caulking lines, and pristine copper sanitary fittings in natural light.',
+    image: '/master-bathroom-ensuite.jfif',
+    alt: 'Master bathroom ensuite in Abeokuta — basin, shower and watertight finish as installed',
     projectId: 'victoria-island-master-bath',
   },
   {
     key: 'vibration-free-pump',
     title: 'Vibration-Free Water Pump Setup',
     description:
-      'Swapped a noisy, rattling old cast pump for a quiet variable speed booster with brass valves and labeled zone shutoffs.',
-    location: 'Victoria Island, lagos',
+      'Pressure pump and filter array in plant room — silent install with brass valves and labelled shutoffs. New and existing pump servicing.',
+    location: 'Lagos',
     year: '2024',
     category: 'pumps',
     categoryLabel: 'Pressure Engineering',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBq8IGXFfExQU8CWvB0ScwB_mwoJHoJSIqCo70h-nyrWSMsLTJkS55HeFL4QQoqKNC_1sa1kYKhJBqhSD8hiKyRHnUclnb4PsNCCokIeb059HTID9uPpXlFjWSPRt8YN2kiuzj_nv_Ck0pFPSqABTixvaCX3ov32ijwpEyh4Wi8cdBrofewOhVAJxWrqdWtQlgK9TTS419dvAdTkXxRPl1vc1zz-DEmvwmCNWVAUeSI5cTEQGzASSEf',
-    alt: 'Industrial silent water booster pump system installed on vibration dampening rubber mounts in Victoria Island Lagos, with polished brass shutoff ball valves, pressure gauge, and clean labeled copper distribution manifold.',
+    image: '/pressure-pump-installs.jfif',
+    alt: 'Pressure pump and filter array in plant room, silent install as fitted',
     projectId: 'mechanical-plant-room',
   },
   {
     key: 'kitchen-laundry-boost',
     title: 'Kitchen & Laundry Water Pressure Boost',
     description:
-      'Re-routed main kitchen supply into independent feeds so the washing machine and dishwasher run at full throttle without the sink tap dropping to a trickle.',
-    location: 'Ibadan',
+      'Kitchen fitting with re-routed supply — washing machine and sink run without losing pressure. For new builds and lived-in homes.',
+    location: 'Abeokuta',
     year: '2024',
     category: 'piping',
     categoryLabel: 'Flow Balancing',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuD78lfqKS0rurpiGGR3NYWN4d5m0ur-tIwa1gqLr4M2fjwz9R8-xbstIOfXkcrc-0hmKrWVhPRwy4gbqY_wxzCYkKf8jISH_PQsbjZZhv9uGvUFV8J5nWgtv4RHtOFqr7CTNXdgLQWGnWbenYNYgfCpAQ5xNP3kEYGYz85WsJ_d4R4-BbhC2O7FvrUoF4sTURwbn6A6DJlUrGin9_xYTGaWEzG62zcUunQOfMjvzrPEQozWYYRoThze',
-    alt: 'Organized under-sink plumbing layout inside a modern luxury kitchen in Lekki Phase 1, featuring dedicated stainless steel braided flexible hoses, quarter-turn brass mini-valves, and an integrated reverse osmosis filtration tap.',
+    image: '/kitchen1.jfif',
+    alt: 'Kitchen fitting in Abeokuta — sink and tap as installed, water tested',
     projectId: 'copper-manifold-installation',
   },
   {
     key: 'twin-tank-filter',
     title: 'Twin Water Tank & Clean Filter Array',
-    description:
-      'Replaced brittle, sun-bleached PVC runs with thermal-shielded conduits. Added dual-stage filtration so every bath and sink discharges clear.',
-    location: 'Ijebu, Ogun',
+    description: 'Overhead water tank and filter set — clean, gravity-fed supply with serviceable valving. New and replacement installs.',
+    location: 'Ogun State',
     year: '2024',
     category: 'pumps',
     categoryLabel: 'Water Filtration & Tanks',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCdhmaXZySGyEJc4vz3mQhTSQog7Hk0umq5MSupKChuvUR0xhoy49bfe4AmIukUBCKW2zFN63FjG6wUbN8Cq5APu2ilS0AfEXibJ2w-RWcro9DzdQpcI-GpqDrTCLzpNXgR9Ajqy_TE8RmX-bJaqXSb0p9VDhy3vmmkhCcoQJWYQnUbnMq_jHDWqImG5miH4XlX4sV7YEdKqg6qsIchDBGcb-Ix3B5wL1ZNzZioulQ417Wf-Sn4sOzT',
-    alt: 'Rooftop overhead twin water tanks in Ikeja GRA Lagos with UV-resistant multi-layer insulated piping, heavy-duty float valves, double canister sediment water filters, and safety overflow drain lines.',
+    image: '/overhead-water-tank.jfif',
+    alt: 'Overhead water tank as installed — neat valving and overflow as fitted',
     projectId: 'pressure-testing-valving',
   },
   {
     key: 'remote-new-build',
     title: 'Remote New Build Complete Plumbing',
     description:
-      'Plumbed this 5-bedroom residence with daily WhatsApp video logs and material receipts while client was abroad — new build and finishing together.',
-    location: 'Banana Island',
+      'New build plumbing — neat supply runs documented for remote client review. From Abiola Way, Abeokuta for diaspora and local clients.',
+    location: 'Nationwide',
     year: '2024',
     category: 'piping',
     categoryLabel: 'Remote Client Oversight',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAuRpXEt6vaoaQhWgT6ixYxpNC2MDjsRpaUzhWPJ6XWT06wAIAts4Rq3wiDyrlniBs_Cob7mBrpELAIA747BuMD1mk4Z8pxm6KnlIDf5J_H-p98lfOVBpKYTdBMXKCjndIPtzzpgGOkQw4S71pZ1VxtFJV39yLU4QERpmESIKb_L_y1HxIE-IRPoOdoNm28ZBtpSsCCD0KTo1obIfSu5mdtKqQySNeqFkL33sexYspMZm0CUbKD0',
-    alt: 'First-fix rough plumbing in a high-end Banana Island Lagos villa under construction, with perfectly plumbed PPR water conduits secured by metal clamps inside chased brickwork, pressure gauges attached for hydro-testing.',
+    image: '/plumber-laying-pipes.jfif',
+    alt: 'Plumber laying pipes for new supply manifold — neat runs before close-up',
     projectId: 'subterranean-drainage-build',
   },
   {
     key: 'commercial-riser',
     title: 'Commercial Riser & Pressure Balancing',
-    description:
-      'Cured constant backflow and fluctuating morning water pressure across duplex flats by installing synchronized pressure balancing stations.',
+    description: 'Industrial overhead pipework in commercial plant — risers and pressure control laid for service access.',
     location: 'Abuja Central',
     year: '2023',
     category: 'commercial',
     categoryLabel: 'Multi-Unit Infrastructure',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAq6I-vTW2Y3EH7bQ81TJz_a212obCgNbsoKCkuuVBvLroYbYTkreJWHWvmKuxUrdzd2SUIiWKUIQmSPiugVIs5RhwXgQnzEWsL8TTQOINKv7LsTt9ZBJ2jm1-7RkN2NFUUuFAFlEgznvhO8cIIbdLLlNQFfEkJDPO6-wUSb-_4J2Odu2wUffZzxE6qf9CBHalLF5Xt2avgny_tgcQAJw1SaLQApRXBLkZk55N0HIa1afiVE5in_MZK',
-    alt: 'Organized vertical utility shaft in an Abuja multi-family duplex apartment block, with insulated green PPR main pipes, precision balancing valves, water meters, and pressure regulating valves labeled for each residential flat.',
+    image: '/industrial-plumbing.jfif',
+    alt: 'Industrial overhead pipework in commercial plant as installed',
     projectId: 'commercial-hydronic-risers',
   },
 ];
@@ -127,7 +120,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
+    if (false) { // reduced-motion disabled
       document.querySelectorAll<HTMLElement>('.reveal-entry').forEach((el) => el.classList.add('is-visible'));
       return;
     }
@@ -154,8 +147,8 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
           <div className="max-w-[640px] flex flex-col gap-3">
             <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Our Work</span>
             <h1
-              className="font-['Plus_Jakarta_Sans',sans-serif] text-[28px] md:text-[40px] leading-[1.1] tracking-[-0.04em] font-bold text-[#1d1b18] text-balance"
-              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              className="font-['Fraunces',serif] text-[28px] md:text-[40px] leading-[1.1] tracking-[-0.03em] font-semibold text-[#1d1b18] text-balance"
+              style={{ fontFamily: "'Fraunces', serif" }}
             >
               Real photos of tidy pipes, calm bathrooms, and clean water.
             </h1>
@@ -170,48 +163,196 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
         </div>
       </section>
 
-      {/* Sticky Filter Bar */}
-      <section className="sticky top-20 z-30 w-full bg-[#fff8f3]/90 backdrop-blur-md py-3 shadow-sm">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 flex items-center gap-2 overflow-x-auto no-scrollbar">
-          {FILTERS.map((f) => {
-            const isActive = active === f.key;
-            return (
-              <button
-                key={f.key}
-                onClick={() => setActive(f.key)}
-                aria-pressed={isActive}
-                className={`whitespace-nowrap px-5 py-3 rounded-full text-[14px] font-semibold tracking-[0.02em] border transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 ${
-                  isActive
-                    ? 'bg-[#a43716] text-white border-[#a43716] shadow-sm'
-                    : 'bg-[#f3ede7] text-[#1d1b18] border-transparent hover:bg-[#ede7e2]'
-                }`}
-              >
-                {f.label}
-              </button>
-            );
-          })}
+      {/* Sticky Filter Bar — scroll-snap + fade affordance, not just no-scrollbar */}
+      <section className="sticky top-20 z-30 w-full bg-[#fff8f3]/90 backdrop-blur-md py-3 shadow-sm overflow-hidden">
+        <div className="relative max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
+          {/* fade edges to signal scrollability */}
+          <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-[#fff8f3] to-transparent z-10 hidden sm:block" />
+          <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#fff8f3] to-transparent z-10" />
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-px-5 sm:scroll-px-6 md:scroll-px-12 pb-1 -mb-1">
+            {FILTERS.map((f) => {
+              const isActive = active === f.key;
+              return (
+                <button
+                  key={f.key}
+                  onClick={() => setActive(f.key)}
+                  aria-pressed={isActive}
+                  className={`whitespace-nowrap min-h-11 px-5 py-3 rounded-full text-[14px] font-semibold tracking-[0.02em] border transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 snap-start shrink-0 ${
+                    isActive
+                      ? 'bg-[#a43716] text-white border-[#a43716] shadow-sm'
+                      : 'bg-[#f3ede7] text-[#1d1b18] border-transparent hover:bg-[#ede7e2]'
+                  }`}
+                >
+                  {f.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Curated Grid */}
+      {/* Curated Editorial Grid — true masonry with featured, panorama, and varied heights */}
       <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-10 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((meta) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 auto-rows-auto">
+          {filtered.map((meta, idx) => {
             const project = PROJECTS.find((p) => p.id === meta.projectId) ?? PROJECTS[0];
-            return (
-              <article
-                key={meta.key}
-                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5"
-              >
-                <div className="relative w-full h-64 overflow-hidden bg-[#f3ede7]">
+            const isPanorama = meta.key === 'twin-tank-filter';
+            const isFeatured = idx === 0 && active === 'all' && !isPanorama;
+
+            if (isPanorama) {
+              return (
+                <article
+                  key={meta.key}
+                  className="group relative flex flex-col justify-end overflow-hidden rounded-2xl lg:col-span-12 h-[320px] md:h-[420px] shadow-sm hover:shadow-md transition-all duration-300 border border-black/5"
+                >
                   <img
                     src={meta.image}
                     alt={meta.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[12px] font-semibold tracking-[0.02em] text-[#1d1b18] shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" aria-hidden="true" />
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-[12px] font-semibold tracking-[0.02em] text-[#1d1b18] shadow-sm">
+                      {meta.location} · {meta.year}
+                    </span>
+                  </div>
+                  <div className="relative z-10 p-6 md:p-8 flex flex-col gap-2 max-w-2xl">
+                    <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white/80">
+                      {meta.categoryLabel} — Panorama
+                    </span>
+                    <h2 className="font-['Fraunces',serif] text-[22px] md:text-[26px] leading-7 font-semibold tracking-[-0.03em] text-white">
+                      {meta.title}
+                    </h2>
+                    <p className="text-[15px] leading-6 text-white/85 line-clamp-2">{meta.description}</p>
+                    <button
+                      onClick={() => onSelectProject(project)}
+                      className="mt-2 self-start inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#1d1b18] rounded-full text-[14px] font-semibold hover:bg-[#fff8f3] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
+                      aria-label={`View project ${meta.title}`}
+                    >
+                      View project
+                      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
+                        arrow_forward
+                      </span>
+                    </button>
+                  </div>
+                </article>
+              );
+            }
+
+            if (isFeatured) {
+              return (
+                <article
+                  key={meta.key}
+                  className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5 lg:col-span-12 lg:flex-row"
+                >
+                  <div className="relative w-full overflow-hidden bg-[#f3ede7] shrink-0 h-72 md:h-[420px] lg:w-[70%] lg:h-auto lg:min-h-[460px]">
+                    <img
+                      src={meta.image}
+                      alt={meta.alt}
+                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-[12px] font-semibold tracking-[0.02em] text-[#1d1b18] shadow-sm">
+                        {meta.location} · {meta.year}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-7 flex flex-col flex-1 gap-4 lg:w-[30%] lg:justify-center lg:p-8 bg-white">
+                    <div className="flex flex-col gap-2">
+                      <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">
+                        {meta.categoryLabel}
+                      </span>
+                      <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[#1d1b18] group-hover:text-[#a43716] transition-colors text-[24px] md:text-[28px] leading-8">
+                        {meta.title}
+                      </h2>
+                      <ReadMore text={meta.description} clampLines={2} textSizeClass="text-[16px]" className="mt-1" />
+                    </div>
+
+                    <div className="flex flex-col gap-3 pt-4 border-t border-black/5">
+                      <div className="flex gap-3 items-start">
+                        <img
+                          src="/close-up-of-basin-install.jfif"
+                          alt="Detail: basin mixer close-up as installed"
+                          className="w-20 h-20 rounded-xl object-cover shrink-0 border border-black/5"
+                          loading="lazy"
+                        />
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Detail shot</span>
+                          <p className="text-[13px] leading-5 text-[#58423c]">Mixer & watertight surround — pressure-tested before handover.</p>
+                        </div>
+                      </div>
+                      <blockquote className="relative pl-4 border-l-2 border-[#a43716]/20">
+                        <p className="font-['Fraunces',serif] text-[14px] leading-6 italic text-[#1d1b18]">
+                          “They left the bathroom cleaner than they found it. Water pressure is perfect.”
+                        </p>
+                        <cite className="mt-1 block text-[11px] font-semibold tracking-[0.08em] uppercase text-[#58423c] not-italic">
+                          — Site client, Abeokuta
+                        </cite>
+                      </blockquote>
+                    </div>
+
+                    <button
+                      onClick={() => onSelectProject(project)}
+                      className="mt-2 -mx-7 -mb-7 px-7 py-4 bg-[#f9f2ed]/80 border-t border-black/5 flex items-center justify-between text-left hover:bg-[#f3ede7] transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a43716] lg:mx-0 lg:mb-0 lg:mt-auto lg:rounded-xl lg:border lg:px-5 lg:py-3"
+                      aria-label={`View project ${meta.title}`}
+                    >
+                      <span className="text-[15px] font-semibold text-[#a43716]">View project</span>
+                      <span className="material-symbols-outlined text-[#a43716] group-hover:translate-x-0.5 transition-transform shrink-0" aria-hidden="true">
+                        arrow_forward
+                      </span>
+                    </button>
+                  </div>
+                </article>
+              );
+            }
+
+            let spanClass: string;
+            let imgHeight: string;
+            if (active === 'all') {
+              switch (meta.key) {
+                case 'vibration-free-pump':
+                  spanClass = 'lg:col-span-7';
+                  imgHeight = 'h-[280px] md:h-[360px]';
+                  break;
+                case 'kitchen-laundry-boost':
+                  spanClass = 'lg:col-span-5';
+                  imgHeight = 'h-64 md:h-[320px]';
+                  break;
+                case 'remote-new-build':
+                  spanClass = 'lg:col-span-5';
+                  imgHeight = 'h-64 md:h-[380px]';
+                  break;
+                case 'commercial-riser':
+                  spanClass = 'lg:col-span-7';
+                  imgHeight = 'h-60 md:h-[340px]';
+                  break;
+                default:
+                  spanClass = 'lg:col-span-6';
+                  imgHeight = 'h-64';
+                  break;
+              }
+            } else {
+              spanClass = 'lg:col-span-6';
+              imgHeight = idx % 2 === 0 ? 'h-64 md:h-[340px]' : 'h-64 md:h-[300px]';
+            }
+
+            return (
+              <article
+                key={meta.key}
+                className={`group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-black/5 ${spanClass}`}
+              >
+                <div className={`relative w-full overflow-hidden bg-[#f3ede7] shrink-0 ${imgHeight}`}>
+                  <img
+                    src={meta.image}
+                    alt={meta.alt}
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-[12px] font-semibold tracking-[0.02em] text-[#1d1b18] shadow-sm">
                       {meta.location} · {meta.year}
                     </span>
                   </div>
@@ -219,15 +360,11 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
 
                 <div className="p-7 flex flex-col flex-1 gap-3">
                   <div className="flex flex-col gap-2">
-                    <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">
-                      {meta.categoryLabel}
-                    </span>
-                    <h2
-                      className="font-['Plus_Jakarta_Sans',sans-serif] text-[20px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18] group-hover:text-[#a43716] transition-colors"
-                    >
+                    <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">{meta.categoryLabel}</span>
+                    <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[#1d1b18] group-hover:text-[#a43716] transition-colors text-[20px] leading-7">
                       {meta.title}
                     </h2>
-                    <p className="text-[16px] leading-7 text-[#58423c] mt-1">{meta.description}</p>
+                    <ReadMore text={meta.description} clampLines={2} textSizeClass="text-[16px]" className="mt-1" />
                   </div>
 
                   <button
@@ -236,10 +373,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                     aria-label={`View project ${meta.title}`}
                   >
                     <span className="text-[15px] font-semibold text-[#a43716]">View project</span>
-                    <span
-                      className="material-symbols-outlined text-[#a43716] group-hover:translate-x-0.5 transition-transform shrink-0"
-                      aria-hidden="true"
-                    >
+                    <span className="material-symbols-outlined text-[#a43716] group-hover:translate-x-0.5 transition-transform shrink-0" aria-hidden="true">
                       arrow_forward
                     </span>
                   </button>
@@ -258,7 +392,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
             <div className="lg:col-span-5 flex flex-col gap-3">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Our Clean Site Standard</span>
               <h2
-                className="font-['Plus_Jakarta_Sans',sans-serif] text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.04em] font-bold text-[#1d1b18]"
+                className="font-['Fraunces',serif] text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.03em] font-semibold text-[#1d1b18]"
               >
                 We treat your home like a showroom, not an active quarry.
               </h2>
@@ -346,50 +480,44 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials — typographic, trade-appropriate */}
       <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-20 reveal-entry">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div className="flex flex-col gap-1">
-            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Verified Client Notes</span>
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Client Referrals</span>
             <h2
-              className="font-['Plus_Jakarta_Sans',sans-serif] text-[24px] md:text-[30px] leading-[1.1] tracking-[-0.04em] font-bold text-[#1d1b18]"
+              className="font-['Fraunces',serif] text-[24px] md:text-[30px] leading-[1.1] tracking-[-0.03em] font-semibold text-[#1d1b18]"
             >
               Proof through their words, not just pictures.
             </h2>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-10">
           {TESTIMONIALS.map((t, idx) => {
-            const initials = t.author
-              .split(' ')
-              .map((w) => w[0])
-              .join('')
-              .slice(0, 2)
-              .toUpperCase();
-            const bg = idx === 0 ? 'bg-[#d4e7d8] text-[#3a4b40]' : idx === 1 ? 'bg-[#ffdbd1] text-[#3b0900]' : 'bg-[#ffdcbd] text-[#623f18]';
+            const headshots = ['/plumber-working-in-kitchen.jfif', '/plumber-laying-pipes.jfif', '/plumber-in-kitchen.jfif'];
+            const headshot = headshots[idx % headshots.length];
             return (
-              <div
-                key={t.id}
-                className="p-5 bg-white rounded-2xl shadow-sm border border-black/5 flex flex-col justify-between"
-              >
-                <div className="flex flex-col gap-3">
-                  <div className="flex text-[#a43716]" aria-label="5 out of 5 stars">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">
-                        star
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-[16px] leading-7 text-[#1d1b18]">“{t.quote}”</p>
-                </div>
-                <div className="mt-6 pt-4 border-t border-black/5 -mx-5 -mb-5 px-5 pb-4 bg-[#f9f2ed]/50 rounded-b-2xl flex items-center gap-3">
-                  <div className={`w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-bold shrink-0 ${bg}`}>{initials}</div>
+              <div key={t.id} className="flex flex-col gap-4">
+                <span className="font-['Fraunces',serif] text-[56px] leading-none text-[#a43716]/15 select-none" aria-hidden="true">
+                  “
+                </span>
+                <blockquote className="font-['Fraunces',serif] text-[18px] md:text-[19px] leading-8 text-[#1d1b18] -mt-6">
+                  “{t.quote}”
+                </blockquote>
+                <div className="flex items-center gap-3 pt-5 mt-1 border-t border-[#ede7e2]">
+                  <img
+                    src={headshot}
+                    alt=""
+                    className="w-10 h-10 rounded-full object-cover border border-black/5 shrink-0"
+                    loading="lazy"
+                  />
                   <div className="flex flex-col">
-                    <span className="text-[15px] font-semibold text-[#1d1b18]">{t.author}</span>
-                    <span className="text-[14px] text-[#58423c]">
+                    <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#1d1b18]">{t.author}</span>
+                    <span className="text-[13px] leading-5 text-[#58423c]">
                       {t.role} · {t.organization}
                     </span>
+                    <span className="text-[12px] leading-4 text-[#58423c]/70">{t.location}</span>
                   </div>
                 </div>
               </div>
@@ -403,7 +531,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
         <div className="bg-[#516257] text-white rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden shadow-md">
           <div className="flex flex-col gap-2 max-w-xl z-10">
             <h2
-              className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] md:text-[26px] leading-[1.15] font-bold tracking-[-0.04em] text-white"
+              className="font-['Fraunces',serif] text-[22px] md:text-[26px] leading-[1.15] font-semibold tracking-[-0.03em] text-white"
             >
               Have a pipe issue, wet patch, or new fitting to review?
             </h2>
@@ -433,7 +561,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
               Direct Call
             </a>
           </div>
-          <div className="absolute -right-16 -bottom-16 w-72 h-72 rounded-full bg-[#a43716]/10 pointer-events-none blur-2xl" aria-hidden="true" />
+          <div className="absolute -right-10 sm:-right-16 -bottom-10 sm:-bottom-16 w-48 sm:w-72 h-48 sm:h-72 max-w-[50vw] rounded-full bg-[#a43716]/10 pointer-events-none blur-2xl" aria-hidden="true" />
         </div>
       </section>
     </div>
