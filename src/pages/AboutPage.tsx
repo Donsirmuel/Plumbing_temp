@@ -51,7 +51,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
           />
           <div className="flex flex-col gap-6 pt-8 md:pt-12 max-w-4xl">
             <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#7b542b]">
-              <span className="w-6 h-px bg-[#dfc0b7]" aria-hidden="true"></span>Our Story · Since 2014
+              <span className="w-6 h-px bg-[#dfc0b7]" aria-hidden="true"></span>Our background since 2014
             </span>
             <h1
               className="font-['Fraunces',serif] text-[38px] leading-[46px] md:text-[56px] md:leading-[64px] tracking-[-0.03em] font-semibold text-[#1d1b18] text-balance"
@@ -60,10 +60,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               Plumbers who treat your home like our own.
             </h1>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#58423c] max-w-3xl">
-              Too many households know the same frustration; a late arrival, pipework hidden
-              without proper testing, and silence when a joint starts to crumble weeks later. OOH
-              JAY was built to be the steadier alternative. Operating nationwide, we bring careful
-              plumbing for new site builds and repairs.
+              Too many property owners know the familiar frustrations: late arrivals, pipes buried in concrete before anyone runs a pressure test, and unanswered phones when a joint begins to leak. We built OOH JAY to offer a steadier experience. Based on Abiola Way, Abeokuta with field teams across Lagos, we deliver methodical plumbing for new construction sites and everyday household repairs.
             </p>
           </div>
 
@@ -80,7 +77,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 <p
                   className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 font-semibold text-white max-w-lg"
                 >
-                  Precise copper &amp; multi-layer manifolds.
+                  Neat copper and multilayer manifolds.
                 </p>
               </div>
             </div>
@@ -89,20 +86,19 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 <h3
                   className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18]"
                 >
-                  Zero shortcuts. Certified hands only.
+                  Trained hands only. No shortcuts.
                 </h3>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c]">
-                  Every OOH JAY technician completes an accredited apprenticeship and
-                  carries verified trade certification. No casual labour!
+                  Every technician at OOH JAY has completed structured trade apprenticeship and carries verified qualifications. We never send unvetted casual labourers to your home.
                 </p>
               </div>
               <div className="p-6 bg-[#516257] text-white rounded-2xl shadow-md flex items-center justify-between">
                 <div>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-semibold leading-7 text-white mt-1">
-                    Abeokuta · Lagos &amp; Beyond
+                    Abeokuta, Lagos &amp; Beyond
                   </p>
                   <p className="text-[13px] font-medium tracking-[0.04em] text-white/80 mt-1">
-                    Serving Nigerians all over the country and Abroad.
+                    Serving families nationwide and property owners abroad.
                   </p>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center text-[#ffdbd1] shrink-0">
@@ -131,13 +127,12 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               </div>
               <div className="relative lg:-mt-20 lg:-mr-8 mx-3 sm:mx-4 p-6 bg-white rounded-2xl shadow-xl z-10 flex flex-col gap-2">
                 <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">
-                  The OOH JAY Standard
+                  The OOH JAY standard
                 </span>
                 <p
                   className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-7 font-semibold text-[#1d1b18]"
                 >
-                  “If a pipe will live behind tile for twenty years, we fit it with
-                  precision; aligned, tested, and documented.”
+                  “If a pipe will live behind tile for twenty years, we fit it with care: properly aligned, tested under working pressure, and documented before any tile is laid.”
                 </p>
                 <span className="text-[14px] font-semibold text-[#58423c] mt-1">
                   — Engr. Julius Adeleke, Master Plumbing Craftsman
@@ -150,7 +145,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 <h2
                   className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold text-[#1d1b18]"
                 >
-                  Trained on modern standards. Trusted across the globe.
+                  Trained to modern standards, trusted by families at home and abroad.
                 </h2>
               </div>
               <div className="flex flex-col gap-4 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c]">
@@ -208,12 +203,12 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div className="max-w-xl flex flex-col gap-2">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">
-                Our Standards
+                Our standards
               </span>
               <h2
                 className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold text-[#1d1b18]"
               >
-                The 4 things we promise always.
+                Four standards we keep on every job.
               </h2>
             </div>
           </div>
@@ -289,7 +284,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   </div>
                 </div>
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18] mb-2">
-                  Original parts and Proper fittings.
+                  Original parts and proper fittings.
                 </h3>
                 <ReadMore
                   text="We do not fit thin counterfeit fittings or brittle unrated PVC. Our stock is sourced from certified suppliers: built to hold pressure and resist aggressive borehole chemistry."
@@ -301,7 +296,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
                     verified
                   </span>{' '}
-                  Zero Counterfeit Material Policy
+                  Zero counterfeit material policy
                 </span>
               </div>
             </div>
@@ -343,15 +338,15 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">
-              The People Behind the Wrenches
+              The people doing the work
             </span>
             <h2
               className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold text-[#1d1b18] mt-1"
             >
-              Real artisans, no hired hands.
+              Experienced plumbers, never subcontracted to strangers.
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-2">
-              The senior technicians who enter your home equipped with years of experience.
+              The senior technicians who enter your home equipped with years of practical site experience.
             </p>
           </div>
           {/* Editorial artisans: founder featured larger, varied heights — breaks 3-equal — lighter-touch chrome */}
@@ -471,7 +466,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
           <div className="mt-10 p-6 md:p-8 bg-[#32302d] text-[#f6f0ea] rounded-2xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="max-w-xl">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffb5a0]">
-                Our Apprenticeship Academy
+                Apprenticeship training
               </span>
               <h3
                 className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] md:text-[26px] leading-8 md:leading-9 font-bold tracking-[-0.04em] text-white mt-1"

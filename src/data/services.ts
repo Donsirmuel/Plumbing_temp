@@ -7,20 +7,20 @@ export const SERVICES: ServiceItem[] = [
     title: 'Plumbing & Mechanical Systems',
     subtitle: 'Water Infrastructure, Pipework & Pressure Systems',
     shortDesc:
-      'Engineered water supply networks, brazed copper and PPR pipework, constant-pressure booster pumps, multi-stage water filtration, and silent drainage systems',
+      'Copper and PPR pipe networks, steady-pressure booster pumps, multi-stage water filtration, and quiet drainage lines.',
     detailedDesc:
-      'Water systems in Nigeria require specialized engineering to handle aggressive borehole chemistry, pressure fluctuations, and sediment. We design and install durable distribution networks using hard-drawn copper, multi-layer piping, and calibrated booster arrays to guarantee clean, steady water throughout your property — whether it is a new site or an occupied home.',
+      'Plumbing in Nigeria has to withstand harsh borehole water, heavy sediment, and sudden pressure spikes. We install distribution manifolds, which are central hubs that feed each tap and shower through its own dedicated line. That keeps water pressure balanced so a flushing toilet downstairs never starves an upstairs shower. We use hard-drawn copper and heavy-wall PPR piping on new builds and occupied properties.',
     image: '/pressure-pump-installs.jfif',
     highlights: [
-      'Hard-Drawn Brazed Copper & Multilayer PPR/PEX Supply Lines',
-      'Whole-Building Water Treatment, Softening & UV Purification',
-      'Constant-Pressure Variable Speed Booster Pump Systems',
-      'Silent Acoustic Soil, Waste & Stormwater Drainage Stacks',
+      'Hard-drawn brazed copper and multilayer PPR/PEX supply lines',
+      'Whole-house water filtration, softening, and sediment removal',
+      'Constant-pressure booster pumps calibrated to protect fittings',
+      'Acoustic drainage stacks that run quietly inside walls',
     ],
     technicalSpecs: [
-      { label: 'Tested', value: 'Before walls close' },
-      { label: 'Water Quality', value: 'Clean, treated delivery' },
-      { label: 'Delivery', value: 'Steady pressure' },
+      { label: 'Testing', value: 'Pressurized before walls close' },
+      { label: 'Water quality', value: 'Clean, filtered delivery' },
+      { label: 'Flow', value: 'Steady, balanced pressure' },
     ],
   },
   {
@@ -29,20 +29,20 @@ export const SERVICES: ServiceItem[] = [
     title: 'Sanitaryware & Luxury Wet Areas',
     subtitle: 'Bathrooms, Concealed Mixers & Waterproofing',
     shortDesc:
-      'Precision installation of concealed thermostatic valves, walk-in wet rooms, flush floor drains, freestanding tubs, and premium bathroom sanitaryware — new fits and watertight refits alike.',
+      'In-wall mixer valves, walk-in wet rooms, flush floor drains, freestanding baths, and sanitary fittings for new builds and renovations.',
     detailedDesc:
-      'We bring meticulous craftsmanship to bathrooms and wet rooms. By handling both the in-wall plumbing rough-in and the waterproofing membrane, we prevent leaks, ensure precise drainage slope, and guarantee flawless alignment with tiles, niches, and luxury brassware — for new builds and refurbishments nationwide from Abeokuta.',
+      'A great bathroom starts with what sits behind the tiles. We install the concealed pipework and the waterproof membrane together, so water cannot seep into the subfloor or walls. We set floor drains with laser-guided falls to prevent pooling, and align all pipe outlets squarely with tile layouts before any wall is closed.',
     image: '/bathroom-installation.jfif',
     highlights: [
-      'In-Wall Concealed Thermostatic Shower & Basin Rough-Ins',
-      'Multi-Layer Waterproofing Membrane & Tanking Systems',
-      'Zero-Threshold Walk-in Showers & Linear Trench Drains',
-      'Precision Ceramic, Travertine & Sanitaryware Fitting',
+      'Concealed thermostatic shower valves and in-wall cistern frames',
+      'Continuous waterproofing membranes on floors and wet walls',
+      'Walk-in showers with linear trench drains set to proper fall',
+      'Accurate sanitaryware alignment with wall and floor tiles',
     ],
     technicalSpecs: [
-      { label: 'Drainage Slope', value: 'Calibrated Laser Grade' },
-      { label: 'Waterproofing', value: 'Dual-Layer Sealed Tanking' },
-      { label: 'Acoustic Sound', value: 'Low-Decibel Silent Flow' },
+      { label: 'Drainage slope', value: 'Laser-checked gradient' },
+      { label: 'Waterproofing', value: 'Continuous sealed membrane' },
+      { label: 'Noise control', value: 'Cushioned pipe brackets' },
     ],
   },
   {
@@ -51,20 +51,20 @@ export const SERVICES: ServiceItem[] = [
     title: 'Plant Rooms, Diagnostics & Servicing',
     subtitle: 'Booster Stations, Filtration & Preventative Care',
     shortDesc:
-      'Central plant room installations, water pump servicing, leak diagnostics, pipework retrofitting, and ongoing facility support — new installs and servicing of existing systems.',
+      'Central plant rooms, booster pump maintenance, acoustic leak tracing, and line retrofits for homes and commercial buildings.',
     detailedDesc:
-      'We design, overhaul, and maintain central mechanical plant rooms for residential compounds and commercial properties. From variable-speed pumps and filtration tanks to non-destructive leak diagnostics, our technical teams keep building systems running smoothly',
+      'We install and maintain central plant rooms that supply compounds, estates, and offices. When a pump hums loudly, short-cycles, or loses prime, we trace the pressure switches and check valves. For hidden leaks behind finished walls, we use acoustic listening equipment to locate the break accurately without knocking down tiles unnecessarily.',
     image: '/leak-tester.jpg',
     highlights: [
-      'Central Water Booster Pump & Filtration Plant Overhauls',
-      'Non-Destructive Thermal & Acoustic Leak Detection',
-      'Water Storage Tank Cleaning, Chlorination & Balancing',
-      'Scheduled Preventative Maintenance Agreements',
+      'Booster pump maintenance and variable-speed drive setup',
+      'Acoustic and thermal leak tracing without destructive demolition',
+      'Storage tank descaling, disinfection, and float valve overhaul',
+      'Routine maintenance visits with written check sheets',
     ],
     technicalSpecs: [
-      { label: 'Testing Method', value: 'Non-Destructive Diagnostic' },
-      { label: 'Response Team', value: 'Rapid Response' },
-      { label: 'Workmanship', value: 'High-Grade Workmanship Assured' },
+      { label: 'Diagnostic method', value: 'Acoustic tracing and pressure gauges' },
+      { label: 'Response', value: 'Prompt dispatch from Abeokuta & Lagos' },
+      { label: 'Workmanship', value: 'Backed by written testing records' },
     ],
   },
   {

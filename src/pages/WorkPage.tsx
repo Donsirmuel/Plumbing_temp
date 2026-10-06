@@ -163,7 +163,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
         </div>
       </section>
 
-      {/* Sticky Filter Bar — scroll-snap + fade affordance, not just no-scrollbar */}
+      {/* Sticky Filter Bar with scroll-snap and fade affordance */}
       <section className="sticky top-20 z-30 w-full bg-[#fff8f3]/90 backdrop-blur-md py-3 shadow-sm overflow-hidden">
         <div className="relative max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           {/* fade edges to signal scrollability */}
@@ -484,11 +484,11 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
       <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-20 reveal-entry">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div className="flex flex-col gap-1">
-            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Client Referrals</span>
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Client referrals</span>
             <h2
               className="font-['Fraunces',serif] text-[24px] md:text-[30px] leading-[1.1] tracking-[-0.03em] font-semibold text-[#1d1b18]"
             >
-              Proof through their words, not just pictures.
+              What clients say about our work.
             </h2>
           </div>
         </div>

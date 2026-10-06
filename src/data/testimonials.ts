@@ -78,11 +78,11 @@ export const PROCESS_STEPS: ProcessStep[] = [
     title: 'Test & Finish',
     duration: 'Stage 04',
     description:
-      'We pressure-test the water lines, verify all pumps and fixtures, complete finishing works, and prepare the property for seamless handover with full workmanship backing.',
+      'We test the water lines under sustained hydrostatic pressure, commission every pump and fixture, and hand over the property with itemized testing documentation and our workmanship backing.',
     deliverables: [
-      'Rigorous hydrostatic pressure hold testing',
-      'Sanitaryware & pump commissioning',
-      'Laminated pipe conduit diagrams & handover documentation',
+      'Hydrostatic pressure hold testing before walls are closed',
+      'Sanitaryware and booster pump commissioning',
+      'As-built pipe layout diagrams and handover records',
     ],
     image: '/leak-tester.jpg',
     imageCaption: 'Leak detection tester and pressure gauge on site — verifying integrity before handover',

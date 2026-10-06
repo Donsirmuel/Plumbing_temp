@@ -242,7 +242,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         {/* Hero Content — centred, no right image, reduced blur */}
         <div className="relative z-10 max-w-[1200px] w-full mx-auto px-5 sm:px-6 md:px-12 pt-16 md:pt-28 pb-10 flex-1 flex items-center justify-center min-w-0 max-w-full overflow-x-clip">
           <div className="w-full max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
-            <span className="reveal-entry inline-block border-b-2 border-[#a43716] pb-1 text-[11px] tracking-[0.08em] uppercase text-[#f6f0ea]">Tidy, Honest Plumbing</span>
+            <span className="reveal-entry inline-block border-b-2 border-[#a43716] pb-1 text-[11px] tracking-[0.08em] uppercase text-[#f6f0ea]">Tidy, honest plumbing</span>
 
             <h1 className="font-['Fraunces',serif] text-[42px] md:text-[64px] leading-[1.08] tracking-tight text-[#f6f0ea] font-normal overflow-hidden text-center">
               <span className="hero-line block overflow-hidden"><span className="hero-line-inner block">Plumbing done right.</span></span>
@@ -250,7 +250,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
             </h1>
 
               <p className="hero-sub text-[15px] md:text-[18px] leading-7 text-[#e7e1dc] max-w-2xl text-center opacity-0">
-                From stubborn leaks and low water pressure to complete plumbing installations for homes and businesses.
+                From persistent leaks and weak water pressure to new pipe installations for homes and businesses.
               </p>
 
               <div className="reveal-entry pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
@@ -258,7 +258,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   onClick={onOpenQuote}
                   className="shine-button inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_12px_24px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_16px_32px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
                 >
-                  Book a Visit
+                  Book a visit
                   <span className="material-symbols-outlined text-[18px] ml-2 group-hover:translate-x-1 transition-transform">calendar_today</span>
                 </button>
                 <a
@@ -268,22 +268,22 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
                 >
                   <span className="material-symbols-outlined text-[18px] mr-2 text-[#ffdcbd] group-hover:scale-110 transition-transform">chat</span>
-                  WhatsApp Us Directly
+                  WhatsApp us directly
                 </a>
               </div>
 
               {/* Micro Trust Chips — centred */}
               <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[#e7e1dc] text-[13px]">
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">schedule</span> Arrive on agreed time
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">schedule</span> On time as agreed
                 </span>
                 <span className="text-white/30">•</span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">receipt_long</span> Upfront clear quotes
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">receipt_long</span> Clear written quotes
                 </span>
                 <span className="text-white/30">•</span>
                 <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> High-grade workmanship
+                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> Workmanship backing
                 </span>
               </div>
               </div>
@@ -292,7 +292,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 sm:px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto flex flex-wrap items-center justify-center gap-2 text-[#e7e1dc] text-[13px]">
             <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified_user</span>
-            <span>Every job photographed after clean-up — tested before handover</span>
+            <span>Every job photographed after clean-up and tested under pressure before handover</span>
           </div>
         </div>
       </section>
@@ -304,10 +304,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-entry min-w-0">
             <div className="min-w-0">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Everyday Craft</span>
+                <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Everyday plumbing</span>
                 <span className="w-8 h-px bg-[#dfc0b7]" />
               </div>
-              <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-none text-[#1d1b18]">What We Do</h2>
+              <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-none text-[#1d1b18]">What we do</h2>
             </div>
           </div>
 
@@ -412,8 +412,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 min-w-0 max-w-full">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-entry min-w-0">
             <div className="min-w-0">
-              <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Evidence of Job Well Done</span>
-              <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-none text-[#1d1b18] mt-1">Recent Jobs</h2>
+              <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Completed work</span>
+              <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-none text-[#1d1b18] mt-1">Recent jobs</h2>
             </div>
           </div>
 
@@ -441,7 +441,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                     Master Ensuite Refit
                   </h3>
                   <p className="text-[16px] leading-7 text-[#58423c]">
-                    Replaced aging galvanised lines with silent multi-layer copper, fitted a concealed dual mixer, and created a seamless wet-room drain.
+                    Replaced corroded galvanised pipes with multi-layer copper pipework, fitted an in-wall shower mixer, and laid a flush wet-room floor drain that flows freely.
                   </p>
                 </div>
                 <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
@@ -522,7 +522,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
       <section className="w-full max-w-full overflow-x-clip bg-[#fff8f3] py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 min-w-0 max-w-full">
           <div className="max-w-2xl mb-12 reveal-entry">
-            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">The Standard</span>
+            <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Our standard</span>
             <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-tight text-[#1d1b18] mt-1">Four simple rules we never compromise on.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 min-w-0 max-w-full">
@@ -575,10 +575,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               <div className="min-w-0">
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[30px] leading-none font-bold text-[#7b542b]">04</span>
                 <h3 className="text-[20px] font-bold text-[#1d1b18] mt-3 mb-2 leading-6" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  High-Grade Workmanship
+                  Workmanship you can trust
                 </h3>
                 <p className="text-[16px] leading-7 text-[#58423c]">
-                  Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our high-grade workmanship.
+                  Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our workmanship.
                 </p>
               </div>
               <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
@@ -594,7 +594,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 min-w-0 max-w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start lg:items-center min-w-0 max-w-full">
             <div className="lg:col-span-5 flex flex-col gap-4 reveal-entry min-w-0 max-w-full">
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffb5a0]">Immediate Assistance</span>
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffb5a0]">Need help now?</span>
               <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[36px] md:text-[48px] leading-[1.05] text-[#f6f0ea]">Got a leak, or planning something new?</h2>
               <p className="text-[16px] md:text-[18px] leading-7 text-[#e7e1dc]">
                 Send us a quick message with what you&apos;re dealing with. A qualified plumber will reply with straightforward advice and a transparent quote within the hour.
@@ -629,7 +629,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               <div className="mb-4 flex items-center justify-between gap-3 min-w-0">
                 <div className="min-w-0">
                   <h3 className="text-[18px] font-semibold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                    Request a Plumber Visit
+                    Request a plumber visit
                   </h3>
                   <p className="text-[15px] leading-6 text-[#58423c]">We never spam, and we provide clear estimates before visit.</p>
                 </div>
@@ -710,7 +710,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   type="submit"
                   className="w-full py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.04em] uppercase rounded-xl shadow-md hover:bg-[#c54f2c] transition-all active:scale-[0.99] flex items-center justify-center gap-2 shine-button cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
                 >
-                  Send Request & Get Clear Quote
+                  Send request for a quote
                   <span className="material-symbols-outlined text-[20px]">send</span>
                 </button>
               </form>

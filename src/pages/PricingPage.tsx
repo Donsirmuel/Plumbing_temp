@@ -86,9 +86,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               Clear prices, written quotes, and <span className="text-[#a43716]">workmanship backing</span>.
             </h1>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#58423c] max-w-2xl">
-              No hidden extras once the floor is open. Every job whether new site
-              installs or repairs starts with a written quotation that seperates
-              labour from materials, so you approve the cost before your property is touched.
+              No surprise bills once the floor is opened up. Every project, from a new building installation to an emergency leak repair, begins with a written quotation. We separate labour from materials, so you review and approve the exact figures before work starts.
             </p>
 
             {/* Trust Ribbon Pill Group */}
@@ -351,13 +349,12 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
         <div aria-hidden="true" className="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-white/5 blur-2xl pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#d4e7d8] mb-3 block">High-Grade Workmanship</span>
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#d4e7d8] mb-3 block">Workmanship you can depend on</span>
             <h2 className="font-['Fraunces',serif] text-[#f6f0ea] text-[28px] md:text-[36px] leading-[1.15] font-semibold tracking-[-0.03em] mb-4">
               Built to last and every joint checked.
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#e7e1dc]">
-              We don&apos;t tender warranty documents. We assure high-grade workmanship that is every joint, weld and seal checked
-              under load before handover, finished clean and documented on site.
+              We don&apos;t give you complex legal disclaimers. We provide straightforward workmanship backing: every joint, weld, and valve is tested under working pressure before handover, left clean, and documented with photos and video on site.
             </p>
           </div>
         </div>

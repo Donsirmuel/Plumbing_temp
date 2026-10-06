@@ -87,7 +87,7 @@ const SERVICES = [
   },
   {
     title: "Diaspora & Remote Property Care",
-    desc: "Building from abroad? We share honest video updates, verify materials and keep costs clear — for new builds and repairs while you are away. — for wherever you are",
+    desc: "Building or maintaining a home from abroad? We share timestamped video walk-throughs, verify genuine materials on site, and keep invoices clear so you stay in full control.",
     highlights: [
       "Time-stamped photo & video at every stage",
       "Pressure testing before walls are sealed",
@@ -104,38 +104,38 @@ const SERVICES = [
 const HOW_WE_WORK = [
   {
     n: 1,
-    title: "Tell Us the Issue",
-    desc: "Send a WhatsApp note, photo or short voice memo showing where the water or smell comes from.",
+    title: "Tell us the issue",
+    desc: "Send a WhatsApp message, photo, or short voice note showing what is leaking or where the smell comes from.",
     footIcon: "chat",
     foot: "Takes 2 minutes",
   },
   {
     n: 2,
-    title: "Fixed Price Quote",
-    desc: "We explain what needs doing and give a firm, upfront price. No work starts without your go-ahead.",
+    title: "Fixed-price quote upfront",
+    desc: "We explain what needs doing and provide a firm, upfront quote. No work starts without your agreement.",
     footIcon: "receipt_long",
     foot: "No surprise invoices",
   },
   {
     n: 3,
-    title: "Floor & Shoe Covers",
-    desc: "Technicians lay protective sheets and wear shoe covers before carrying tools across your floors.",
+    title: "Floor and shoe covers",
+    desc: "Our technicians lay protective floor coverings and wear clean shoe guards before bringing tools inside.",
     footIcon: "do_not_step",
     foot: "Spotless cleanliness",
   },
   {
     n: 4,
-    title: "Pressure Testing",
-    desc: "Every joint is checked under load — not just a quick tap turn.",
+    title: "Pressure testing before sealing",
+    desc: "Every joint is tested under sustained working pressure before any wall or floor is tiled.",
     footIcon: "published_with_changes",
     foot: "Tested before close",
   },
   {
     n: 5,
-    title: "High-Grade Workmanship",
-    desc: "Every joint checked under load and finished clean — we stand behind our high-grade workmanship, no shortcuts.",
+    title: "Workmanship backing",
+    desc: "Every joint, weld, and valve is checked under load and left clean. If our work ever fails, we come back and fix it.",
     footIcon: "verified_user",
-    foot: "High-grade workmanship assured",
+    foot: "Workmanship assured",
   },
 ] as const;
 

@@ -105,7 +105,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
             <div className="bg-[#a43716] text-white rounded-2xl shadow-lg overflow-hidden flex flex-col lg:flex-row">
               <div className="p-8 md:p-10 flex-1 flex flex-col gap-4 justify-center">
                 <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[#ffdbd1]">
-                  <span className="w-6 h-px bg-white/35" aria-hidden="true"></span>Active Emergency Desk · Abiola Way
+                  <span className="w-6 h-px bg-white/35" aria-hidden="true"></span>Emergency desk · Abiola Way
                 </span>
                 <h2 className="font-['Fraunces',serif] text-[26px] md:text-[32px] leading-[1.1] font-semibold tracking-[-0.03em] text-white">
                   Need to stop water fast?
@@ -152,7 +152,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                 </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
-                    WhatsApp Priority Line
+                    WhatsApp priority line
                   </h3>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
                     Send a photo or short video: leaking joint, weak pressure, heater noise. A senior plumber replies with honest analysis and free quotation guidance — no photo-review fee.
@@ -175,7 +175,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                 </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
-                    Diaspora Property Desk
+                    Diaspora property desk
                   </h3>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
                     Managing a home from the UK, US, Canada or Europe. We do video checks, clear parts lists and tidy photo handovers for new and existing work — WhatsApp updates on your hours.
@@ -202,7 +202,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                   </div>
                   <div>
                     <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
-                      Physical Location
+                      Physical location
                     </h3>
                     <p className="text-[15px] leading-6 text-[#58423c]">Abiola Way, Abeokuta, Ogun State with nationwide reach</p>
                   </div>
@@ -248,9 +248,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
           {/* Right Column: Direct Intake Form — lighter design language, underline inputs */}
           <div className="lg:col-span-5 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-[#dfc0b7]/15 flex flex-col gap-6 reveal-entry">
             <div className="flex flex-col gap-1">
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Direct Intake</span>
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Direct inquiry</span>
               <h2 className="font-['Fraunces',serif] text-[22px] font-semibold tracking-[-0.03em] text-[#1d1b18]">
-                Request a Clear Quote
+                Request a clear quote
               </h2>
               <p className="text-[15px] leading-6 text-[#58423c]">
                 Fill this in 45 seconds. We reply by WhatsApp or phone — plain quotation, no obligation. New builds and repairs welcome.
