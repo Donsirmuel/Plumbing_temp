@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SERVICES } from '../data/services';
@@ -139,7 +139,7 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ onOpen
               <div className="space-y-2">
                 {currentService.highlights.map((h, hIdx) => (
                   <div key={hIdx} className="flex items-start gap-2.5 text-sm text-[#2D3A4A]">
-                    <Check className="w-4 h-4 text-[#1A5CFF] shrink-0 mt-0.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1A5CFF] shrink-0 mt-2" />
                     <span>{h}</span>
                   </div>
                 ))}

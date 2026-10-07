@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { ShieldCheck, Gauge, Wrench, Droplets } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -52,8 +51,7 @@ export const WhyOohJay: React.FC = () => {
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <div className="bg-[#F6F5F2] p-7 rounded-2xl border border-[#0F1E2D]/5 flex flex-col gap-4 card-hover">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">01 · Precision</span>
-              <Gauge className="w-5 h-5 text-[#0F1E2D]/70" />
+              <span className="text-xs font-semibold tracking-[0.12em] text-[#a43716] uppercase">01 · Precision</span>
             </div>
             <h3 className="font-sans text-lg font-bold tracking-[-0.02em] text-[#0F1E2D]">Pressure-tested work</h3>
             <p className="text-sm text-[#5B6B7A] leading-6">
@@ -63,10 +61,9 @@ export const WhyOohJay: React.FC = () => {
 
           <div className="bg-[#F6F5F2] p-7 rounded-2xl border border-[#0F1E2D]/5 flex flex-col gap-4 card-hover">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">02 · Reliability</span>
-              <Droplets className="w-5 h-5 text-[#0F1E2D]/70" />
+              <span className="text-xs font-semibold tracking-[0.12em] text-[#a43716] uppercase">02 · Reliability</span>
             </div>
-            <h3 className="font-sans text-lg font-bold tracking-[-0.02em] text-[#0F1E2D]">Steady pressure & flow</h3>
+            <h3 className="font-sans text-lg font-bold tracking-[-0.02em] text-[#0F1E2D]">Steady pressure &amp; flow</h3>
             <p className="text-sm text-[#5B6B7A] leading-6">
               We balance pipe sizing and pumps so pressure stays consistent at every outlet, with quiet drainage.
             </p>
@@ -74,8 +71,7 @@ export const WhyOohJay: React.FC = () => {
 
           <div className="bg-[#F6F5F2] p-7 rounded-2xl border border-[#0F1E2D]/5 flex flex-col gap-4 card-hover">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">03 · Materials</span>
-              <Wrench className="w-5 h-5 text-[#0F1E2D]/70" />
+              <span className="text-xs font-semibold tracking-[0.12em] text-[#a43716] uppercase">03 · Materials</span>
             </div>
             <h3 className="font-sans text-lg font-bold tracking-[-0.02em] text-[#0F1E2D]">Built to last</h3>
             <p className="text-sm text-[#5B6B7A] leading-6">
@@ -85,8 +81,7 @@ export const WhyOohJay: React.FC = () => {
 
           <div className="bg-[#F6F5F2] p-7 rounded-2xl border border-[#0F1E2D]/5 flex flex-col gap-4 card-hover">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-[0.12em] text-[#1A5CFF] uppercase">04 · Coordination</span>
-              <ShieldCheck className="w-5 h-5 text-[#0F1E2D]/70" />
+              <span className="text-xs font-semibold tracking-[0.12em] text-[#a43716] uppercase">04 · Coordination</span>
             </div>
             <h3 className="font-sans text-lg font-bold tracking-[-0.02em] text-[#0F1E2D]">One coordinated team</h3>
             <p className="text-sm text-[#5B6B7A] leading-6">

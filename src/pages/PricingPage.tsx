@@ -89,25 +89,19 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               No surprise bills once the floor is opened up. Every project, from a new building installation to an emergency leak repair, begins with a written quotation. We separate labour from materials, so you review and approve the exact figures before work starts.
             </p>
 
-            {/* Trust Ribbon Pill Group */}
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[14px] font-semibold text-[#1d1b18]">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] shadow-sm border border-[#dfc0b7]/20">
-                <span className="material-symbols-outlined text-[18px] text-[#a43716]" aria-hidden="true">
-                  verified
-                </span>
-                <span>Years active: 2014–present</span>
+            {/* Trust Ribbon */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-[13px] font-semibold text-[#1d1b18]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a43716]" aria-hidden="true" />
+                <span>Working across Nigeria since 2014</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] shadow-sm border border-[#dfc0b7]/20">
-                <span className="material-symbols-outlined text-[18px] text-[#516257]" aria-hidden="true">
-                  receipt_long
-                </span>
-                <span>Precise pricing</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
+                <span>Itemised quotes before work starts</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] shadow-sm border border-[#dfc0b7]/20">
-                <span className="material-symbols-outlined text-[18px] text-[#a43716]" aria-hidden="true">
-                  shield
-                </span>
-                <span>Workmanship backing</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a43716]" aria-hidden="true" />
+                <span>Workmanship backed on every joint</span>
               </div>
             </div>
           </div>
@@ -115,8 +109,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
       </div>
 
       {/* Pricing Cards */}
-      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-20 md:py-28 w-full">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal-entry">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-24 w-full">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-entry">
           <div className="max-w-xl">
             <h2
               className="font-['Fraunces',serif] text-[#1d1b18] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold"
@@ -124,221 +118,191 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               How we price our work
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-3">
-              Every job comes with an itemised quotation. Labour is listed separately from fittings and
-              sanitary ware, so you keep full control of spend — buy yourself or have us procure at store
-              price. For new builds and existing repairs alike.
+              Every job comes with an itemised quotation. Labour is listed separately from pipes, valves, and
+              sanitary fittings, so you know exactly where every naira goes. You can purchase materials yourself
+              from our schedule, or have us supply them with original store receipts attached.
             </p>
           </div>
           <div className="flex items-center gap-2 p-1.5 bg-[#f3ede7] rounded-full text-[13px] font-semibold tracking-[0.04em] self-start md:self-auto border border-[#dfc0b7]/20">
-            <span className="px-3.5 py-1.5 rounded-full bg-white text-[#1d1b18] shadow-sm">Standard Scope</span>
+            <span className="px-3.5 py-1.5 rounded-full bg-white text-[#1d1b18] shadow-sm">Standard scope</span>
             <span className="px-3 py-1.5 text-[#58423c]">Abeokuta · Lagos · Nationwide</span>
           </div>
         </div>
 
-        {/* Editorial pricing: middle card lifted/featured, outer cards quieter — breaks 3-equal */}
+        {/* Editorial pricing: middle card lifted/featured, outer cards quieter */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start reveal-entry">
           {/* Tier 1 — compact, muted */}
           <div className="lg:col-span-4 lg:mt-6 flex flex-col justify-between bg-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group border border-[#dfc0b7]/20">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#a43716] mb-6">
-                <span className="material-symbols-outlined text-[24px]" aria-hidden="true">
-                  water_drop
-                </span>
-              </div>
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[22px] md:text-[24px] leading-9 font-bold tracking-[-0.04em] mb-3">
-                Everyday Fixes & Leaks
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716] block mb-2">
+                Repairs
+              </span>
+              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[22px] md:text-[24px] leading-8 font-bold tracking-[-0.04em] mb-3">
+                Everyday fixes and leaks
               </h3>
               <ReadMore
-                text="For the daily nuisances that wear a home down — dripping kitchen taps, hissing cisterns that never fill, slow floor drains and burst flexi-hoses under the basin. New and existing homes."
+                text="For the daily annoyances that waste water and damage ceilings: dripping taps, toilet cisterns that run non-stop, slow floor traps, and weeping flexible hoses under kitchen sinks."
                 clampLines={2}
                 className="mb-6"
               />
               <div className="py-4 my-6 bg-[#f9f2ed] rounded-xl px-5 flex flex-col border border-[#dfc0b7]/15">
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#58423c]">
-                  Typical Billing Framework
+                  How we bill
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] md:text-[18px] font-semibold leading-7 text-[#1d1b18] mt-1">
-                  Fixed Diagnostic & Service Fee
+                  Fixed diagnostic and service fee
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] text-[#a43716] font-medium mt-0.5">
-                  Parts billed at verified market cost
+                  Parts invoiced at verified market cost
                 </span>
               </div>
-              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mb-8">
+              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Leak tracing with visual and acoustic tools — no needless tile cuts</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Pinpoint leak tracing with pressure gauges and listening gear before cutting walls</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Washers, PTFE, O-rings and sealants included in labour</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Standard washers, thread tape, and O-rings included in labour</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Original shop receipts shown for every fitting supplied</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Original merchant slips provided for any replacement brassware or valves</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Floors wiped dry and left tidy before we leave</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Floors dried and workspace cleaned before the technician leaves</span>
                 </li>
               </ul>
             </div>
             <button
               type="button"
-              onClick={() => handleBook("Everyday Fixes & Leaks")}
+              onClick={() => handleBook("Everyday fixes and leaks")}
               className="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-full bg-[#f3ede7] text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#ede7e2] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 cursor-pointer"
             >
-              Book Rapid Repair
+              Book a repair visit
             </button>
           </div>
 
-          {/* Tier 2 — FEATURED: lifted, scaled, warm border + only card with photo thumbnail */}
+          {/* Tier 2 — FEATURED: lifted, scaled, warm border */}
           <div className="lg:col-span-4 flex flex-col justify-between bg-[#fffaf7] rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 relative border-2 border-[#a43716]/15 lg:-mt-4 lg:scale-[1.04] lg:shadow-[0_24px_48px_rgba(164,55,22,0.14)]">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#a43716] text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-[0.08em] uppercase shadow-md whitespace-nowrap">
-              Most requested · Pump specialists
+              Most requested · Pressure specialists
             </div>
             <div className="pt-3">
-              <div className="w-12 h-12 rounded-xl bg-[#a43716] flex items-center justify-center text-white mb-5 shadow-sm">
-                <span className="material-symbols-outlined text-[24px]" aria-hidden="true">
-                  speed
-                </span>
-              </div>
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[24px] md:text-[26px] leading-9 font-bold tracking-[-0.04em] mb-3">
-                Pump, Tank & Pressure
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716] block mb-2">
+                Water supply
+              </span>
+              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[24px] md:text-[26px] leading-8 font-bold tracking-[-0.04em] mb-3">
+                Pump, tank and water pressure
               </h3>
               <ReadMore
-                text="Stable showers on every floor — booster and borehole pumps, overhead tanks, pressure balancing and whole-house filtration without the hum or airlocks. For new sites and retrofits."
+                text="Steady water pressure on every floor. We set up booster and submersible borehole pumps, overhead tanks, automatic float switches, and whole-house filtration so taps flow strong without pump rattle."
                 clampLines={2}
                 className="mb-5"
               />
-              {/* Only featured card carries a real photo thumbnail — earns emphasis */}
+              {/* Photo thumbnail */}
               <div className="rounded-xl overflow-hidden mb-5 border border-[#dfc0b7]/20 bg-[#f3ede7]">
                 <img
                   src="/pressure-pump-installs.jfif"
-                  alt="Booster pump as installed — tidy manifold with anti-vibration mounts, Abeokuta"
+                  alt="Booster pump installation with anti-vibration rubber mounts"
                   className="w-full h-36 object-cover"
                   loading="lazy"
                 />
-                <div className="px-3 py-2 flex items-center justify-between bg-white">
-                  <span className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#7b542b]">As fitted — Lagos</span>
-                  <span className="text-[11px] font-semibold text-[#a43716]">Silent mount</span>
+                <div className="px-3 py-2 flex items-center justify-between bg-white text-[11px] font-semibold">
+                  <span className="tracking-[0.06em] uppercase text-[#7b542b]">Installed setup</span>
+                  <span className="text-[#a43716]">Anti-vibration mount</span>
                 </div>
               </div>
               <div className="py-4 mb-6 bg-[#f3ede7] rounded-xl px-5 flex flex-col border border-[#a43716]/10">
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#58423c]">
-                  Typical Billing Framework
+                  How we bill
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] md:text-[18px] font-semibold leading-7 text-[#1d1b18] mt-1">
-                  Fixed-Scope Site Proposal
+                  Fixed-scope site proposal
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] text-[#a43716] font-medium mt-0.5">
-                  Sized by horsepower & pipe diameters
+                  Sized by pump power and pipe diameter
                 </span>
               </div>
-              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mb-8">
+              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Pressure calibrated to protect heaters and extend pump life</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Pressure switches calibrated to protect water heaters and avoid burst pipe joints</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Rubber anti-vibration mounts — no wall buzz when taps shut</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Heavy rubber vibration pads so pump motors do not vibrate through house walls</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Bypass loop so mains switch causes no interruption</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Full bypass pipe loop so you still get gravity water during maintenance</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Dedicated isolator and earthing check on every pump</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Dedicated electrical isolator switch and safety earthing check on every motor</span>
                 </li>
               </ul>
             </div>
             <button
               type="button"
-              onClick={() => handleBook("Pump, Tank & Pressure")}
+              onClick={() => handleBook("Pump, tank and water pressure")}
               className="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-full bg-[#a43716] text-white font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#c54f2c] shadow-md active:scale-95 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 cursor-pointer"
             >
-              Request Site Assessment
+              Request a site assessment
             </button>
           </div>
 
           {/* Tier 3 — taller editorial, calm */}
           <div className="lg:col-span-4 lg:mt-6 flex flex-col justify-between bg-white rounded-2xl p-7 md:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group border border-[#dfc0b7]/20">
             <div>
-              <div className="w-12 h-12 rounded-xl bg-[#f3ede7] flex items-center justify-center text-[#516257] mb-6 group-hover:bg-[#516257] group-hover:text-white transition-colors duration-300">
-                <span className="material-symbols-outlined text-[24px]" aria-hidden="true">
-                  architecture
-                </span>
-              </div>
-              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[22px] md:text-[24px] leading-9 font-bold tracking-[-0.04em] mb-3">
-                Bathrooms & Repiping
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#516257] block mb-2">
+                Installations
+              </span>
+              <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[#1d1b18] text-[22px] md:text-[24px] leading-8 font-bold tracking-[-0.04em] mb-3">
+                Bathrooms and repiping
               </h3>
               <ReadMore
-                text="New bathrooms and full re-pipes done once and done well — concealed cisterns, thermostatic mixers, and whole-house PPR/PEX runs with laser-set slopes. For new builds and renovations."
+                text="New bathroom fit-outs and full pipe replacements done once and done properly. We install concealed wall-hung frames, thermostatic shower valves, and multilayer PPR lines sloped to prevent blockages."
                 clampLines={2}
                 className="mb-6"
               />
               <div className="py-4 my-6 bg-[#f9f2ed] rounded-xl px-5 flex flex-col border border-[#dfc0b7]/15">
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#58423c]">
-                  Typical Billing Framework
+                  How we bill
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] md:text-[18px] font-semibold leading-7 text-[#1d1b18] mt-1">
-                  Itemised Room-by-Room Bill
+                  Itemised room-by-room quote
                 </span>
                 <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] text-[#516257] font-medium mt-0.5">
-                  Staged payment milestones
+                  Milestone payments linked to completed stages
                 </span>
               </div>
-              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mb-8">
+              <ul className="space-y-3 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mb-8">
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#516257] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Pressure hold on every concealed run before tiling</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#516257] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Sustained hydrostatic pressure test on every concealed pipe run before any tiler lays mortar</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#516257] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>Laser-aligned outlets for clean tile symmetry</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#516257] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Laser-leveled pipe outlets so faucets and shower mixers align with tile grout lines</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#516257] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>As-built plumbing diagram handed over at handover</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#516257] shrink-0 mt-2" aria-hidden="true" />
+                  <span>As-built plumbing sketch and pipe route photos handed over when the job finishes</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <span className="material-symbols-outlined text-[18px] text-[#516257] shrink-0 mt-0.5" aria-hidden="true">
-                    check_circle
-                  </span>
-                  <span>High-grade workmanship assured</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#516257] shrink-0 mt-2" aria-hidden="true" />
+                  <span>Full workmanship backing with clear point of contact if you ever need adjustments</span>
                 </li>
               </ul>
             </div>
             <button
               type="button"
-              onClick={() => handleBook("Bathrooms & Repiping")}
+              onClick={() => handleBook("Bathrooms and repiping")}
               className="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-full bg-[#f3ede7] text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#ede7e2] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 cursor-pointer"
             >
-              Discuss Architectural Project
+              Discuss an installation
             </button>
           </div>
         </div>
@@ -376,39 +340,37 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#f3ede7]">
             {/* 1 */}
             <div className="p-6 md:p-8 flex gap-4">
-              <span className="shrink-0 w-9 h-9 rounded-full bg-[#fff1ee] border border-[#ffc9b8] flex items-center justify-center text-[#a43716] relative" aria-hidden="true">
-                <span className="material-symbols-outlined text-[18px]">payments</span>
-                <span className="absolute w-5 h-px bg-[#a43716] rotate-[-22deg] opacity-70" />
+              <span className="shrink-0 w-8 h-8 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/40 flex items-center justify-center text-[#a43716] text-[12px] font-bold" aria-hidden="true">
+                01
               </span>
               <div className="min-w-0">
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold leading-6 tracking-[-0.03em] text-[#1d1b18]">
-                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Payments for photo reviews</span>
+                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Charging fees just to view your photos</span>
                 </h3>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-2">
-                  Others charge just to look at your photos. Send clear pictures or quick video on WhatsApp — we give an honest read, likely cause and written quotation range — at no charge.
+                  Some trades charge an inspection fee before they even look at your problem. Send us clear pictures or a short WhatsApp video clip. We will tell you the probable cause and give you a written price range at no charge.
                 </p>
                 <p className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] uppercase text-[#516257]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
-                  Free photo & video quotations
+                  Free photo and video assessments
                 </p>
               </div>
             </div>
             {/* 2 */}
             <div className="p-6 md:p-8 flex gap-4">
-              <span className="shrink-0 w-9 h-9 rounded-full bg-[#fff1ee] border border-[#ffc9b8] flex items-center justify-center text-[#a43716] relative" aria-hidden="true">
-                <span className="material-symbols-outlined text-[18px]">plumbing</span>
-                <span className="absolute w-5 h-px bg-[#a43716] rotate-[-22deg] opacity-70" />
+              <span className="shrink-0 w-8 h-8 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/40 flex items-center justify-center text-[#a43716] text-[12px] font-bold" aria-hidden="true">
+                02
               </span>
               <div className="min-w-0">
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold leading-6 tracking-[-0.03em] text-[#1d1b18]">
                   <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Cheap imitation valves or thin PVC</span>
                 </h3>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-2">
-                  Light brass and thin PVC split under pump pressure. We source heavy-gauge, pressure-rated fittings from accredited distributors — batch and receipts shown.
+                  Lightweight brass and thin unrated PVC burst when booster pumps kick in. We buy only pressure-rated fittings from reputable distributors, and we show you the merchant slips.
                 </p>
                 <p className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] uppercase text-[#516257]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
-                  Only authentic, pressure-tested systems
+                  Only authentic, pressure-tested fittings
                 </p>
               </div>
             </div>
@@ -416,39 +378,37 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-[#f3ede7]">
             {/* 3 */}
             <div className="p-6 md:p-8 flex gap-4">
-              <span className="shrink-0 w-9 h-9 rounded-full bg-[#fff1ee] border border-[#ffc9b8] flex items-center justify-center text-[#a43716] relative" aria-hidden="true">
-                <span className="material-symbols-outlined text-[18px]">handyman</span>
-                <span className="absolute w-5 h-px bg-[#a43716] rotate-[-22deg] opacity-70" />
+              <span className="shrink-0 w-8 h-8 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/40 flex items-center justify-center text-[#a43716] text-[12px] font-bold" aria-hidden="true">
+                03
               </span>
               <div className="min-w-0">
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold leading-6 tracking-[-0.03em] text-[#1d1b18]">
-                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Loose pipes that hammer in walls</span>
+                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Loose pipe runs that shudder inside walls</span>
                 </h3>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-2">
-                  Water hammer cracks tiles and wakes the house. Every run is clipped with rubber-cushioned brackets at measured intervals — walls stay silent.
+                  When a tap closes suddenly, the shock wave shakes unsecured pipes against masonry. We anchor every line with rubber-lined clips at regular intervals so your walls stay quiet.
                 </p>
                 <p className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] uppercase text-[#516257]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
-                  Acoustically clamped conduits
+                  Rubber-cushioned pipe brackets
                 </p>
               </div>
             </div>
             {/* 4 */}
             <div className="p-6 md:p-8 flex gap-4">
-              <span className="shrink-0 w-9 h-9 rounded-full bg-[#fff1ee] border border-[#ffc9b8] flex items-center justify-center text-[#a43716] relative" aria-hidden="true">
-                <span className="material-symbols-outlined text-[18px]">receipt</span>
-                <span className="absolute w-5 h-px bg-[#a43716] rotate-[-22deg] opacity-70" />
+              <span className="shrink-0 w-8 h-8 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/40 flex items-center justify-center text-[#a43716] text-[12px] font-bold" aria-hidden="true">
+                04
               </span>
               <div className="min-w-0">
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold leading-6 tracking-[-0.03em] text-[#1d1b18]">
-                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Secret padding or duplicate slips</span>
+                  <span className="line-through decoration-[#a43716] decoration-2 underline-offset-2">Lump-sum bills with hidden margins</span>
                 </h3>
                 <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-2">
-                  Labour and materials never hide in one lump sum. Buy from our spec yourself, or let us buy and bring original merchant slips — store price, itemised.
+                  We never roll materials and labour into one unexplained number. You get an itemised materials list and can buy everything yourself, or have us collect them at actual store prices.
                 </p>
                 <p className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] uppercase text-[#516257]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#516257]" aria-hidden="true" />
-                  Store price, itemised receipt
+                  Original store receipts provided
                 </p>
               </div>
             </div>
@@ -493,10 +453,10 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
                       {faq.q}
                     </h4>
                     <div
-                      className={`w-8 h-8 rounded-full bg-[#f3ede7] flex items-center justify-center shrink-0 text-[#1d1b18] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                      className={`w-8 h-8 rounded-full bg-[#f3ede7] flex items-center justify-center shrink-0 text-[#1d1b18] text-sm font-semibold transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
                       aria-hidden="true"
                     >
-                      <span className="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+                      +
                     </div>
                   </div>
                   <div
@@ -523,8 +483,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               Got a leak or project question right now?
             </h3>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#ffdbd1] mt-2">
-              Send photos of the issue to our plumber on WhatsApp for a clear, itemised quotation — or
-              call direct from Abeokuta, Lagos and nationwide, for new builds and repairs.
+              Send photos of the issue to our plumber on WhatsApp for a clear quotation, or call direct from Abeokuta, Lagos, and nationwide.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
@@ -532,21 +491,15 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               href={`https://wa.me/2349031386928?text=${encodeURIComponent("Hello OOH JAY, I need a quotation for a plumbing job — here are photos of the issue.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#f9f2ed] transition-all shadow-md active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.02em] hover:bg-[#f9f2ed] transition-all shadow-md active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
             >
-              <span className="material-symbols-outlined text-[20px] text-[#516257]" aria-hidden="true">
-                chat
-              </span>
-              <span>WhatsApp Photos</span>
+              <span>Send photos on WhatsApp</span>
             </a>
             <a
               href="tel:+2349031386928"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-[#32302d] text-white font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#1d1b18] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#32302d] text-white font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.02em] hover:bg-[#1d1b18] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
             >
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">
-                call
-              </span>
-              <span>+234 903 138 6928</span>
+              <span>Call 0903 138 6928</span>
             </a>
           </div>
         </div>

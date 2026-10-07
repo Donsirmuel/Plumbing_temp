@@ -103,15 +103,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               onClick={onOpenQuote}
               className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full hover:bg-[#c54f2c] active:scale-[0.98] transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 shadow-sm whitespace-nowrap shrink-0 max-w-full"
             >
-              Book a Plumber
+              Book a plumber
             </button>
-            {/* Icon-only fallback at 390–639 to avoid truncation — hidden at <360 and >=640 */}
+            {/* Compact button on smaller screens */}
             <button
               onClick={onOpenQuote}
-              aria-label="Book a Plumber"
-              className="inline-flex sm:hidden items-center justify-center w-10 h-10 rounded-full bg-[#a43716] text-white hover:bg-[#c54f2c] active:scale-[0.98] transition-colors shrink-0 max-[360px]:hidden"
+              aria-label="Book a plumber"
+              className="inline-flex sm:hidden items-center justify-center px-3.5 py-1.5 rounded-full bg-[#a43716] text-white text-[12px] font-semibold hover:bg-[#c54f2c] active:scale-[0.98] transition-colors shrink-0 max-[360px]:hidden"
             >
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">plumbing</span>
+              Book
             </button>
 
             <button
@@ -163,13 +163,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
                   }}
                   className="w-full rounded-full py-3.5 bg-[#a43716] text-white text-[14px] font-semibold hover:bg-[#c54f2c] transition-colors cursor-pointer"
                 >
-                  Book a Plumber
+                  Book a plumber
                 </button>
                 <a
                   href="tel:+2349031386928"
                   className="w-full rounded-full py-3.5 border border-[#dfc0b7]/40 text-[#1d1b18] text-[13px] font-medium text-center hover:border-[#dfc0b7] hover:bg-white transition-colors"
                 >
-                  Emergency? Call +234 903 138 6928
+                  Urgent leak? Call +234 903 138 6928
                 </a>
                 <a
                   href="https://wa.me/2349031386928"

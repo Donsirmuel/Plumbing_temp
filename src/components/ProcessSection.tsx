@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PROCESS_STEPS } from '../data/testimonials';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -140,7 +140,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenQuote }) =
             <div className="space-y-2">
               {activeStep.deliverables.map((del, dIdx) => (
                 <div key={dIdx} className="flex items-start gap-2.5 text-sm text-white/85">
-                  <Check className="w-4 h-4 text-[#7AA8FF] shrink-0 mt-0.5" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#7AA8FF] shrink-0 mt-2" />
                   <span>{del}</span>
                 </div>
               ))}

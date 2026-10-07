@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { X, Check, ArrowRight } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { Project } from '../types';
 import gsap from 'gsap';
 
@@ -89,7 +89,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {project.scope.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-sm text-[#2D3A4A]">
-                  <Check className="w-4 h-4 text-[#1A5CFF] shrink-0 mt-0.5" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A5CFF] shrink-0 mt-2" />
                   <span>{item}</span>
                 </div>
               ))}

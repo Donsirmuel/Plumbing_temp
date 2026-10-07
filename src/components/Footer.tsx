@@ -64,24 +64,21 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Col 3: Emergency & WhatsApp */}
           <div className="lg:col-span-3 flex flex-col gap-3">
-            <h3 className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Emergency &amp; WhatsApp</h3>
+            <h3 className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">Reach us directly</h3>
             <div className="flex flex-col gap-3 text-[14px] text-[#58423c]">
-              <div className="flex flex-col gap-1.5">
-                <a href="tel:+2349031386928" className="inline-flex items-center gap-2 font-semibold text-[#1d1b18] hover:text-[#a43716] transition-colors">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716]">phone_in_talk</span>
-                  +234 903 138 6928 . Call 24/7
+              <div className="flex flex-col gap-2">
+                <a href="tel:+2349031386928" className="font-semibold text-[#1d1b18] hover:text-[#a43716] transition-colors">
+                  +234 903 138 6928 (Call anytime)
                 </a>
                 <a
                   href="https://wa.me/2349031386928"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-[#1d1b18] transition-colors"
+                  className="hover:text-[#1d1b18] transition-colors"
                 >
-                  <span className="material-symbols-outlined text-[18px] text-[#516257]">chat</span>
-                  Chat on WhatsApp
+                  WhatsApp message &amp; photos
                 </a>
-                <a href="mailto:inquiries@oohjay.com" className="inline-flex items-center gap-2 hover:text-[#1d1b18] transition-colors text-[13px]">
-                  <span className="material-symbols-outlined text-[18px] text-[#a43716]">email</span>
+                <a href="mailto:inquiries@oohjay.com" className="hover:text-[#1d1b18] transition-colors text-[13px]">
                   inquiries@oohjay.com
                 </a>
               </div>
@@ -90,14 +87,11 @@ export const Footer: React.FC<FooterProps> = () => {
 
           {/* Col 4: OOH JAY Promise */}
           <div className="sm:col-span-2 lg:col-span-3 flex flex-col gap-3">
-            <div className="mt-1 p-4 bg-[#fff8f3] rounded-xl border border-[#dfc0b7]/30 flex items-start gap-3 shadow-sm">
-              <span className="material-symbols-outlined text-[#a43716] text-[22px] mt-0.5 shrink-0">verified</span>
-              <div>
-                <p className="text-[13px] font-semibold tracking-[0.02em] text-[#1d1b18]">High-Grade Workmanship Assured</p>
-                <p className="text-[13px] leading-5 text-[#58423c] mt-0.5">
-                  Every fitting and pipe we fix is finished with care — checked under load and left clean, nationwide.
-                </p>
-              </div>
+            <div className="mt-1 p-4 bg-[#fff8f3] rounded-xl border border-[#dfc0b7]/30 flex flex-col gap-1.5 shadow-sm">
+              <p className="text-[13px] font-semibold tracking-[0.02em] text-[#1d1b18]">Our workmanship standard</p>
+              <p className="text-[13px] leading-5 text-[#58423c]">
+                Every fitting and pipe is checked under operating pressure and left clean before we leave the site.
+              </p>
             </div>
           </div>
         </div>
@@ -106,13 +100,13 @@ export const Footer: React.FC<FooterProps> = () => {
           <p className="text-[13px] text-[#8b716a]">© {new Date().getFullYear()} OOH JAY Plumbing Services Ltd. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="tel:+2349031386928" className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors">
-              Direct Line
+              Direct line
             </a>
             <Link to="/pricing" className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors">
               Workmanship
             </Link>
-            <button onClick={scrollToTop} className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors cursor-pointer inline-flex items-center gap-1">
-              Back to top <span className="material-symbols-outlined text-[16px]">arrow_upward</span>
+            <button onClick={scrollToTop} className="text-[13px] text-[#8b716a] hover:text-[#1d1b18] transition-colors cursor-pointer">
+              Back to top ↑
             </button>
           </div>
         </div>

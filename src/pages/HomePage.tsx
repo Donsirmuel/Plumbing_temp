@@ -259,7 +259,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   className="shine-button inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_12px_24px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_16px_32px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
                 >
                   Book a visit
-                  <span className="material-symbols-outlined text-[18px] ml-2 group-hover:translate-x-1 transition-transform">calendar_today</span>
                 </button>
                 <a
                   href="https://wa.me/2349031386928"
@@ -267,32 +266,24 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
                 >
-                  <span className="material-symbols-outlined text-[18px] mr-2 text-[#ffdcbd] group-hover:scale-110 transition-transform">chat</span>
                   WhatsApp us directly
                 </a>
               </div>
 
-              {/* Micro Trust Chips — centred */}
+              {/* Micro Trust Chips — clean typographic presentation */}
               <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[#e7e1dc] text-[13px]">
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">schedule</span> On time as agreed
-                </span>
+                <span>On time as agreed</span>
                 <span className="text-white/30">•</span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">receipt_long</span> Clear written quotes
-                </span>
+                <span>Clear written quotes</span>
                 <span className="text-white/30">•</span>
-                <span className="flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified</span> Workmanship backing
-                </span>
+                <span>Workmanship backing</span>
               </div>
               </div>
             </div>
-        {/* Bottom Hero Transition: Trust bar — honest */}
+        {/* Bottom Hero Transition: Trust bar — clean typography */}
         <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 sm:px-6 md:px-12">
-          <div className="max-w-[1200px] mx-auto flex flex-wrap items-center justify-center gap-2 text-[#e7e1dc] text-[13px]">
-            <span className="material-symbols-outlined text-[#ffdcbd] text-[18px]">verified_user</span>
-            <span>Every job photographed after clean-up and tested under pressure before handover</span>
+          <div className="max-w-[1200px] mx-auto text-center text-[#e7e1dc] text-[13px] tracking-[0.01em]">
+            Every job photographed after clean-up and tested under pressure before handover
           </div>
         </div>
       </section>
@@ -330,10 +321,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               </h3>
               <ReadMore text="New pipework for new builds and quick fixes for running toilets, dripping taps, hidden leaks and burst mains — before they damage walls or woodwork." clampLines={3} textSizeClass="text-[16px]" />
               <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[14px] font-semibold text-[#a43716]">New builds & repairs</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <span className="text-[14px] font-semibold text-[#a43716] group-hover:underline">New builds & repairs</span>
               </div>
             </Link>
 
@@ -352,10 +340,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               </h3>
               <ReadMore text="New fits and refits: from first-fix in new builds to fitting modern showers, basin taps, sinks, tubs and toilets with watertight seals." clampLines={3} textSizeClass="text-[16px]" />
               <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[14px] font-semibold text-[#a43716]">Full fitout or replacements</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <span className="text-[14px] font-semibold text-[#a43716] group-hover:underline">Full fitout or replacements</span>
               </div>
             </Link>
 
@@ -374,10 +359,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               </h3>
               <ReadMore text="From new pump sets in new sites to servicing weak showers — we install, clear sediment lines and balance pressure across every floor. Nationwide from Abeokuta." clampLines={3} textSizeClass="text-[16px]" />
               <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[14px] font-semibold text-[#a43716]">Pressure calibration</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <span className="text-[14px] font-semibold text-[#a43716] group-hover:underline">Pressure calibration</span>
               </div>
             </Link>
 
@@ -396,10 +378,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               </h3>
               <ReadMore text="New installs and servicing: safe fitting and descaling of heaters, overhead tanks, ball valves and filtration — hygienic on new and existing sites. Nationwide." clampLines={3} textSizeClass="text-[16px]" />
               <div className="mt-6 pt-4 border-t border-[#f3ede7] flex items-center justify-between">
-                <span className="text-[14px] font-semibold text-[#a43716]">Safe electrical isolation</span>
-                <span className="material-symbols-outlined text-[#8b716a] text-[18px] group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                  arrow_forward
-                </span>
+                <span className="text-[14px] font-semibold text-[#a43716] group-hover:underline">Safe electrical isolation</span>
               </div>
             </Link>
             </div>
@@ -444,10 +423,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                     Replaced corroded galvanised pipes with multi-layer copper pipework, fitted an in-wall shower mixer, and laid a flush wet-room floor drain that flows freely.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
-                  <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[18px]">check_circle</span> Pressure tested
-                  </span>
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                  <span>Pressure tested</span>
                 </div>
               </div>
             </button>
@@ -475,10 +452,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                     Stripped out a vibrating 1.5HP pump that rattled bedroom walls. Installed rubber anti-vibration mountings and tidy, labeled shutoff valves.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
-                  <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[18px]">volume_off</span> Whisper quiet
-                  </span>
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                  <span>Silent mountings</span>
                 </div>
               </div>
             </button>
@@ -506,10 +481,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                     Resolved chronic low pressure affecting washing machines and kitchen sinks. Re-routed supply without damaging existing cabinetry or tiles.
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[14px] font-medium">
-                  <span className="flex items-center gap-1.5">
-                    <span className="material-symbols-outlined text-[18px]">sentiment_satisfied</span> Zero tile breakage
-                  </span>
+                <div className="mt-5 pt-3 border-t border-[#f3ede7] flex items-center justify-between text-[#7b542b] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                  <span>Preserved tiles</span>
                 </div>
               </div>
             </button>
@@ -523,7 +496,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 min-w-0 max-w-full">
           <div className="max-w-2xl mb-12 reveal-entry">
             <span className="text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">Our standard</span>
-            <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-tight text-[#1d1b18] mt-1">Four simple rules we never compromise on.</h2>
+            <h2 className="font-['Fraunces',serif] font-semibold tracking-[-0.03em] text-[32px] md:text-[40px] leading-tight text-[#1d1b18] mt-1">Four simple rules we keep on every job</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 min-w-0 max-w-full">
             <div className="reveal-entry bg-[#f3ede7] p-7 rounded-2xl flex flex-col justify-between min-w-0 max-w-full">
@@ -536,8 +509,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   We look at the problem and state the cost before picking up a spanner. No sudden inflated bills once work is dismantled.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
-                <span className="material-symbols-outlined text-[#a43716] text-[18px]">verified</span> Written quote upfront
+              <div className="mt-6 text-[#58423c] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                Written quote upfront
               </div>
             </div>
 
@@ -551,8 +524,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   Protective covers on our boots, heavy dust cloths across your floorboards, and everything vacuumed or mopped before we say goodbye.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
-                <span className="material-symbols-outlined text-[#a43716] text-[18px]">sanitizer</span> Tidy workspaces
+              <div className="mt-6 text-[#58423c] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                Tidy workspaces
               </div>
             </div>
 
@@ -566,8 +539,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   Heavy gauge brass valves, quality solvent welds, and durable fittings. We refuse cheap brittle plastics that crack in six months.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
-                <span className="material-symbols-outlined text-[#a43716] text-[18px]">handyman</span> Genuine components
+              <div className="mt-6 text-[#58423c] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                Genuine components
               </div>
             </div>
 
@@ -581,15 +554,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                   Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our workmanship.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-[#58423c] text-[14px] font-semibold">
-                <span className="material-symbols-outlined text-[#a43716] text-[18px]">shield</span> Assured workmanship
+              <div className="mt-6 text-[#58423c] text-[13px] font-semibold tracking-[0.04em] uppercase">
+                Assured workmanship
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Interactive Direct Booking / Contact Section — stacks at 390, no page overflow */}
+      {/* Interactive Direct Booking */}
       <section id="booking-form" className="w-full max-w-full overflow-x-clip bg-[#32302d] text-[#f6f0ea] py-14 md:py-24">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 min-w-0 max-w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start lg:items-center min-w-0 max-w-full">
@@ -600,40 +573,27 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
                 Send us a quick message with what you&apos;re dealing with. A qualified plumber will reply with straightforward advice and a transparent quote within the hour.
               </p>
               <div className="pt-2 space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#a43716] flex items-center justify-center text-white">
-                    <span className="material-symbols-outlined text-[20px]">call</span>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#e7e1dc]">Call directly</p>
-                    <a href="tel:+2349031386928" className="text-[18px] font-semibold text-[#f6f0ea] hover:text-[#ffb5a0] transition-colors">
-                      +234 903 138 6928
-                    </a>
-                  </div>
+                <div>
+                  <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#e7e1dc]">Call directly</p>
+                  <a href="tel:+2349031386928" className="text-[20px] font-semibold text-[#f6f0ea] hover:text-[#ffb5a0] transition-colors block mt-1">
+                    +234 903 138 6928
+                  </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#516257] flex items-center justify-center text-white">
-                    <span className="material-symbols-outlined text-[20px]">chat</span>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#e7e1dc]">Fastest reply on WhatsApp</p>
-                    <a href="https://wa.me/2349031386928" target="_blank" rel="noopener noreferrer" className="text-[14px] text-[#f6f0ea] underline hover:text-[#ffb5a0]">
-                      Chat directly with our team
-                    </a>
-                  </div>
+                <div className="pt-2">
+                  <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#e7e1dc]">Fastest reply on WhatsApp</p>
+                  <a href="https://wa.me/2349031386928" target="_blank" rel="noopener noreferrer" className="text-[15px] text-[#f6f0ea] underline hover:text-[#ffb5a0] block mt-1">
+                    Chat directly with our team
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7 bg-white p-6 md:p-8 rounded-3xl text-[#1d1b18] shadow-2xl reveal-entry min-w-0 max-w-full w-full">
-              <div className="mb-4 flex items-center justify-between gap-3 min-w-0">
-                <div className="min-w-0">
-                  <h3 className="text-[18px] font-semibold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                    Request a plumber visit
-                  </h3>
-                  <p className="text-[15px] leading-6 text-[#58423c]">We never spam, and we provide clear estimates before visit.</p>
-                </div>
-                <span className="material-symbols-outlined text-[#a43716] text-[28px] shrink-0">plumbing</span>
+              <div className="mb-4 min-w-0">
+                <h3 className="text-[18px] font-semibold text-[#1d1b18]" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                  Request a plumber visit
+                </h3>
+                <p className="text-[15px] leading-6 text-[#58423c]">We provide a written estimate before any work commences.</p>
               </div>
 
               <form className="space-y-4 min-w-0 max-w-full" onSubmit={handleBookingSubmit}>
@@ -708,10 +668,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.04em] uppercase rounded-xl shadow-md hover:bg-[#c54f2c] transition-all active:scale-[0.99] flex items-center justify-center gap-2 shine-button cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+                  className="w-full py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.04em] uppercase rounded-xl shadow-md hover:bg-[#c54f2c] transition-all active:scale-[0.99] flex items-center justify-center shine-button cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
                 >
                   Send request for a quote
-                  <span className="material-symbols-outlined text-[20px]">send</span>
                 </button>
               </form>
             </div>

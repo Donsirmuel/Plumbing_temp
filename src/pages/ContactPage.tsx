@@ -116,78 +116,66 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                 <div className="pt-2 flex flex-col gap-2">
                   <a
                     href="tel:+2349031386928"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#a43716] text-[16px] font-bold tracking-[-0.01em] rounded-full shadow-md hover:bg-[#fff8f3] transition-all whitespace-nowrap active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#a43716] text-[16px] font-bold tracking-[-0.01em] rounded-full shadow-md hover:bg-[#fff8f3] transition-all whitespace-nowrap active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a43716]"
                   >
-                    <span className="material-symbols-outlined text-[20px]">call</span>
-                    Call Direct — 0903 138 6928
+                    Call 0903 138 6928
                   </a>
-                  <span className="text-[13px] text-white/75">Average pickup &lt; 60 seconds · 7am–7pm, emergency after hours</span>
+                  <span className="text-[13px] text-white/75">Direct line: 7am–7pm, and emergency response after hours</span>
                 </div>
               </div>
               <div className="lg:w-[40%] relative min-h-[240px] lg:min-h-[360px] bg-[#7a1f0a] overflow-hidden">
                 <img
                   src={MAP_PLACEHOLDER}
-                  alt="Overhead water tank as installed — example of tidy tank work we respond to urgently"
+                  alt="Overhead water tank installation"
                   className="w-full h-full object-cover opacity-90"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#a43716]/60 via-transparent to-transparent lg:bg-gradient-to-r" aria-hidden="true" />
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center gap-3 shadow-md">
-                  <span className="w-9 h-9 rounded-full bg-[#d4e7d8] flex items-center justify-center text-[#516257] shrink-0">
-                    <span className="material-symbols-outlined text-[18px]">location_on</span>
-                  </span>
                   <div className="flex flex-col">
                     <span className="text-[13px] font-bold text-[#1d1b18] leading-none">Abiola Way, Abeokuta</span>
-                    <span className="text-[12px] text-[#58423c]">Ogun State · serving nationwide</span>
+                    <span className="text-[12px] text-[#58423c] mt-0.5">Ogun State · serving nationwide</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Contact Channels — simplified two-item list without card chrome */}
+            {/* Contact Channels */}
             <div className="bg-white rounded-2xl border border-[#dfc0b7]/15 divide-y divide-[#f3ede7]">
               <div className="p-6 flex gap-4 items-start">
-                <span className="shrink-0 w-9 h-9 rounded-full bg-[#f3ede7] flex items-center justify-center text-[#516257] border border-[#dfc0b7]/15" aria-hidden="true">
-                  <span className="material-symbols-outlined text-[18px]">chat</span>
-                </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
-                    WhatsApp priority line
+                    WhatsApp message line
                   </h3>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
-                    Send a photo or short video: leaking joint, weak pressure, heater noise. A senior plumber replies with honest analysis and free quotation guidance — no photo-review fee.
+                    Send a photo or short video clip showing the issue: a leaking joint, weak shower pressure, or a noisy water heater. An experienced plumber will assess the cause and give you a written estimate.
                   </p>
                   <a
                     href="https://wa.me/2349031386928?text=Hello%20OOH%20JAY%2C%20I%20have%20a%20plumbing%20issue%20I%20need%20help%20with"
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
+                    className="mt-3 inline-flex items-center text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
                   >
-                    Start WhatsApp Chat
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    Open WhatsApp chat
                   </a>
-                  <p className="text-[12px] text-[#8b716a] mt-1">Fastest reply — usually within the hour</p>
+                  <p className="text-[12px] text-[#8b716a] mt-1">Usually answered within the hour</p>
                 </div>
               </div>
               <div className="p-6 flex gap-4 items-start">
-                <span className="shrink-0 w-9 h-9 rounded-full bg-[#f3ede7] flex items-center justify-center text-[#2c1600] border border-[#dfc0b7]/15" aria-hidden="true">
-                  <span className="material-symbols-outlined text-[18px]">public</span>
-                </span>
                 <div className="min-w-0 flex-1">
                   <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold tracking-[-0.03em] text-[#1d1b18]">
-                    Diaspora property desk
+                    Overseas property desk
                   </h3>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-1">
-                    Managing a home from the UK, US, Canada or Europe. We do video checks, clear parts lists and tidy photo handovers for new and existing work — WhatsApp updates on your hours.
+                    If you live in the UK, US, Canada, or elsewhere and manage property in Nigeria, we provide timestamped video walk-throughs, itemised store receipts, and milestone sign-offs.
                   </p>
                   <a
                     href="https://wa.me/2349031386928?text=Hello%2C%20I%20am%20calling%20from%20abroad%20regarding%20my%20property%20in%20Nigeria"
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
+                    className="mt-3 inline-flex items-center text-[#a43716] text-[13px] font-semibold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-sm"
                   >
-                    Diaspora Consultation
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    Overseas enquiry
                   </a>
                 </div>
               </div>
@@ -196,22 +184,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
             {/* Physical Location */}
             <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-[#dfc0b7]/20 flex flex-col gap-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#f3ede7] flex items-center justify-center text-[#a43716]">
-                    <span className="material-symbols-outlined text-[20px]">home_pin</span>
-                  </div>
-                  <div>
-                    <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
-                      Physical location
-                    </h3>
-                    <p className="text-[15px] leading-6 text-[#58423c]">Abiola Way, Abeokuta, Ogun State with nationwide reach</p>
-                  </div>
+                <div>
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
+                    Workshop and dispatch base
+                  </h3>
+                  <p className="text-[15px] leading-6 text-[#58423c]">Abiola Way, Abeokuta, Ogun State. Teams dispatched across Nigeria.</p>
                 </div>
                 <a
                   href="tel:+2349031386928"
-                  className="px-3 py-1 bg-[#d4e7d8] text-[#57685d] rounded-full text-[13px] font-semibold tracking-[0.04em] w-fit hover:bg-[#b8cbbd] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
+                  className="px-4 py-2 bg-[#d4e7d8] text-[#57685d] rounded-full text-[13px] font-semibold tracking-[0.04em] w-fit hover:bg-[#b8cbbd] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
                 >
-                  Direct call
+                  Call office
                 </a>
               </div>
 
@@ -382,13 +365,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
                   {submitting ? (
                     <>
                       <span className="w-4 h-4 rounded-full border-2 border-white border-t-transparent animate-spin inline-block" aria-hidden="true" />
-                      <span>Connecting dispatch…</span>
+                      <span>Sending request…</span>
                     </>
                   ) : (
-                    <>
-                      <span>Send Request & Get Clear Quote</span>
-                      <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                    </>
+                    <span>Send request for a quote</span>
                   )}
                 </button>
 
@@ -398,26 +378,25 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
               </form>
             ) : (
               <div className="flex flex-col items-center text-center p-6 bg-[#d4e7d8] text-[#1d1b18] rounded-xl gap-3">
-                <span className="material-symbols-outlined text-[36px] text-[#516257]">check_circle</span>
+                <span className="w-3 h-3 rounded-full bg-[#516257]" aria-hidden="true" />
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
-                  Request received — we&apos;re on it
+                  Request received
                 </h3>
                 <p className="text-[15px] leading-6 text-[#58423c]">
-                  Thank you{form.name ? `, ${form.name}` : ''}. Your note has reached our desk at Abiola Way. We will reply shortly on WhatsApp or phone with a clear quotation.
+                  Thank you{form.name ? `, ${form.name}` : ''}. Your details reached our desk in Abeokuta. We will reply on WhatsApp or phone with a clear quotation.
                 </p>
                 <div className="mt-1 flex flex-col sm:flex-row gap-2 w-full justify-center">
                   <a
                     href={waForScope}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white text-[#1d1b18] rounded-full text-[14px] font-semibold shadow-sm hover:bg-[#fff8f3] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-white text-[#1d1b18] rounded-full text-[14px] font-semibold shadow-sm hover:bg-[#fff8f3] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
                   >
-                    Continue on WhatsApp
-                    <span className="material-symbols-outlined text-[16px]">chat</span>
+                    Open on WhatsApp
                   </a>
                   <a
                     href="tel:+2349031386928"
-                    className="inline-flex items-center justify-center px-5 py-2.5 bg-[#516257] text-white rounded-full text-[14px] font-semibold hover:bg-[#3a4b40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
+                    className="inline-flex items-center justify-center px-6 py-2.5 bg-[#516257] text-white rounded-full text-[14px] font-semibold hover:bg-[#3a4b40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257]"
                   >
                     Call now if urgent
                   </a>
@@ -439,28 +418,25 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
         </div>
       </div>
 
-      {/* House Standard — Message via WhatsApp */}
+      {/* House Standard */}
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-8 md:py-12 w-full reveal-entry">
         <div className="p-6 md:p-8 bg-[#f3ede7] rounded-xl border border-[#dfc0b7]/20 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#a43716] shadow-sm flex-shrink-0 border border-[#dfc0b7]/20">
-              <span className="material-symbols-outlined text-[24px]">verified_user</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
-                The OOH JAY House Standard
-              </h4>
-              <p className="text-[15px] leading-6 text-[#58423c]">Tidy workspaces, satisfactory job, clear quotation first with high-grade workmanship assured.</p>
-            </div>
+          <div className="flex flex-col gap-1">
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">
+              Our standard
+            </span>
+            <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-bold tracking-[-0.04em] text-[#1d1b18]">
+              Clean workspaces and tested installations
+            </h4>
+            <p className="text-[15px] leading-6 text-[#58423c]">We protect your floors, quote before opening pipes, and test joints under sustained pressure before handover.</p>
           </div>
           <a
             href="https://wa.me/2349031386928?text=Hello%20OOH%20JAY%20%E2%80%94%20I%27d%20like%20to%20confirm%20your%20House%20Standard%20and%20book%20a%20visit"
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-3 bg-[#516257] text-white text-[14px] font-semibold tracking-[0.02em] rounded-full hover:bg-[#3a4b40] transition-colors shadow-sm whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257] focus-visible:ring-offset-2 cursor-pointer inline-flex items-center gap-2"
+            className="px-6 py-3 bg-[#516257] text-white text-[14px] font-semibold tracking-[0.02em] rounded-full hover:bg-[#3a4b40] transition-colors shadow-sm whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#516257] focus-visible:ring-offset-2 cursor-pointer inline-flex items-center"
           >
-            Message via WhatsApp
-            <span className="material-symbols-outlined text-[18px]">chat</span>
+            Message on WhatsApp
           </a>
         </div>
       </div>

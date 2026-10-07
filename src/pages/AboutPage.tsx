@@ -95,16 +95,14 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               <div className="p-6 bg-[#516257] text-white rounded-2xl shadow-md flex items-center justify-between">
                 <div>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-semibold leading-7 text-white mt-1">
-                    Abeokuta, Lagos &amp; Beyond
+                    Abeokuta, Lagos and across Nigeria
                   </p>
                   <p className="text-[13px] font-medium tracking-[0.04em] text-white/80 mt-1">
-                    Serving families nationwide and property owners abroad.
+                    Serving local families and property owners abroad.
                   </p>
                 </div>
-                <div className="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center text-[#ffdbd1] shrink-0">
-                  <span className="material-symbols-outlined text-[28px]" aria-hidden="true">
-                    schedule
-                  </span>
+                <div className="px-3 py-1.5 rounded-full bg-white/15 text-[#ffdbd1] text-[12px] font-bold tracking-[0.06em] uppercase shrink-0">
+                  Est. 2014
                 </div>
               </div>
             </div>
@@ -112,7 +110,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
         </div>
       </section>
 
-      {/* SECTION 2: EDITORIAL 2-COLUMN STORY — TRAINED ON MODERN STANDARDS */}
+      {/* SECTION 2: EDITORIAL 2-COLUMN STORY */}
       <section className="w-full py-12 md:py-20 bg-[#f9f2ed] reveal-entry">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -150,46 +148,36 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               </div>
               <div className="flex flex-col gap-4 font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c]">
                 <p>
-                  When we began in Abeokuta, much of the trade still relied on improvisation —
-                  tape wound the wrong way, thin galvanised runs turning failures after two rainy
-                  seasons, and pressure that doesn't exist when two taps run at once. We chose a different
-                  path, operating with a nationwide mindset from the start for new sites and lived-in
-                  homes alike.
+                  When we began in Abeokuta, much of the trade still relied on improvisation:
+                  tape wound the wrong direction, thin galvanised lines rusting through after two rainy
+                  seasons, and water pressure that vanishes the moment someone opens a second tap. We chose
+                  a different path. We work to strict plumbing codes, whether on a brand new build in Lekki or an existing bungalow in Abeokuta.
                 </p>
-                <p className="p-4 bg-white rounded-xl shadow-sm text-[#1d1b18] text-[15px] leading-6">
+                <div className="p-5 bg-white rounded-xl shadow-sm text-[#1d1b18] text-[15px] leading-6">
                   <strong className="font-semibold block text-[#a43716] mb-1">
-                    A steadier link for Nigerians in the UK, USA &amp; Canada
+                    Direct support for Nigerians in the UK, USA, and Canada
                   </strong>
-                  Building or caring for a home from abroad is hard when updates depend on
-                  blurred photos only. We become your local eyes and hands: timestamped video
-                  diagnostics, itemised material receipts, and live WhatsApp walk-throughs
-                  before, during, and after the work.
-                </p>
+                  Building or maintaining a home from abroad is stressful when updates are just blurry snapshots. We act as your reliable eyes and hands: timestamped video walk-throughs, itemised store receipts, and direct WhatsApp calls before and after every phase of work.
+                </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-                <div className="p-3 bg-white rounded-xl shadow-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#a43716] text-[20px]" aria-hidden="true">
-                    videocam
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <span className="text-[12px] font-bold tracking-[0.04em] uppercase text-[#1d1b18] block">
+                    Video walk-throughs
                   </span>
-                  <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                    Video Audits
-                  </span>
+                  <span className="text-[12px] text-[#58423c] mt-0.5 block">Clear footage of hidden pipe runs</span>
                 </div>
-                <div className="p-3 bg-white rounded-xl shadow-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#516257] text-[20px]" aria-hidden="true">
-                    receipt_long
+                <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <span className="text-[12px] font-bold tracking-[0.04em] uppercase text-[#1d1b18] block">
+                    Store receipts
                   </span>
-                  <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                    Direct Invoicing
-                  </span>
+                  <span className="text-[12px] text-[#58423c] mt-0.5 block">Materials billed at actual cost</span>
                 </div>
-                <div className="p-3 bg-white rounded-xl shadow-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#7b542b] text-[20px]" aria-hidden="true">
-                    verified_user
+                <div className="p-3 bg-white rounded-xl shadow-sm">
+                  <span className="text-[12px] font-bold tracking-[0.04em] uppercase text-[#1d1b18] block">
+                    Pressure tested
                   </span>
-                  <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                    Premium Care
-                  </span>
+                  <span className="text-[12px] text-[#58423c] mt-0.5 block">Checked under pump pressure</span>
                 </div>
               </div>
             </div>
@@ -197,7 +185,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
         </div>
       </section>
 
-      {/* SECTION 4: THE 4 THINGS WE NEVER COMPROMISE ON */}
+      {/* SECTION 4: THE 4 STANDARDS */}
       <section className="w-full py-12 md:py-20 bg-[#f9f2ed] reveal-entry">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -208,124 +196,103 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
               <h2
                 className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold text-[#1d1b18]"
               >
-                Four standards we keep on every job.
+                Four commitments we keep on every job
               </h2>
             </div>
           </div>
-          {/* Editorial bento: featured + varied — breaks 2×2 template */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-            {/* Featured — Price — dark editorial, larger */}
+            {/* 01 */}
             <div className="lg:col-span-7 p-8 md:p-10 bg-[#32302d] rounded-2xl shadow-xl flex flex-col justify-between border border-white/10 relative overflow-hidden">
               <div aria-hidden="true" className="absolute -right-12 -top-12 w-48 h-48 bg-[#a43716]/20 rounded-full blur-2xl pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-5">
-                  <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center text-[#ffdbd1] border border-white/10">
-                    <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
-                      payments
-                    </span>
-                  </div>
-                  <span className="px-3 py-1 rounded-full bg-[#a43716] text-white text-[11px] font-semibold tracking-[0.06em] uppercase">Most asked about</span>
+                  <span className="text-[13px] font-bold tracking-[0.06em] text-[#ffdbd1]">
+                    Standard 01
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-[#a43716] text-white text-[11px] font-semibold tracking-[0.06em] uppercase">Most requested</span>
                 </div>
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] md:text-[24px] leading-7 font-bold tracking-[-0.04em] text-white mb-3">
-                  Price made clear before work begins.
+                  Clear prices before work begins
                 </h3>
                 <ReadMore
-                  text="You receive a written diagnostic and cost of project quotation before we begin. Labour and materials listed separately — no secret fees, no inflated parts price. Quotations free via WhatsApp."
+                  text="You receive an itemised written quotation before our technicians start. Labour and materials are listed separately so there are no surprise charges or inflated replacement costs."
                   clampLines={2}
                   variant="dark"
                 />
               </div>
               <div className="relative z-10 mt-8 bg-white/10 backdrop-blur-sm p-3.5 rounded-xl border border-white/10">
-                <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-white flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#ffdbd1] text-[18px]" aria-hidden="true">
-                    verified
-                  </span>{' '}
-                  Written Estimates & Quotations Guaranteed
+                <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-white">
+                  Written quotes and material schedules provided
                 </span>
               </div>
             </div>
 
-            {/* Clean — compact, light */}
+            {/* 02 */}
             <div className="lg:col-span-5 p-7 md:p-8 bg-white rounded-2xl shadow-sm flex flex-col justify-between border border-black/5">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#d4e7d8]/60 flex items-center justify-center text-[#516257]">
-                    <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
-                      cleaning_services
-                    </span>
-                  </div>
+                  <span className="text-[13px] font-bold tracking-[0.06em] text-[#516257]">
+                    Standard 02
+                  </span>
                 </div>
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18] mb-2">
-                  Clean and tidy job guaranteed.
+                  Tidy workspaces and protected floors
                 </h3>
                 <ReadMore
-                  text="Your Homes are treated as living spaces, not sites. Sites are treated as safe structures. No hazardous treatments or filthy after-job environment."
+                  text="Your home is treated as a clean living space. We protect tile and sanitary ware during work, contain dust where feasible, and thoroughly wipe down the floor before leaving."
                   clampLines={2}
                 />
               </div>
               <div className="mt-6 bg-[#f9f2ed] p-3 rounded-xl">
-                <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18] flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
-                    verified
-                  </span>{' '}
-                  Safety & Cleanliness Guarantee
+                <span className="text-[12px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
+                  Clean site promise on every call
                 </span>
               </div>
             </div>
 
-            {/* Parts — warm tint, mid */}
+            {/* 03 */}
             <div className="lg:col-span-5 p-7 md:p-8 bg-[#ede7e2] rounded-2xl shadow-sm flex flex-col justify-between border border-[#dfc0b7]/20">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#7b542b] shadow-sm">
-                    <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
-                      plumbing
-                    </span>
-                  </div>
+                  <span className="text-[13px] font-bold tracking-[0.06em] text-[#7b542b]">
+                    Standard 03
+                  </span>
                 </div>
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18] mb-2">
-                  Original parts and proper fittings.
+                  Genuine, pressure-rated fittings
                 </h3>
                 <ReadMore
-                  text="We do not fit thin counterfeit fittings or brittle unrated PVC. Our stock is sourced from certified suppliers: built to hold pressure and resist aggressive borehole chemistry."
+                  text="We do not install counterfeit valves or thin PVC that splits under booster pressure. We source heavy-duty, rated pipework and fittings from accredited distributors."
                   clampLines={2}
                 />
               </div>
               <div className="mt-6 bg-white p-3 rounded-xl shadow-sm">
-                <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18] flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
-                    verified
-                  </span>{' '}
+                <span className="text-[12px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
                   Zero counterfeit material policy
                 </span>
               </div>
             </div>
 
-            {/* Support — spans larger to close the bento */}
+            {/* 04 */}
             <div className="lg:col-span-7 p-7 md:p-8 bg-white rounded-2xl shadow-sm flex flex-col justify-between border border-black/5">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#ffdbd1]/60 flex items-center justify-center text-[#a43716]">
-                    <span className="material-symbols-outlined text-[22px]" aria-hidden="true">
-                      ring_volume
-                    </span>
-                  </div>
-                  <span className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#7b542b] bg-[#f3ede7] px-2.5 py-1 rounded-full">Up to 1-year</span>
+                  <span className="text-[13px] font-bold tracking-[0.06em] text-[#a43716]">
+                    Standard 04
+                  </span>
+                  <span className="text-[11px] font-semibold tracking-[0.06em] uppercase text-[#7b542b] bg-[#f3ede7] px-2.5 py-1 rounded-full">After-job care</span>
                 </div>
                 <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[18px] md:text-[20px] leading-7 font-bold tracking-[-0.04em] text-[#1d1b18] mb-2">
-                  We pick up the phone when you call.
+                  Responsive support after the job
                 </h3>
                 <ReadMore
-                  text="Courtesy at payment is guaranteed and still exists months later. We answer, attend, and correct issues with our workmanship — high-grade workmanship assured, every joint checked."
+                  text="Good communication should not stop once the bill is settled. If you have any question or need a quick adjustment on work we carried out, you reach the same team directly."
                   clampLines={2}
                 />
               </div>
               <div className="mt-6 bg-[#f9f2ed] p-3 rounded-xl">
-                <span className="text-[13px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18] flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
-                    verified
-                  </span>{' '}
-                  High-grade workmanship assured
+                <span className="text-[12px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
+                  Workmanship backed on every project
                 </span>
               </div>
             </div>
@@ -333,34 +300,33 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
         </div>
       </section>
 
-      {/* SECTION 5: MEET THE MASTER PLUMBERS & TEAM */}
+      {/* SECTION 5: MASTER PLUMBERS & TEAM */}
       <section className="w-full py-12 md:py-20 bg-[#fff8f3] reveal-entry">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b]">
-              The people doing the work
+              Our team
             </span>
             <h2
               className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[36px] md:leading-[44px] tracking-[-0.03em] font-semibold text-[#1d1b18] mt-1"
             >
-              Experienced plumbers, never subcontracted to strangers.
+              Qualified technicians on every job
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-2">
-              The senior technicians who enter your home equipped with years of practical site experience.
+              The plumbers who arrive at your property carry formal training and practical on-site experience.
             </p>
           </div>
-          {/* Editorial artisans: founder featured larger, varied heights — breaks 3-equal — lighter-touch chrome */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-stretch">
             <div className="lg:col-span-6 bg-[#f3ede7] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col border border-[#dfc0b7]/20">
               <div className="h-[380px] lg:h-[520px] w-full overflow-hidden relative bg-[#ede7e2]">
                 <img
                   className="w-full h-full object-cover"
                   src={PORTRAIT_OJ}
-                  alt="Plumber at work in kitchen — tidy install as documented for quality review"
+                  alt="Plumber at work in kitchen — pipe installation for quality review"
                   loading="lazy"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-[#a43716] text-[11px] font-semibold tracking-[0.05em] uppercase shadow-sm">
-                  Co-Founder · Since 2014
+                  Co-founder · In trade since 2014
                 </div>
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#1d1b18]/70 via-[#1d1b18]/20 to-transparent p-6 pt-12">
                   <p className="text-white text-[13px] font-semibold tracking-[0.04em] uppercase opacity-90">Abeokuta · Lagos · Nationwide</p>
@@ -372,18 +338,15 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                     Olumide “OJ” Oladipo
                   </h3>
                   <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] mt-1">
-                    Master Mechanical Plumber &amp; Hydronics Lead
+                    Master Plumber &amp; Pipework Lead
                   </p>
                   <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 text-[#58423c] mt-3">
-                    Trained under port hydraulic engineers before founding OOH JAY in 2014. Leads acoustic leak tracing, booster balancing and sanitary layout for high-spec bathrooms. Your direct line when water must be silent.
+                    Trained in hydraulic pipefitting before co-founding OOH JAY in 2014. Oversees acoustic leak detection, booster pump installations, and sanitary pipe layout for modern residential properties.
                   </p>
                 </div>
-                <div className="mt-5 flex items-center gap-2 pt-4 border-t border-[#dfc0b7]/20">
-                  <span className="material-symbols-outlined text-[#516257] text-[18px]" aria-hidden="true">
-                    verified
-                  </span>
+                <div className="mt-5 pt-4 border-t border-[#dfc0b7]/20">
                   <span className="text-[11px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                    City &amp; Guilds Mechanical Cert.
+                    City &amp; Guilds Mechanical Certified
                   </span>
                 </div>
               </div>
@@ -395,11 +358,11 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   <img
                     className="w-full h-full object-cover"
                     src={PORTRAIT_BABA}
-                    alt="Plumber at work in kitchen — checking supply lines and neat connections"
+                    alt="Plumber checking pipework connections"
                     loading="lazy"
                   />
                   <div className="absolute top-3 right-3 bg-[#f3ede7]/95 backdrop-blur-sm px-2.5 py-1 rounded-full text-[#516257] text-[11px] font-semibold tracking-[0.04em] uppercase shadow-sm">
-                    Lead Diagnostician
+                    Leak detection
                   </div>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -408,18 +371,15 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                       Babatunde Adeleke
                     </h3>
                     <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] mt-0.5">
-                      Ultrasonic Leak &amp; Pressure Specialist
+                      Leak Detection &amp; Pressure Specialist
                     </p>
                     <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-3">
-                      Resolving hidden sub-surface leaks without needless tile breakout. Runs diaspora video audits and commercial flow surveys from Abeokuta to Lagos Island.
+                      Locates concealed underground and wall leaks using non-invasive acoustic equipment, preventing unnecessary tile and wall demolition.
                     </p>
                   </div>
-                  <div className="mt-4 flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#516257] text-[16px]" aria-hidden="true">
-                      verified
-                    </span>
+                  <div className="mt-4 pt-3 border-t border-[#dfc0b7]/15">
                     <span className="text-[11px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                      Level 3 Non-Destructive Testing
+                      Non-Destructive Testing Certified
                     </span>
                   </div>
                 </div>
@@ -430,11 +390,11 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                   <img
                     className="w-full h-full object-cover"
                     src={PORTRAIT_CHIDIMA}
-                    alt="Plumbing installation as fitted — neat pipe runs coordinated before close-up"
+                    alt="Plumbing installation pipe runs before close-up"
                     loading="lazy"
                   />
                   <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-[#7b542b] text-[11px] font-semibold tracking-[0.04em] uppercase shadow-sm">
-                    Head of Quality
+                    Quality inspection
                   </div>
                 </div>
                 <div className="p-6 flex-1 flex flex-col justify-between">
@@ -443,18 +403,15 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                       Engr. Chidinma Eze
                     </h3>
                     <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] mt-0.5">
-                      Project Director &amp; Diaspora Liaison
+                      Project Engineer &amp; Diaspora Updates
                     </p>
                     <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-3">
-                      Oversees QA, verifies every pipe run against code, and leads diaspora milestone handovers — ensuring what is buried is worthy of being buried.
+                      Coordinates quality assurance, verifies pipe slopes against building codes, and manages milestone photo and video reports for remote property owners.
                     </p>
                   </div>
-                  <div className="mt-4 flex items-center gap-2">
-                    <span className="material-symbols-outlined text-[#516257] text-[16px]" aria-hidden="true">
-                      verified
-                    </span>
+                  <div className="mt-4 pt-3 border-t border-[#dfc0b7]/20">
                     <span className="text-[11px] font-semibold tracking-[0.04em] uppercase text-[#1d1b18]">
-                      NSE &amp; COREN Reg. Engineer
+                      COREN Registered Engineer
                     </span>
                   </div>
                 </div>
@@ -462,22 +419,19 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
             </div>
           </div>
 
-          {/* Investing in next generation */}
+          {/* Training */}
           <div className="mt-10 p-6 md:p-8 bg-[#32302d] text-[#f6f0ea] rounded-2xl shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="max-w-xl">
               <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#ffb5a0]">
-                Apprenticeship training
+                Apprentice training
               </span>
               <h3
                 className="font-['Plus_Jakarta_Sans',sans-serif] text-[22px] md:text-[26px] leading-8 md:leading-9 font-bold tracking-[-0.04em] text-white mt-1"
               >
-                Investing in the next generation of Nigerian craftsmen.
+                Investing in skilled Nigerian plumbing craftsmen
               </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#e7e1dc] mt-2">
-                Each year we welcome vocational graduates from technical colleges around
-                Abeokuta and Ogun State for 18 months at our Abiola Way workshop — copper
-                brazing, PEX press, and courteous site conduct — before they set foot in a
-                client&apos;s home or on a Lagos site, for new builds and repairs.
+                We accept vocational technical college graduates for rigorous workshop training in pipe alignment, joint welding, and clean on-site conduct before they work on client properties.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto shrink-0">
@@ -485,18 +439,15 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 href="tel:+2349031386928"
                 className="w-full sm:w-auto text-center px-7 py-3.5 bg-[#a43716] text-white text-[14px] font-semibold tracking-[0.04em] rounded-full hover:bg-[#c54f2c] transition-colors shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#32302d]"
               >
-                Reach out to us
+                Call our office
               </a>
               <a
                 href="https://wa.me/2349031386928"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center px-7 py-3.5 bg-white/10 text-white text-[14px] font-semibold tracking-[0.04em] rounded-full hover:bg-white/20 transition-colors flex items-center justify-center gap-2 border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#32302d]"
+                className="w-full sm:w-auto text-center px-7 py-3.5 bg-white/10 text-white text-[14px] font-semibold tracking-[0.04em] rounded-full hover:bg-white/20 transition-colors border border-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#32302d]"
               >
-                <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-                  chat
-                </span>{' '}
-                WhatsApp Diaspora Desk
+                Message on WhatsApp
               </a>
             </div>
           </div>

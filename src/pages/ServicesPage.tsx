@@ -237,11 +237,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
               <button
                 type="button"
                 onClick={() => onOpenQuote()}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.04em] shadow-md hover:bg-[#c54f2c] transition-all active:scale-[0.98] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.04em] shadow-md hover:bg-[#c54f2c] transition-all active:scale-[0.98] cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
               >
-                <span className="material-symbols-outlined text-[20px] leading-none" aria-hidden="true">
-                  calendar_month
-                </span>
                 Book a plumber
               </button>
             </div>
@@ -254,18 +251,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                 <img
                   className="w-full h-full object-cover"
                   src="/plumber-working-in-kitchen.jfif"
-                  alt="Plumber working in kitchen — tidy pipework install documented for new and existing homes"
+                  alt="Plumber working in kitchen — pipework install documented for new and existing homes"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#32302d]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-                  <div className="flex items-center gap-2 mb-2 ">
-                    <span className="material-symbols-outlined text-[#ffdbd1] text-[22px] leading-none" aria-hidden="true">
-                      workspace_premium
-                    </span>
-                    <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-semibold leading-7 tracking-[-0.005em] text-[#fff8f3]">
-                      Nationwide service
-                    </span>
-                  </div>
-                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-5 text-white/85">For New sites & Existing homes.</p>
+                  <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-semibold leading-7 tracking-[-0.005em] text-[#fff8f3]">
+                    Nationwide service
+                  </span>
+                  <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-5 text-white/85">For new construction sites and occupied homes.</p>
                 </div>
               </div>
             </div>
@@ -273,16 +265,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
         </div>
       </div>
 
-      {/* Services — alternating editorial rows, varied highlight treatments */}
-      <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-20 md:py-24">
+      {/* Services */}
+      <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-24">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-entry">
           <div className="max-w-xl">
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] block mb-2">Detailed Scope of Work</span>
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] block mb-2">Our services</span>
             <h2 className="font-['Fraunces',serif] text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] tracking-[-0.03em] font-semibold text-[#1d1b18]">
-              Everyday plumbing problems, solved with care.
+              Plumbing services for homes and commercial buildings
             </h2>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c] mt-3">
-              Nationwide with free quotations. New builds & lived-in homes.
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-6 text-[#58423c] mt-3">
+              Written estimates provided before work starts. Serving Abeokuta, Lagos, and projects nationwide.
             </p>
           </div>
         </div>
@@ -311,7 +303,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                   />
                   {isDiaspora && (
                     <span className="absolute top-4 left-4 px-3 py-1.5 bg-white text-[#1d1b18] rounded-full text-[11px] font-bold tracking-[0.06em] uppercase shadow-sm">
-                      Diaspora favourite
+                      Diaspora service
                     </span>
                   )}
                   {!isDiaspora && (
@@ -319,22 +311,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                       {idx === 0
                         ? "Nationwide"
                         : idx === 1
-                          ? "Borehole & pump care"
+                          ? "Boreholes and pumps"
                           : idx === 2
-                            ? "Bathroom & kitchen"
+                            ? "Bathrooms and kitchens"
                             : idx === 3
-                              ? "Heaters & filtration"
-                              : "Drainage & soakaways"}
+                              ? "Heaters and filtration"
+                              : "Drainage and soakaways"}
                     </span>
                   )}
                 </div>
 
                 <div className="flex-1 p-6 sm:p-7 lg:p-8 xl:p-10 flex flex-col">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-4 ${isDiaspora ? "bg-white/15 text-[#ffdbd1] border border-white/10" : svc.iconWrap}`}>
-                    <span className="material-symbols-outlined text-[22px] leading-none" aria-hidden="true">
-                      {svc.icon}
-                    </span>
-                  </div>
                   <h3
                     className={`font-['Plus_Jakarta_Sans',sans-serif] text-[20px] md:text-[22px] leading-7 tracking-[-0.04em] font-bold mb-3 ${isDiaspora ? "text-white" : "text-[#1d1b18]"}`}
                   >
@@ -342,7 +329,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                   </h3>
                   <ReadMore text={svc.desc} clampLines={2} variant={isDiaspora ? "dark" : "light"} className="mb-5" />
 
-                  {/* ——— Distinct highlight per category ——— */}
+                  {/* Highlights */}
                   {idx === 0 && (
                     <ul className="space-y-2.5 mb-6">
                       {svc.highlights.map((h) => (
@@ -350,9 +337,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                           key={h}
                           className="flex items-start gap-2.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-6 text-[#58423c]"
                         >
-                          <span className={`material-symbols-outlined text-[18px] leading-none mt-[2px] shrink-0 ${svc.checkColor}`} aria-hidden="true">
-                            check_circle
-                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
                           <span>{h}</span>
                         </li>
                       ))}
@@ -362,21 +347,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                   {idx === 1 && (
                     <div className="mb-6 space-y-4">
                       <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[14px] leading-7 text-[#58423c] border-l-2 border-[#d4e7d8] pl-3">
-                        Weak upstairs showers, humming pumps or tanks that overflow? We clear airlocks, calibrate boosters and set auto float switches so every floor holds
-                        steady pressure — for new sites and lived-in homes, nationwide. Quotations free.
+                        Weak upstairs showers, humming pumps, or tanks that overflow? We clear airlocks, calibrate pressure switches, and install automatic float valves so every floor receives steady pressure.
                       </p>
                       <div className="grid grid-cols-3 gap-2">
                         {[
-                          { k: "Same-day", v: "Airlock cleared", icon: "bolt" },
-                          { k: "±0.3 bar", v: "Pressure balanced", icon: "speed" },
-                          { k: "Zero overflows", v: "Float set right", icon: "water_drop" },
+                          { k: "Same-day", v: "Airlocks cleared" },
+                          { k: "Balanced", v: "Pressure calibrated" },
+                          { k: "Automatic", v: "Float switches tested" },
                         ].map((s) => (
-                          <div key={s.k} className="rounded-xl bg-[#f9f2ed] border border-[#dfc0b7]/20 px-3 py-3 text-center">
-                            <span className="material-symbols-outlined text-[#a43716] text-[18px] leading-none block mb-1" aria-hidden="true">
-                              {s.icon}
-                            </span>
+                          <div key={s.k} className="rounded-xl bg-[#f9f2ed] border border-[#dfc0b7]/20 px-3 py-2.5 text-center">
                             <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-bold leading-none tracking-[-0.02em] text-[#1d1b18]">{s.k}</div>
-                            <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] leading-3 text-[#58423c] mt-1">{s.v}</div>
+                            <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] leading-4 text-[#58423c] mt-1">{s.v}</div>
                           </div>
                         ))}
                       </div>
@@ -448,17 +429,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                           key={h}
                           className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/30 text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 font-medium"
                         >
-                          <span className="w-6 h-6 rounded-full bg-[#d4e7d8] text-[#0f1f16] flex items-center justify-center shrink-0" aria-hidden="true">
-                            <span className="material-symbols-outlined text-[14px] leading-none">verified</span>
-                          </span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#516257] shrink-0" aria-hidden="true" />
                           {h}
                         </span>
                       ))}
                       <span className="inline-flex items-center gap-1.5 px-3 py-2 font-['Plus_Jakarta_Sans',sans-serif] text-[12px] leading-5 text-[#58423c]">
-                        <span className="material-symbols-outlined text-[14px] text-[#516257]" aria-hidden="true">
-                          info
-                        </span>
-                        Nationwide · new & occupied homes
+                        Nationwide · new and existing properties
                       </span>
                     </div>
                   )}
@@ -467,29 +443,26 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                     <div className="mb-6">
                       <ol className="relative border-l border-white/15 pl-6 space-y-4 ml-2">
                         {[
-                          { step: "Enquiry & video survey", detail: svc.highlights[0], icon: "videocam" },
-                          { step: "Pressure test before close-up", detail: svc.highlights[1], icon: "verified_user" },
-                          { step: "UK/US-friendly WhatsApp updates", detail: svc.highlights[2], icon: "chat" },
-                        ].map((item) => (
+                          { step: "Initial WhatsApp enquiry and video review", detail: svc.highlights[0] },
+                          { step: "Pressure testing before walls are tiled", detail: svc.highlights[1] },
+                          { step: "Regular updates timed for UK, US and Canada time zones", detail: svc.highlights[2] },
+                        ].map((item, sIdx) => (
                           <li key={item.step} className="relative">
                             <span
                               aria-hidden="true"
                               className="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-[#ffdbd1] border-2 border-[#32302d] shadow-sm"
                             />
-                            <div className="flex items-start gap-2">
-                              <span className="material-symbols-outlined text-[#ffdbd1] text-[16px] leading-none mt-0.5 shrink-0" aria-hidden="true">
-                                {item.icon}
-                              </span>
-                              <div>
-                                <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-semibold leading-5 text-white">{item.step}</div>
-                                <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 text-[#e7e1dc]">{item.detail}</div>
+                            <div>
+                              <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-semibold leading-5 text-white">
+                                {sIdx + 1}. {item.step}
                               </div>
+                              <div className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 text-[#e7e1dc] mt-0.5">{item.detail}</div>
                             </div>
                           </li>
                         ))}
                       </ol>
                       <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] leading-5 text-[#e7e1dc]/80 mt-4">
-                        For wherever you are — time-stamped photos at every stage, materials verified, costs clear.
+                        Timestamped site photos at each stage, verified parts, and clearly separated labour and materials.
                       </p>
                     </div>
                   )}
@@ -498,12 +471,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                     <button
                       type="button"
                       onClick={() => onOpenQuote(svc.title)}
-                      className={`inline-flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 rounded-full ${isDiaspora ? "text-[#ffdbd1] hover:text-white" : "text-[#a43716] group-hover:text-[#c54f2c]"}`}
+                      className={`inline-flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 rounded-full ${isDiaspora ? "text-[#ffdbd1] hover:text-white" : "text-[#a43716] group-hover:text-[#c54f2c]"}`}
                     >
                       <span>Request quotation</span>
-                      <span className="material-symbols-outlined text-[18px] leading-none" aria-hidden="true">
-                        arrow_forward
-                      </span>
                     </button>
                     <span
                       className={`hidden sm:inline-flex items-center gap-1 font-['Plus_Jakarta_Sans',sans-serif] text-[11px] font-semibold tracking-[0.06em] uppercase ${isDiaspora ? "text-[#e7e1dc]/60" : "text-[#58423c]/60"}`}
@@ -522,17 +492,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
       <section className="w-full bg-[#f9f2ed] py-20 md:py-24">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 reveal-entry">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] block mb-2">Our Method</span>
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] block mb-2">Our process</span>
             <h2
               className="font-['Fraunces',serif] text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] tracking-[-0.03em] font-semibold text-[#1d1b18]"
             >
-              How we work in your home: simple, predictable, clean.
+              How we work on your property
             </h2>
             <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[16px] leading-7 text-[#58423c] mt-3">
-              No hidden bills, no rubble left behind, and no extra trips for forgotten parts.
+              Clear prices, tidy work areas, and tests completed before any pipe is covered up.
             </p>
           </div>
-          {/* Editorial How we work: bento 7+5 / 5+3+4 — breaks 5-equal */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
             {HOW_WE_WORK.map((step, idx) => {
               const span =
@@ -548,22 +517,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                   <div className="relative z-10">
                     <div className="relative inline-flex flex-col items-center mb-4">
                       <div
-                        className={`w-11 h-11 flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-[16px] font-bold border-2 -rotate-1 shadow-sm ${featured ? 'bg-white border-white text-[#1d1b18]' : 'bg-[#fff8f3] border-[#a43716] text-[#a43716]'}`}
-                        style={{ borderRadius: featured ? '46% 54% 52% 48% / 48% 42% 56% 52%' : '42% 58% 52% 48% / 48% 42% 58% 52%' }}
+                        className={`w-10 h-10 flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif] text-[15px] font-bold border-2 shadow-sm ${featured ? 'bg-white border-white text-[#1d1b18]' : 'bg-[#fff8f3] border-[#a43716] text-[#a43716]'}`}
+                        style={{ borderRadius: '50%' }}
                       >
                         {step.n}
                       </div>
-                      <span aria-hidden="true" className={`mt-1.5 h-1.5 rounded-full w-9 -rotate-1 ${featured ? 'bg-[#ffdbd1]/70' : 'bg-[#ffdcbd]'}`} />
                     </div>
                     <h4 className={`font-['Plus_Jakarta_Sans',sans-serif] text-[18px] font-semibold leading-7 tracking-[-0.005em] mb-2 ${featured ? 'text-white text-[20px]' : 'text-[#1d1b18]'}`}>{step.title}</h4>
                     <p className={`font-['Plus_Jakarta_Sans',sans-serif] text-[15px] leading-7 ${featured ? 'text-[#e7e1dc]' : 'text-[#58423c]'}`}>{step.desc}</p>
                   </div>
                   <div
-                    className={`pt-4 mt-5 border-t flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-semibold tracking-[0.04em] uppercase relative z-10 ${featured ? 'border-white/15 text-[#ffdbd1]' : 'border-[#f3ede7] text-[#58423c]'}`}
+                    className={`pt-4 mt-5 border-t font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-semibold tracking-[0.04em] uppercase relative z-10 ${featured ? 'border-white/15 text-[#ffdbd1]' : 'border-[#f3ede7] text-[#58423c]'}`}
                   >
-                    <span className={`material-symbols-outlined text-[16px] leading-none ${featured ? 'text-[#ffb5a0]' : 'text-[#516257]'}`} aria-hidden="true">
-                      {step.footIcon}
-                    </span>
                     <span>{step.foot}</span>
                   </div>
                 </div>
@@ -573,8 +538,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
         </div>
       </section>
 
-      {/* Quick Problem Finder — prominent differentiated UX */}
-      <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-28 reveal-entry">
+      {/* Quick Problem Finder */}
+      <section className="w-full max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 py-16 md:py-24 reveal-entry">
         <div className="relative bg-[#f3ede7] rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 shadow-sm border border-[#dfc0b7]/25 overflow-hidden">
           <div aria-hidden="true" className="pointer-events-none absolute -top-20 -right-20 w-72 h-72 bg-[#a43716]/[0.06] rounded-full blur-3xl" />
           <div aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-16 w-56 h-56 bg-[#ffdcbd]/60 rounded-full blur-2xl" />
@@ -582,15 +547,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
             <div>
               <span className="inline-flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase font-semibold text-[#7b542b] mb-3">
                 <span className="w-6 h-px bg-[#a43716]/40" aria-hidden="true" />
-                Free diagnosis · Nationwide
+                Problem finder
               </span>
-              <h3 className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[1.05] tracking-[-0.03em] font-semibold text-[#1d1b18]">Not sure what kind of plumber you need?</h3>
+              <h3 className="font-['Fraunces',serif] text-[28px] md:text-[36px] leading-[1.1] tracking-[-0.03em] font-semibold text-[#1d1b18]">
+                What is happening with your plumbing?
+              </h3>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] md:text-[16px] leading-7 text-[#58423c] mt-3 max-w-xl">
-                Tap what matches your situation and we&apos;ll explain the likely cause, how we fix it without needless damage, and how soon we can be there.
+                Choose the symptom that matches your issue. We will explain what typically causes it, how we fix it, and what to expect on site.
               </p>
-              <div className="flex flex-wrap gap-3 mt-8" role="group" aria-label="Problem finder">
+              <div className="flex flex-wrap gap-2.5 mt-8" role="group" aria-label="Problem finder">
                 {DIAG_LABELS.map((label, idx) => {
-                  const icons = ["water_drop", "shower", "sanitizer", "settings"] as const;
                   const active = activeDiag === idx;
                   return (
                     <button
@@ -598,11 +564,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                       type="button"
                       onClick={() => setActiveDiag(idx)}
                       aria-pressed={active}
-                      className={`min-h-[48px] inline-flex items-center gap-2 px-5 py-3.5 rounded-full font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.02em] transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 cursor-pointer ${active ? "bg-[#a43716] text-white shadow-md scale-[1.01]" : "bg-white text-[#1d1b18] hover:bg-[#ede7e2] border border-[#dfc0b7]/25 hover:border-[#a43716]/20"}`}
+                      className={`min-h-[44px] inline-flex items-center px-5 py-2.5 rounded-full font-['Plus_Jakarta_Sans',sans-serif] text-[13px] font-semibold tracking-[0.02em] transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 cursor-pointer ${active ? "bg-[#a43716] text-white shadow-md" : "bg-white text-[#1d1b18] hover:bg-[#ede7e2] border border-[#dfc0b7]/25"}`}
                     >
-                      <span className={`material-symbols-outlined text-[18px] leading-none ${active ? "text-white" : "text-[#a43716]"}`} aria-hidden="true">
-                        {icons[idx]}
-                      </span>
                       {label}
                     </button>
                   );
@@ -619,10 +582,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#1d1b18]/70 via-[#1d1b18]/5 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 text-[#1d1b18] text-[11px] font-bold tracking-[0.06em] uppercase shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#2d7a3b] animate-pulse" aria-hidden="true" />
-                  Nationwide
+                  <span className="w-2 h-2 rounded-full bg-[#2d7a3b]" aria-hidden="true" />
+                  On-site work
                 </div>
-                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 font-medium mt-2 text-white/90">Real asset from site — tidy install, pressure-tested before close-up.</p>
+                <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[13px] leading-5 font-medium mt-2 text-white/90">
+                  Neat pipe installation, pressure-tested before walls are closed.
+                </p>
               </div>
             </div>
           </div>
@@ -630,25 +595,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
           <div className="relative mt-8 bg-white rounded-2xl p-6 md:p-8 lg:p-8 shadow-sm flex flex-col md:flex-row gap-6 md:gap-8 items-start justify-between border border-[#dfc0b7]/20 transition-opacity duration-200">
             <span aria-hidden="true" className="hidden md:block absolute left-0 top-6 bottom-6 w-1 bg-[#a43716] rounded-full" />
             <div className="space-y-3 max-w-xl md:pl-4">
-              <div className="flex items-center gap-2 text-[#a43716] font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-bold tracking-[0.08em] uppercase">
-                <span className="material-symbols-outlined text-[18px] leading-none" aria-hidden="true">
-                  search
-                </span>
-                <span>{diag.tag}</span>
-              </div>
+              <span className="text-[#a43716] font-['Plus_Jakarta_Sans',sans-serif] text-[12px] font-bold tracking-[0.08em] uppercase block">
+                {diag.tag}
+              </span>
               <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[20px] md:text-[22px] font-bold leading-7 tracking-[-0.03em] text-[#1d1b18]">{diag.title}</h4>
               <p className="font-['Plus_Jakarta_Sans',sans-serif] text-[15px] md:text-[16px] leading-7 text-[#58423c]">{diag.desc}</p>
               <div className="flex flex-wrap items-center gap-3 md:gap-4 font-['Plus_Jakarta_Sans',sans-serif] text-[13px] md:text-[14px] leading-6 text-[#58423c] pt-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#f9f2ed] border border-[#dfc0b7]/20">
-                  <span className="material-symbols-outlined text-[16px] leading-none text-[#a43716]" aria-hidden="true">
-                    schedule
-                  </span>
                   {diag.time}
                 </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#d4e7d8]/60 border border-[#516257]/15">
-                  <span className="material-symbols-outlined text-[16px] leading-none text-[#516257]" aria-hidden="true">
-                    thumb_up
-                  </span>
                   {diag.benefit}
                 </span>
               </div>
@@ -658,24 +614,18 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                 href={`https://wa.me/2349031386928?text=${encodeURIComponent(diag.waText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#a43716] text-white font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] shadow-md hover:bg-[#c54f2c] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#a43716] text-white font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] shadow-md hover:bg-[#c54f2c] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 text-center"
               >
-                <span className="material-symbols-outlined text-[18px] leading-none" aria-hidden="true">
-                  chat
-                </span>
-                Fix this now
+                Send photo on WhatsApp
               </a>
               <button
                 type="button"
                 onClick={() => onOpenQuote(diag.title)}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#f3ede7] text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#ede7e2] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#f3ede7] text-[#1d1b18] font-['Plus_Jakarta_Sans',sans-serif] text-[14px] font-semibold tracking-[0.04em] hover:bg-[#ede7e2] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
               >
-                <span className="material-symbols-outlined text-[18px] leading-none" aria-hidden="true">
-                  calendar_month
-                </span>
-                Book check
+                Request an inspection
               </button>
-              <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] leading-4 text-[#58423c]/60 text-center">Quotations free · Abeokuta base</span>
+              <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[11px] leading-4 text-[#58423c]/60 text-center">Free written quotes · Abeokuta base</span>
             </div>
           </div>
         </div>

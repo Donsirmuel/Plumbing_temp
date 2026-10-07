@@ -28,7 +28,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenQuote }) => {
         </h2>
 
         <p className="text-sm sm:text-base text-white/70 leading-6 max-w-2xl mx-auto">
-          A leaking line, a new bathroom, a plant room or a full water system — we will help you understand the next step and what it will take.
+          Tell us about your repair or installation. We will explain the practical steps, the parts required, and what the work will cost before anything starts.
         </p>
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">

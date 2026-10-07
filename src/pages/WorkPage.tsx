@@ -230,10 +230,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                       className="mt-2 self-start inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#1d1b18] rounded-full text-[14px] font-semibold hover:bg-[#fff8f3] transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
                       aria-label={`View project ${meta.title}`}
                     >
-                      View project
-                      <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-                        arrow_forward
-                      </span>
+                      View project →
                     </button>
                   </div>
                 </article>
@@ -299,10 +296,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                       className="mt-2 -mx-7 -mb-7 px-7 py-4 bg-[#f9f2ed]/80 border-t border-black/5 flex items-center justify-between text-left hover:bg-[#f3ede7] transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a43716] lg:mx-0 lg:mb-0 lg:mt-auto lg:rounded-xl lg:border lg:px-5 lg:py-3"
                       aria-label={`View project ${meta.title}`}
                     >
-                      <span className="text-[15px] font-semibold text-[#a43716]">View project</span>
-                      <span className="material-symbols-outlined text-[#a43716] group-hover:translate-x-0.5 transition-transform shrink-0" aria-hidden="true">
-                        arrow_forward
-                      </span>
+                      <span className="text-[15px] font-semibold text-[#a43716]">View project →</span>
                     </button>
                   </div>
                 </article>
@@ -372,10 +366,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                     className="mt-auto -mx-7 -mb-7 px-7 py-4 bg-[#f9f2ed]/80 border-t border-black/5 flex items-center justify-between text-left hover:bg-[#f3ede7] transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#a43716]"
                     aria-label={`View project ${meta.title}`}
                   >
-                    <span className="text-[15px] font-semibold text-[#a43716]">View project</span>
-                    <span className="material-symbols-outlined text-[#a43716] group-hover:translate-x-0.5 transition-transform shrink-0" aria-hidden="true">
-                      arrow_forward
-                    </span>
+                    <span className="text-[15px] font-semibold text-[#a43716]">View project →</span>
                   </button>
                 </div>
               </article>
@@ -390,89 +381,72 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-5 flex flex-col gap-3">
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Our Clean Site Standard</span>
+              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#a43716]">Clean site policy</span>
               <h2
-                className="font-['Fraunces',serif] text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.03em] font-semibold text-[#1d1b18]"
+                className="font-['Fraunces',serif] text-[24px] md:text-[30px] leading-[1.2] tracking-[-0.03em] font-semibold text-[#1d1b18]"
               >
-                We treat your home like a showroom, not an active quarry.
+                We leave your home as clean as we found it
               </h2>
               <div className="flex flex-col gap-3 mt-1">
                 <div className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-[#a43716]/10 text-[#a43716] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
-                    <span className="material-symbols-outlined text-[14px]">check</span>
-                  </span>
-                  <p className="text-[16px] leading-7 text-[#1d1b18]">
-                    <strong className="font-semibold">Protective Overcovers:</strong> Clean overshoes before stepping past your front door.
+                  <span className="w-2 h-2 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <p className="text-[15px] leading-6 text-[#1d1b18]">
+                    <strong className="font-semibold">Protective overshoes:</strong> Clean shoe covers before walking past your front door.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-[#a43716]/10 text-[#a43716] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
-                    <span className="material-symbols-outlined text-[14px]">check</span>
-                  </span>
-                  <p className="text-[16px] leading-7 text-[#1d1b18]">
-                    <strong className="font-semibold">Heavy Canvas Tarpaulins:</strong> Floors and polished wood shielded while tools are active.
+                  <span className="w-2 h-2 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <p className="text-[15px] leading-6 text-[#1d1b18]">
+                    <strong className="font-semibold">Floor protection:</strong> Drop cloths placed under every basin, valve, or pipe run while work is underway.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-[#a43716]/10 text-[#a43716] flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
-                    <span className="material-symbols-outlined text-[14px]">check</span>
-                  </span>
-                  <p className="text-[16px] leading-7 text-[#1d1b18]">
-                    <strong className="font-semibold">Wet/Dry Vacuuming:</strong> Every shaving and droplet cleared before we sign off.
+                  <span className="w-2 h-2 rounded-full bg-[#a43716] shrink-0 mt-2" aria-hidden="true" />
+                  <p className="text-[15px] leading-6 text-[#1d1b18]">
+                    <strong className="font-semibold">Floors dried and swept:</strong> Every water droplet and pipe cut cleaned up before handover.
                   </p>
                 </div>
               </div>
               <div className="mt-4">
                 <a
                   href="tel:+2349031386928"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#a43716] text-white rounded-full text-[14px] font-semibold hover:bg-[#c54f2c] transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
+                  className="inline-flex items-center px-6 py-3 bg-[#a43716] text-white rounded-full text-[14px] font-semibold hover:bg-[#c54f2c] transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2"
                 >
-                  <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-                    phone_in_talk
-                  </span>
-                  Book Clean Plumber Today
+                  Book a plumber
                 </a>
               </div>
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-2xl flex flex-col gap-3 shadow-sm border border-black/5">
-                <div className="w-11 h-11 rounded-xl bg-[#d4e7d8] text-[#3a4b40] flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]" aria-hidden="true">
-                    cleaning_services
-                  </span>
-                </div>
-                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">Pristine Site Sign-off</h3>
-                <p className="text-[16px] leading-7 text-[#58423c]">
-                  We inspect before presenting the final work order. If you spot dust or scrap, we return to wipe it down.
+              <div className="bg-white p-6 rounded-2xl flex flex-col gap-2 shadow-sm border border-black/5">
+                <span className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#3a4b40]">
+                  Inspection first
+                </span>
+                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">Clean sign-off</h3>
+                <p className="text-[15px] leading-6 text-[#58423c]">
+                  We check the workspace with you before packing up. If any spot needs extra wiping, we handle it immediately.
                 </p>
               </div>
-              <div className="bg-white p-5 rounded-2xl flex flex-col gap-3 shadow-sm border border-black/5">
-                <div className="w-11 h-11 rounded-xl bg-[#ffdcbd] text-[#623f18] flex items-center justify-center">
-                  <span className="material-symbols-outlined text-[26px]" aria-hidden="true">
-                    handyman
-                  </span>
-                </div>
-                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">No Pipe Ruptures</h3>
-                <p className="text-[16px] leading-7 text-[#58423c]">
-                  Scanners pinpoint existing conduits and rebar before we drill a single anchor.
+              <div className="bg-white p-6 rounded-2xl flex flex-col gap-2 shadow-sm border border-black/5">
+                <span className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#623f18]">
+                  Wall protection
+                </span>
+                <h3 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">No blind drilling</h3>
+                <p className="text-[15px] leading-6 text-[#58423c]">
+                  We check for buried conduit and electrical wiring before drilling anchor holes for pipes or cistern frames.
                 </p>
               </div>
               <div
-                className="bg-white p-5 rounded-2xl flex flex-col gap-3 shadow-sm border border-black/5 sm:col-span-2"
+                className="bg-white p-6 rounded-2xl flex flex-col gap-2 shadow-sm border border-black/5 sm:col-span-2"
               >
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-[#a43716]/10 text-[#a43716] flex items-center justify-center shrink-0">
-                    <span className="material-symbols-outlined text-[32px]" aria-hidden="true">
-                      shield_with_heart
-                    </span>
-                  </div>
-                  <div className="flex flex-col text-center sm:text-left">
-                    <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18]">High-grade workmanship assured</h4>
-                    <p className="text-[16px] leading-7 text-[#58423c] mt-1">
-                      Every joint, weld and seal we fit is checked under load and finished clean — we stand behind our work.
-                    </p>
-                  </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-[12px] font-bold tracking-[0.06em] uppercase text-[#a43716]">
+                    Our guarantee
+                  </span>
+                  <h4 className="font-['Plus_Jakarta_Sans',sans-serif] text-[17px] font-bold tracking-[-0.04em] text-[#1d1b18] mt-1">Workmanship backing on every joint</h4>
+                  <p className="text-[15px] leading-6 text-[#58423c] mt-1">
+                    Every joint, weld, and valve is tested under working water pressure before we close up. If our work leaks or shifts, we return and fix it.
+                  </p>
                 </div>
               </div>
             </div>
@@ -544,21 +518,15 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
               href="https://wa.me/2349031386928"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#a43716] text-white rounded-full text-[14px] font-semibold hover:bg-[#c54f2c] transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#516257]"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-[#a43716] text-white rounded-full text-[14px] font-semibold hover:bg-[#c54f2c] transition-colors shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#516257]"
             >
-              <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-                chat
-              </span>
-              WhatsApp Photos
+              Send photos on WhatsApp
             </a>
             <a
               href="tel:+2349031386928"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/15 text-white hover:bg-white/25 rounded-full text-[14px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-white/15 text-white hover:bg-white/25 rounded-full text-[14px] font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
-              <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
-                call
-              </span>
-              Direct Call
+              Call 0903 138 6928
             </a>
           </div>
           <div className="absolute -right-10 sm:-right-16 -bottom-10 sm:-bottom-16 w-48 sm:w-72 h-48 sm:h-72 max-w-[50vw] rounded-full bg-[#a43716]/10 pointer-events-none blur-2xl" aria-hidden="true" />
