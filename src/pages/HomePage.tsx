@@ -183,44 +183,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
     return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // reduced-motion commented out — always animate
-    // if (prefersReduced) return;
-    if (window.innerWidth <= 768) return;
-    const heroSection = document.getElementById('hero-section') as HTMLElement | null;
-    const tiltFeatured = document.getElementById('tilt-featured') as HTMLElement | null;
-    if (!heroSection || !tiltFeatured) return;
-
-    const onMove = (e: MouseEvent) => {
-      const rect = heroSection.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const deltaX = (x - centerX) / centerX;
-      const deltaY = (y - centerY) / centerY;
-      tiltFeatured.style.transform = `perspective(1000px) rotateY(${deltaX * 4}deg) rotateX(${-deltaY * 4}deg) translateZ(8px)`;
-    };
-    const onLeave = () => {
-      tiltFeatured.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0)';
-    };
-    heroSection.addEventListener('mousemove', onMove);
-    heroSection.addEventListener('mouseleave', onLeave);
-    return () => {
-      heroSection.removeEventListener('mousemove', onMove);
-      heroSection.removeEventListener('mouseleave', onLeave);
-    };
-  }, []);
-
   return (
     <div ref={rootRef} className="w-full max-w-full min-w-0 overflow-x-clip bg-[#fff8f3]">
-      {/* Immersive hero — Navbar already renders announcement bar, so Home starts with hero */}
+      {/* Immersive hero — compact, balanced vertical proportions */}
       <section
         id="hero-section"
-        className="relative w-full min-h-[92vh] lg:min-h-screen overflow-hidden flex flex-col justify-between bg-[#191513] text-[#f6f0ea]"
+        className="relative w-full overflow-hidden bg-[#191513] text-[#f6f0ea] py-14 sm:py-16 md:py-20 lg:py-22"
       >
-        {/* Parallax Deep Visual Background Layer — pipe close-up → finished bathroom fade, gentle */}
+        {/* Parallax Deep Visual Background Layer — pipe close-up → finished bathroom fade */}
         <div id="hero-bg-wrapper" className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
             src={HERO_IMG}
@@ -239,51 +209,47 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(15,13,12,0.6)_100%)]" />
         </div>
 
-        {/* Hero Content — centred, no right image, reduced blur */}
-        <div className="relative z-10 max-w-[1200px] w-full mx-auto px-5 sm:px-6 md:px-12 pt-16 md:pt-28 pb-10 flex-1 flex items-center justify-center min-w-0 max-w-full overflow-x-clip">
-          <div className="w-full max-w-3xl mx-auto flex flex-col items-center text-center gap-5">
-            <span className="reveal-entry inline-block border-b-2 border-[#a43716] pb-1 text-[11px] tracking-[0.08em] uppercase text-[#f6f0ea]">Tidy, honest plumbing</span>
+        {/* Hero Content — centred, compact, perfectly proportioned */}
+        <div className="relative z-10 max-w-[1200px] w-full mx-auto px-5 sm:px-6 md:px-12 flex items-center justify-center min-w-0 max-w-full">
+          <div id="hero-text-layer" className="w-full max-w-3xl mx-auto flex flex-col items-center text-center gap-4 md:gap-5">
+            <span className="reveal-entry inline-block border-b-2 border-[#a43716] pb-1 text-[11px] font-semibold tracking-[0.08em] uppercase text-[#f6f0ea]">
+              Tidy, honest plumbing
+            </span>
 
-            <h1 className="font-['Fraunces',serif] text-[42px] md:text-[64px] leading-[1.08] tracking-tight text-[#f6f0ea] font-normal overflow-hidden text-center">
+            <h1 className="font-['Fraunces',serif] text-[38px] sm:text-[46px] md:text-[56px] lg:text-[62px] leading-[1.08] tracking-tight text-[#f6f0ea] font-normal overflow-hidden text-center">
               <span className="hero-line block overflow-hidden"><span className="hero-line-inner block">Plumbing done right.</span></span>
               <span className="hero-line block overflow-hidden"><span className="hero-line-inner block"><span className="font-normal text-[#ffdcbd]">Clean</span> and built to last.</span></span>
             </h1>
 
-              <p className="hero-sub text-[15px] md:text-[18px] leading-7 text-[#e7e1dc] max-w-2xl text-center opacity-0">
-                From persistent leaks and weak water pressure to new pipe installations for homes and businesses.
-              </p>
+            <p className="hero-sub text-[15px] md:text-[17px] leading-relaxed text-[#e7e1dc] max-w-xl text-center opacity-0">
+              From persistent leaks and weak water pressure to new pipe installations for homes and businesses.
+            </p>
 
-              <div className="reveal-entry pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
-                <button
-                  onClick={onOpenQuote}
-                  className="shine-button inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_12px_24px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_16px_32px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
-                >
-                  Book a visit
-                </button>
-                <a
-                  href="https://wa.me/2349031386928"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-4 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
-                >
-                  WhatsApp us directly
-                </a>
-              </div>
-
-              {/* Micro Trust Chips — clean typographic presentation */}
-              <div className="reveal-entry pt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[#e7e1dc] text-[13px]">
-                <span>On time as agreed</span>
-                <span className="text-white/30">•</span>
-                <span>Clear written quotes</span>
-                <span className="text-white/30">•</span>
-                <span>Workmanship backing</span>
-              </div>
-              </div>
+            <div className="reveal-entry pt-1 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
+              <button
+                onClick={onOpenQuote}
+                className="shine-button inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full shadow-[0_8px_20px_rgba(164,55,22,0.35)] hover:bg-[#c54f2c] hover:shadow-[0_12px_28px_rgba(197,79,44,0.5)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ffb5a0] focus-visible:ring-offset-2 focus-visible:ring-offset-[#191513]"
+              >
+                Book a visit
+              </button>
+              <a
+                href="https://wa.me/2349031386928"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-white/10 hover:bg-white/20 text-[#f6f0ea] text-[13px] font-medium rounded-full backdrop-blur-md border border-white/15 transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98] shadow-sm group"
+              >
+                WhatsApp us directly
+              </a>
             </div>
-        {/* Bottom Hero Transition: Trust bar — clean typography */}
-        <div className="relative z-10 w-full bg-white/10 backdrop-blur-lg border-t border-white/10 py-4 px-5 sm:px-6 md:px-12">
-          <div className="max-w-[1200px] mx-auto text-center text-[#e7e1dc] text-[13px] tracking-[0.01em]">
-            Every job photographed after clean-up and tested under pressure before handover
+
+            {/* Micro Trust Chips — clean typographic presentation */}
+            <div className="reveal-entry pt-1 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[#e7e1dc] text-[12px] sm:text-[13px]">
+              <span>On time as agreed</span>
+              <span className="text-white/30">•</span>
+              <span>Clear written quotes</span>
+              <span className="text-white/30">•</span>
+              <span>Workmanship backing</span>
+            </div>
           </div>
         </div>
       </section>
