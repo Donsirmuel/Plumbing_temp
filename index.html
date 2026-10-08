@@ -24,30 +24,86 @@
     <title>OOH JAY — Plumbing & Construction</title>
     <meta name="description" content="Specialized plumbing engineering and building construction company based in Nigeria. Delivering high-pressure water systems, plant rooms, luxury wet areas, and turnkey construction across Lagos, Abuja, and nationwide." />
     <meta name="theme-color" content="#a43716" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Favicons & App Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
+
+    <!-- Search Engine Directives -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <meta name="bingbot" content="index, follow" />
     <meta name="author" content="OOH JAY Plumbing Services" />
-    <meta name="keywords" content="OOH JAY, plumbing company Lagos, plumber Lagos, plumbing company Abuja, water systems Nigeria, plant room Lagos, bathroom plumbing Lagos, Ikoyi plumbing, Lekki plumbing" />
-    <link rel="canonical" href="https://plumbingtemp.vercel.app/" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <meta name="keywords" content="OOH JAY, plumbing company Lagos, plumber Lagos, plumbing company Abuja, water systems Nigeria, plant room Lagos, bathroom plumbing Lagos, Ikoyi plumbing, Lekki plumbing, Abeokuta plumbing" />
+    <link rel="canonical" href="/" />
+
+    <!-- OpenGraph Social Sharing (Facebook, WhatsApp, LinkedIn, Discord, Slack, iMessage) -->
+    <meta property="og:site_name" content="OOH JAY" />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="OOH JAY — Plumbing & Construction" />
     <meta property="og:description" content="Specialized plumbing engineering and building construction company based in Nigeria. Delivering high-pressure water systems, plant rooms, luxury wet areas, and turnkey construction across Lagos, Abuja, and nationwide." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://plumbingtemp.vercel.app/" />
-    <meta property="og:image" content="https://plumbingtemp.vercel.app/og-image.jpg" />
+    <meta property="og:url" content="/" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="en_GB" />
+
+    <!-- Primary OpenGraph Image (1200x630 JPEG, high density) -->
+    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image:secure_url" content="/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="OOH JAY Plumbing Services — Architectural Plumbing and Plant Rooms in Nigeria" />
+    <meta property="og:image:alt" content="OOH JAY — Plumbing & Construction | High-pressure water systems, luxury bathrooms and plant rooms" />
+
+    <!-- Fallback OpenGraph Image (1200x630 PNG) -->
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:secure_url" content="/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X Social Share Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="OOH JAY — Plumbing for Homes & Businesses" />
-    <meta name="twitter:description" content="Plumbing for homes and businesses in Nigeria & beyond. Water systems, wet areas, plant rooms, repairs and servicing. Construction support when the project needs it." />
-    <meta name="twitter:image" content="https://plumbingtemp.vercel.app/og-image.jpg" />
+    <meta name="twitter:title" content="OOH JAY — Plumbing & Construction" />
+    <meta name="twitter:description" content="Specialized plumbing engineering and building construction company based in Nigeria. Delivering high-pressure water systems, plant rooms, luxury wet areas, and turnkey construction across Lagos, Abuja, and nationwide." />
+    <meta name="twitter:image" content="/og-image.jpg" />
+    <meta name="twitter:image:alt" content="OOH JAY — Plumbing & Construction | High-pressure water systems and luxury plant rooms in Nigeria" />
+
+    <!-- Dynamic OpenGraph & Canonical URL Synchronization -->
+    <script>
+      (function() {
+        try {
+          if (typeof window !== 'undefined' && window.location) {
+            var origin = window.location.origin;
+            var href = window.location.href;
+
+            var canonicalEl = document.querySelector('link[rel="canonical"]');
+            if (canonicalEl) canonicalEl.setAttribute('href', href);
+
+            var ogUrlEl = document.querySelector('meta[property="og:url"]');
+            if (ogUrlEl) ogUrlEl.setAttribute('content', href);
+
+            var imageSelectors = [
+              'meta[property="og:image"]',
+              'meta[property="og:image:secure_url"]',
+              'meta[name="twitter:image"]'
+            ];
+            imageSelectors.forEach(function(sel) {
+              var els = document.querySelectorAll(sel);
+              els.forEach(function(el) {
+                var val = el.getAttribute('content');
+                if (val && val.startsWith('/')) {
+                  el.setAttribute('content', origin + val);
+                }
+              });
+            });
+          }
+        } catch (_) {}
+      })();
+    </script>
 
     <!-- Schema.org JSON-LD Structured Data for AI Agents & Search Engines -->
     <script type="application/ld+json">
@@ -56,14 +112,15 @@
       "@graph": [
         {
           "@type": ["Plumber", "GeneralContractor"],
-          "@id": "https://plumbingtemp.vercel.app/#business",
+          "@id": "https://oohjay.com/#business",
           "name": "OOH JAY Plumbing Services",
           "alternateName": "OOH JAY Nigeria",
-          "url": "https://plumbingtemp.vercel.app",
+          "url": "https://oohjay.com",
           "description": "Plumbing company for homes and businesses in Nigeria & beyond. Water systems, bathrooms & wet areas, plant rooms, diagnostics and servicing — with construction support when a project needs it.",
           "telephone": "+2349031386928",
           "email": "inquiries@oohjay.com",
           "priceRange": "$$$$",
+          "image": "/og-image.jpg",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Abiola Way, Abeokuta",
@@ -73,8 +130,8 @@
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 6.4281,
-            "longitude": 3.4219
+            "latitude": 7.1557,
+            "longitude": 3.3486
           },
           "areaServed": [
             { "@type": "Country", "name": "Nigeria" },
@@ -124,7 +181,7 @@
         },
         {
           "@type": "FAQPage",
-          "@id": "https://plumbingtemp.vercel.app/#faq",
+          "@id": "https://oohjay.com/#faq",
           "mainEntity": [
             {
               "@type": "Question",

@@ -15,6 +15,7 @@ import { PricingPage } from './pages/PricingPage';
 import { ProcessPage } from './pages/ProcessPage';
 import { ContactPage } from './pages/ContactPage';
 import { Project } from './types';
+import { SeoHead } from './components/SeoHead';
 
 // Register ScrollTrigger globally for the application
 gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +57,7 @@ function Site() {
 
   return (
     <div className="min-h-screen bg-[#fff8f3] text-[#1d1b18] font-sans antialiased selection:bg-[#ffdbd1] selection:text-[#3b0900]">
+      <SeoHead />
       <ScrollToTop />
       <Navbar onOpenQuote={() => handleOpenQuote()} />
       {/* Spacer for fixed header (main nav 80px) */}
