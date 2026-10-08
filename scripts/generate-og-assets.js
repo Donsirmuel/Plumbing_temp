@@ -10,6 +10,21 @@ async function generateAssets() {
 
   // 1. Generate crisp PNG favicons
   await sharp(faviconSvgBuffer)
+    .resize(16, 16)
+    .png()
+    .toFile('public/favicon-16x16.png');
+
+  await sharp(faviconSvgBuffer)
+    .resize(32, 32)
+    .png()
+    .toFile('public/favicon-32x32.png');
+
+  await sharp(faviconSvgBuffer)
+    .resize(48, 48)
+    .png()
+    .toFile('public/favicon-48x48.png');
+
+  await sharp(faviconSvgBuffer)
     .resize(192, 192)
     .png()
     .toFile('public/favicon.png');

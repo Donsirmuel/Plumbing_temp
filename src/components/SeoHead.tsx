@@ -10,37 +10,37 @@ const ROUTE_SEO_MAP: Record<string, RouteSeo> = {
   '/': {
     title: 'OOH JAY — Plumbing & Construction',
     description:
-      'Specialized plumbing engineering and building construction company based in Nigeria. Delivering high-pressure water systems, plant rooms, luxury wet areas, and turnkey construction across Lagos, Abuja, and nationwide.',
+      'Specialized plumbing engineering and building construction in Nigeria. High-pressure water systems, plant rooms, and luxury wet areas in Lagos and Abuja.',
   },
   '/services': {
     title: 'Services & Capabilities — OOH JAY Plumbing & Construction',
     description:
-      'Explore our core capabilities: water distribution networks, luxury bathrooms, plant room pumps and filtration, diagnostic leak tracing, and turnkey building support.',
+      'Plumbing engineering capabilities: high-pressure water systems, luxury bathrooms, plant rooms, acoustic pipe insulation, and turnkey building support.',
   },
   '/work': {
     title: 'Completed Projects & Gallery — OOH JAY Plumbing & Construction',
     description:
-      'Examine completed residential and commercial plumbing installations, plant room pump arrays, luxury master ensuites, and water treatment systems across Nigeria.',
+      'Completed projects: commercial and residential plumbing installations, plant room overhauls, and luxury wet areas in Lagos, Abeokuta, and nationwide.',
   },
   '/about': {
     title: 'About Us — OOH JAY Plumbing & Construction',
     description:
-      'Meet OOH JAY. Our engineering standards, in-house team of qualified plumbers and builders, 16-bar pressure testing guarantee, and calm workmanship on every site.',
+      'Meet OOH JAY: our engineering standards, qualified in-house plumbers and builders, 16-bar pressure testing guarantee, and calm workmanship on every site.',
   },
   '/pricing': {
     title: 'Pricing & Scope — OOH JAY Plumbing & Construction',
     description:
-      'Transparent diagnostic fees, itemised material schedules at market cost, and clear workmanship backing for plumbing repairs, refits, and new installations.',
+      'Clear diagnostic fees, itemised material schedules at market cost, and workmanship backing for plumbing repairs, refits, and new installations.',
   },
   '/process': {
     title: 'Our Process — OOH JAY Plumbing & Construction',
     description:
-      'From initial site audit and itemised quotation to 16-bar pressure testing and clean handover: how we deliver reliable water systems across Nigeria.',
+      'From site audit and itemised quotation to 16-bar pressure testing and clean handover: how we build and repair water systems across Nigeria.',
   },
   '/contact': {
     title: 'Contact & Inquiries — OOH JAY Plumbing & Construction',
     description:
-      'Call +234 903 138 6928 or send photos on WhatsApp for urgent leaks, project consultations, and site visits in Abeokuta, Lagos, and nationwide.',
+      'Direct line and WhatsApp hotline (+234 903 138 6928) for urgent leaks, project consultations, and site visits in Abeokuta, Lagos, and nationwide.',
   },
 };
 
@@ -83,6 +83,9 @@ export const SeoHead: React.FC = () => {
     }
 
     // 5. Update Twitter Tags
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:site', '@oohjayplumbing');
+    setMeta('name', 'twitter:creator', '@oohjayplumbing');
     setMeta('name', 'twitter:title', seo.title);
     setMeta('name', 'twitter:description', seo.description);
     if (origin) {
