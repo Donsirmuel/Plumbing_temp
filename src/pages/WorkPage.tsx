@@ -33,7 +33,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2024',
     category: 'bathrooms',
     categoryLabel: 'Sanitary Architecture',
-    image: '/master-bathroom-ensuite.jfif',
+    image: '/master-bathroom-ensuite.webp',
     alt: 'Master bathroom ensuite in Abeokuta — basin, shower and watertight finish as installed',
     projectId: 'victoria-island-master-bath',
   },
@@ -46,7 +46,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2024',
     category: 'pumps',
     categoryLabel: 'Pressure Engineering',
-    image: '/pressure-pump-installs.jfif',
+    image: '/pressure-pump-installs.webp',
     alt: 'Pressure pump and filter array in plant room, silent install as fitted',
     projectId: 'mechanical-plant-room',
   },
@@ -59,7 +59,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2024',
     category: 'piping',
     categoryLabel: 'Flow Balancing',
-    image: '/kitchen1.jfif',
+    image: '/kitchen1.webp',
     alt: 'Kitchen fitting in Abeokuta — sink and tap as installed, water tested',
     projectId: 'copper-manifold-installation',
   },
@@ -71,7 +71,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2024',
     category: 'pumps',
     categoryLabel: 'Water Filtration & Tanks',
-    image: '/overhead-water-tank.jfif',
+    image: '/overhead-water-tank.webp',
     alt: 'Overhead water tank as installed — neat valving and overflow as fitted',
     projectId: 'pressure-testing-valving',
   },
@@ -84,7 +84,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2024',
     category: 'piping',
     categoryLabel: 'Remote Client Oversight',
-    image: '/plumber-laying-pipes.jfif',
+    image: '/plumber-laying-pipes.webp',
     alt: 'Plumber laying pipes for new supply manifold — neat runs before close-up',
     projectId: 'subterranean-drainage-build',
   },
@@ -96,7 +96,7 @@ const GALLERY_META: GalleryMeta[] = [
     year: '2023',
     category: 'commercial',
     categoryLabel: 'Multi-Unit Infrastructure',
-    image: '/industrial-plumbing.jfif',
+    image: '/industrial-plumbing.webp',
     alt: 'Industrial overhead pipework in commercial plant as installed',
     projectId: 'commercial-hydronic-risers',
   },
@@ -271,7 +271,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
                     <div className="flex flex-col gap-3 pt-4 border-t border-black/5">
                       <div className="flex gap-3 items-start">
                         <img
-                          src="/close-up-of-basin-install.jfif"
+                          src="/close-up-of-basin-install.webp"
                           alt="Detail: basin mixer close-up as installed"
                           className="w-20 h-20 rounded-xl object-cover shrink-0 border border-black/5"
                           loading="lazy"
@@ -469,7 +469,7 @@ export const WorkPage: React.FC<WorkPageProps> = ({ onSelectProject }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-10">
           {TESTIMONIALS.map((t, idx) => {
-            const headshots = ['/plumber-working-in-kitchen.jfif', '/plumber-laying-pipes.jfif', '/plumber-in-kitchen.jfif'];
+            const headshots = ['/plumber-working-in-kitchen.webp', '/plumber-laying-pipes.webp', '/plumber-in-kitchen.webp'];
             const headshot = headshots[idx % headshots.length];
             return (
               <div key={t.id} className="flex flex-col gap-4">

@@ -89,7 +89,7 @@ export const BeforeAfterSlider: React.FC = () => {
             className="relative overflow-hidden bg-[#0F1E2D] aspect-[16/10] sm:aspect-[21/10] w-full select-none cursor-ew-resize rounded-2xl border border-[#0F1E2D]/10"
           >
             <img
-              src="/bathroom-ikoyi.jfif"
+              src="/bathroom-ikoyi.webp"
               alt="Master ensuite bathroom as finished — basin and shower with watertight finish, Abeokuta"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               loading="lazy"
@@ -100,7 +100,7 @@ export const BeforeAfterSlider: React.FC = () => {
               style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
             >
               <img
-                src="/plumbing-installation.jfif"
+                src="/plumbing-installation.webp"
                 alt="Pipework behind the walls — plumber laying neat supply runs before close-up"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"

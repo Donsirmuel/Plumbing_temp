@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     location: 'ABEOKUTA',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: '/plumber-laying-pipes.jfif',
+    image: '/plumber-laying-pipes.webp',
     description:
       'Plumber laying copper pipes for a new supply manifold — neat runs set out for access and tested before walls close. For new builds and repairs on existing homes,',
     client: 'Residential build, Abeokuta — new manifold & supply rework',
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     location: 'LAGOS',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: '/pressure-pump-installs.jfif',
+    image: '/pressure-pump-installs.webp',
     description:
       'Pressure pump and filter array in a plant room — silent install set for steady pressure and clean delivery. New plant builds and servicing of existing pump sets',
     client: 'Residential compound, Lagos — plant room & filtration',
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     location: 'ABEOKUTA',
     year: '2024',
     category: 'Plumbing & Hydronics',
-    image: '/master-bathroom-ensuite.jfif',
+    image: '/master-bathroom-ensuite.webp',
     description:
       'Master bathroom ensuite — basin, shower and watertight finish as installed. Concealed pipework and waterproofing for daily use, for new bathrooms and refits on existing homes.',
     client: 'Residential ensuite, Abeokuta',
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     location: 'OGUN STATE',
     year: '2024',
     category: 'Complete Design-Build',
-    image: '/soakaways.jfif',
+    image: '/soakaways.webp',
     description:
       'Soakaway and drainage chamber as built — drainage and building work coordinated so services run cleanly. New soakaway builds and fixes for blocked or smelly existing drains,',
     client: 'Residential site, Ogun State — soakaway & drainage',
@@ -123,7 +123,7 @@ export const PROJECTS: Project[] = [
     location: 'ABUJA',
     year: '2023',
     category: 'Plumbing & Hydronics',
-    image: '/industrial-plumbing.jfif',
+    image: '/industrial-plumbing.webp',
     description:
       'Industrial overhead pipework in a commercial plant — risers, plant and drainage coordinated for ongoing operation. New commercial installs and remedial work on existing systems, serving nationwide.',
     client: 'Commercial building, Abuja FCT — risers & plant',

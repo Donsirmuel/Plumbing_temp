@@ -175,23 +175,24 @@ export const RequestQuoteModal: React.FC<RequestQuoteModalProps> = ({ isOpen, on
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <button
                 type="submit"
-                className="flex-1 rounded-full py-3.5 bg-[#a43716] text-white text-sm font-semibold hover:bg-[#a43716] transition-colors duration-150 cursor-pointer inline-flex items-center justify-center gap-2"
+                className="flex-1 rounded-full py-3.5 bg-[#a43716] text-white text-sm font-semibold hover:bg-[#c54f2c] transition-all duration-150 shadow-md active:scale-[0.98] cursor-pointer inline-flex items-center justify-center gap-2"
               >
-                Submit for review <ArrowRight className="w-4 h-4" />
+                <span>Submit for review</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 border border-[#0F1E2D]/15 text-[#0F1E2D] text-sm font-medium hover:bg-[#F6F5F2] transition-colors duration-150"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 border border-[#dfc0b7]/40 text-[#1d1b18] text-sm font-medium hover:bg-[#f3ede7] transition-colors duration-150"
               >
                 <MessageSquare className="w-4 h-4 text-[#a43716]" />
                 <span>Chat via WhatsApp</span>
               </a>
             </div>
 
-            <div className="text-xs text-[#5B6B7A] text-center">OOH JAY · Nigeria & Abroad</div>
+            <div className="text-xs text-[#8b716a] text-center">OOH JAY · Abiola Way, Abeokuta · Serving Nigeria &amp; Abroad</div>
           </form>
         )}
       </div>

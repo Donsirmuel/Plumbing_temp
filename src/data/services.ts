@@ -10,7 +10,7 @@ export const SERVICES: ServiceItem[] = [
       'Copper and PPR pipe networks, steady-pressure booster pumps, multi-stage water filtration, and quiet drainage lines.',
     detailedDesc:
       'Plumbing in Nigeria has to withstand harsh borehole water, heavy sediment, and sudden pressure spikes. We install distribution manifolds, which are central hubs that feed each tap and shower through its own dedicated line. That keeps water pressure balanced so a flushing toilet downstairs never starves an upstairs shower. We use hard-drawn copper and heavy-wall PPR piping on new builds and occupied properties.',
-    image: '/pressure-pump-installs.jfif',
+    image: '/pressure-pump-installs.webp',
     highlights: [
       'Hard-drawn brazed copper and multilayer PPR/PEX supply lines',
       'Whole-house water filtration, softening, and sediment removal',
@@ -32,7 +32,7 @@ export const SERVICES: ServiceItem[] = [
       'In-wall mixer valves, walk-in wet rooms, flush floor drains, freestanding baths, and sanitary fittings for new builds and renovations.',
     detailedDesc:
       'A great bathroom starts with what sits behind the tiles. We install the concealed pipework and the waterproof membrane together, so water cannot seep into the subfloor or walls. We set floor drains with laser-guided falls to prevent pooling, and align all pipe outlets squarely with tile layouts before any wall is closed.',
-    image: '/bathroom-installation.jfif',
+    image: '/bathroom-installation.webp',
     highlights: [
       'Concealed thermostatic shower valves and in-wall cistern frames',
       'Continuous waterproofing membranes on floors and wet walls',
@@ -76,7 +76,7 @@ export const SERVICES: ServiceItem[] = [
       'Construction support when a plumbing project needs it — structural work, foundations, concrete framing and masonry planned together with the plumbing so pipe penetrations and services are built in, not chased in later. New builds and coordinated repairs.',
     detailedDesc:
       'For projects that need more than plumbing alone, our building team works with our plumbers from the drawings. That means sleeves, risers and drainage are coordinated early — no destructive chasing and cleaner finishes — for both new structures and existing property upgrades, nationwide.',
-    image: '/plumbing-installation.jfif',
+    image: '/plumbing-installation.webp',
     highlights: [
       'Foundations, concrete framing & masonry when required',
       'Pipe penetrations and sleeves coordinated in the structure',

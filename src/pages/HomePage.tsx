@@ -14,12 +14,12 @@ interface HomePageProps {
   onSelectProject: (project: Project) => void;
 }
 
-const HERO_IMG = '/master-bathroom-ensuite.jfif';
+const HERO_IMG = '/master-bathroom-ensuite.webp';
 
 const RECENT_IMAGES = {
-  ensuite: '/master-bathroom-ensuite.jfif',
-  pump: '/pressure-pump-installs.jfif',
-  kitchen: '/kitchen1.jfif',
+  ensuite: '/master-bathroom-ensuite.webp',
+  pump: '/pressure-pump-installs.webp',
+  kitchen: '/kitchen1.webp',
 };
 
 export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote, onSelectProject }) => {
@@ -199,7 +199,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
           />
           <img
             id="hero-bg-finished"
-            src="/master-bathroom-ensuite.jfif"
+            src="/master-bathroom-ensuite.webp"
             alt="Finished master bathroom ensuite — basin, shower and watertight finish as installed, Abeokuta"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-0 will-change-transform"
             loading="lazy"
@@ -277,7 +277,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               className="reveal-entry bg-white rounded-2xl border border-[#dfc0b7]/15 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 p-7 min-w-0 max-w-full w-[84%] min-w-[280px] max-w-[340px] snap-start shrink-0 sm:w-auto sm:min-w-0 sm:max-w-none sm:shrink"
             >
               <img
-                src="/close-up-of-basin-install.jfif"
+                src="/close-up-of-basin-install.webp"
                 alt="Close-up of basin valve — neat fitting as fitted"
                 className="w-14 h-14 rounded-xl object-cover mb-4 shrink-0"
                 loading="lazy"
@@ -296,7 +296,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               className="reveal-entry bg-white rounded-2xl border border-[#dfc0b7]/15 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 p-7 min-w-0 max-w-full w-[84%] min-w-[280px] max-w-[340px] snap-start shrink-0 sm:w-auto sm:min-w-0 sm:max-w-none sm:shrink"
             >
               <img
-                src="/bathroom1.jfif"
+                src="/bathroom1.webp"
                 alt="Bathroom fitting as installed — shower and basin with watertight seals, Abeokuta"
                 className="w-14 h-14 rounded-xl object-cover mb-4 shrink-0"
                 loading="lazy"
@@ -315,7 +315,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               className="reveal-entry bg-white rounded-2xl border border-[#dfc0b7]/15 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 p-7 min-w-0 max-w-full w-[84%] min-w-[280px] max-w-[340px] snap-start shrink-0 sm:w-auto sm:min-w-0 sm:max-w-none sm:shrink"
             >
               <img
-                src="/silent-water-pump.jfif"
+                src="/silent-water-pump.webp"
                 alt="Silent water pump install — tidy booster set for steady pressure, Abeokuta"
                 className="w-14 h-14 rounded-xl object-cover mb-4 shrink-0"
                 loading="lazy"
@@ -334,7 +334,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onExploreClick, onOpenQuote,
               className="reveal-entry bg-white rounded-2xl border border-[#dfc0b7]/15 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 p-7 min-w-0 max-w-full w-[84%] min-w-[280px] max-w-[340px] snap-start shrink-0 sm:w-auto sm:min-w-0 sm:max-w-none sm:shrink"
             >
               <img
-                src="/water-heater.jfif"
+                src="/water-heater.webp"
                 alt="Water heater as installed — safe fitting with relief valve, Abeokuta"
                 className="w-14 h-14 rounded-xl object-cover mb-4 shrink-0"
                 loading="lazy"

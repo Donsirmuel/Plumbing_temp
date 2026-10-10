@@ -40,7 +40,7 @@ const SERVICES = [
     icon: "speed",
     iconWrap: "bg-[#d4e7d8] text-[#0f1f16]",
     checkColor: "text-[#516257]",
-    image: "/borehole.jfif",
+    image: "/borehole.webp",
     alt: "Borehole head as installed — clean casing and valving for steady supply",
   },
   {
@@ -54,7 +54,7 @@ const SERVICES = [
     icon: "shower",
     iconWrap: "bg-[#ffdcbd] text-[#2c1600]",
     checkColor: "text-[#7b542b]",
-    image: "/bathroom-installation.jfif",
+    image: "/bathroom-installation.webp",
     alt: "Bathroom installation as finished — basin and shower with watertight finish, Abeokuta",
   },
   {
@@ -68,7 +68,7 @@ const SERVICES = [
     icon: "water_heater",
     iconWrap: "bg-[#a43716]/10 text-[#a43716]",
     checkColor: "text-[#a43716]",
-    image: "/water-heater.jfif",
+    image: "/water-heater.webp",
     alt: "Water heater as installed — safe fitting with relief valve and neat connections",
   },
   {
@@ -82,7 +82,7 @@ const SERVICES = [
     icon: "sanitizer",
     iconWrap: "bg-[#d4e7d8] text-[#0f1f16]",
     checkColor: "text-[#516257]",
-    image: "/soakaways.jfif",
+    image: "/soakaways.webp",
     alt: "Soakaway and drainage chamber as built — correctly sloped and serviceable",
   },
   {
@@ -96,7 +96,7 @@ const SERVICES = [
     icon: "public",
     iconWrap: "bg-[#a43716] text-white",
     checkColor: "text-[#a43716]",
-    image: "/plumber-in-kitchen.jfif",
+    image: "/plumber-in-kitchen.webp",
     alt: "Plumber at work in kitchen — tidy install documented for remote client review",
   },
 ] as const;
@@ -250,7 +250,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
               <div className="h-96 w-full rounded-xl overflow-hidden relative">
                 <img
                   className="w-full h-full object-cover"
-                  src="/plumber-working-in-kitchen.jfif"
+                  src="/plumber-working-in-kitchen.webp"
                   alt="Plumber working in kitchen — pipework install documented for new and existing homes"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#32302d]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
@@ -370,7 +370,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                         <figure className="rounded-xl overflow-hidden bg-[#f3ede7] border border-[#dfc0b7]/20">
                           <div className="h-36 sm:h-40 overflow-hidden">
                             <img
-                              src="/bathroom-installation.jfif"
+                              src="/bathroom-installation.webp"
                               alt="Bathroom installation as finished — level set-out before sealing"
                               className="w-full h-full object-cover"
                               loading="lazy"
@@ -384,7 +384,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
                         <figure className="rounded-xl overflow-hidden bg-[#f3ede7] border border-[#dfc0b7]/20">
                           <div className="h-36 sm:h-40 overflow-hidden">
                             <img
-                              src="/close-up-of-basin-install.jfif"
+                              src="/close-up-of-basin-install.webp"
                               alt="Close-up of basin install — silicone sealed watertight edge after fitting, Abeokuta"
                               className="w-full h-full object-cover"
                               loading="lazy"
@@ -574,7 +574,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onOpenQuote }) => {
             </div>
             <div className="hidden lg:block relative rounded-2xl overflow-hidden bg-white border border-[#dfc0b7]/20 shadow-sm self-stretch min-h-[280px]">
               <img
-                src="/plumber-working-in-kitchen.jfif"
+                src="/plumber-working-in-kitchen.webp"
                 alt="Plumber at work — serving nationwide, new builds and lived-in homes"
                 className="w-full h-full object-cover"
                 loading="lazy"

@@ -89,7 +89,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {project.scope.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-sm text-[#2D3A4A]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1A5CFF] shrink-0 mt-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#a43716] shrink-0 mt-2" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -104,21 +104,21 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
                 </span>
               )}
             </div>
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
               <a
                 href={whatsappInquiryUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 sm:flex-none text-center rounded-full px-5 py-2.5 border border-[#0F1E2D]/15 text-[#0F1E2D] text-sm font-medium hover:border-[#0F1E2D]/25 hover:bg-[#F6F5F2] transition-colors duration-150"
+                className="w-full sm:w-auto text-center rounded-full px-5 py-2.5 border border-[#dfc0b7]/40 text-[#1d1b18] text-sm font-medium hover:bg-[#f3ede7] transition-colors duration-150"
               >
-                WhatsApp
+                WhatsApp photos
               </a>
               <button
                 onClick={() => {
                   onClose();
                   onOpenQuote();
                 }}
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 bg-[#1A5CFF] text-white text-sm font-semibold hover:bg-[#1448C6] transition-colors duration-150 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 bg-[#a43716] text-white text-sm font-semibold hover:bg-[#c54f2c] transition-all shadow-md active:scale-[0.98] cursor-pointer"
               >
                 <span>Request similar quote</span>
                 <ArrowRight className="w-4 h-4" />

@@ -204,7 +204,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({ onOpenQuote }) => {
               {/* Photo thumbnail */}
               <div className="rounded-xl overflow-hidden mb-5 border border-[#dfc0b7]/20 bg-[#f3ede7]">
                 <img
-                  src="/pressure-pump-installs.jfif"
+                  src="/pressure-pump-installs.webp"
                   alt="Booster pump installation with anti-vibration rubber mounts"
                   className="w-full h-36 object-cover"
                   loading="lazy"

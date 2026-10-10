@@ -64,32 +64,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             : 'bg-[#fff8f3]/90 backdrop-blur-xl border-b border-[#dfc0b7]/0 shadow-[0_1px_8px_rgba(31,29,26,0.04)]'
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-6 md:px-12 h-20 flex items-center justify-between gap-3 min-w-0 max-w-full overflow-x-clip">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 h-20 flex items-center justify-between gap-2 sm:gap-4 min-w-0 max-w-full">
           <Link
             id="nav-brand-logo"
             to="/"
             onClick={closeMobileMenu}
-            className="flex items-baseline gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 rounded-sm shrink-0 min-w-0"
+            className="flex items-baseline gap-1.5 sm:gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 rounded-sm shrink-0 min-w-0"
           >
             <span
-              className="font-['Newsreader',serif] text-[22px] md:text-[24px] font-medium tracking-tight text-[#1d1b18] leading-none whitespace-nowrap"
+              className="font-['Newsreader',serif] text-[20px] sm:text-[22px] lg:text-[24px] font-medium tracking-tight text-[#1d1b18] leading-none whitespace-nowrap"
               style={{ fontFamily: "'Newsreader', Georgia, serif" }}
             >
               OOH JAY
             </span>
-            <span className="text-[10px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] whitespace-nowrap max-[340px]:hidden">
+            <span className="text-[10px] font-semibold tracking-[0.08em] uppercase text-[#7b542b] whitespace-nowrap hidden min-[400px]:inline">
               Plumbing
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-2 xl:gap-3 min-w-0" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 min-w-0" aria-label="Main Navigation">
             {navItems.map(([label, path]) => (
               <NavLink
                 key={path}
                 to={path}
                 onClick={closeMobileMenu}
                 className={({ isActive }) =>
-                  `text-[14px] font-medium tracking-[-0.01em] transition-all duration-200 px-3.5 py-1.5 rounded-full whitespace-nowrap shrink-0 ${isActive ? 'bg-[#a43716] text-white font-semibold shadow-sm' : 'text-[#58423c] hover:text-[#1d1b18] hover:bg-[#f3ede7]'}`
+                  `text-[13px] xl:text-[14px] font-medium tracking-[-0.01em] transition-all duration-200 px-3 xl:px-3.5 py-1.5 rounded-full whitespace-nowrap shrink-0 ${isActive ? 'bg-[#a43716] text-white font-semibold shadow-sm' : 'text-[#58423c] hover:text-[#1d1b18] hover:bg-[#f3ede7]'}`
                 }
               >
                 {label}
@@ -97,19 +97,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-4 min-w-0 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Full button on large screens */}
             <button
               id="nav-quote-btn"
               onClick={onOpenQuote}
-              className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full hover:bg-[#c54f2c] active:scale-[0.98] transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 shadow-sm whitespace-nowrap shrink-0 max-w-full"
+              className="hidden lg:inline-flex items-center justify-center px-5 xl:px-6 py-2.5 bg-[#a43716] text-white text-[13px] font-semibold tracking-[0.02em] rounded-full hover:bg-[#c54f2c] active:scale-[0.98] transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] focus-visible:ring-offset-2 shadow-sm whitespace-nowrap shrink-0"
             >
               Book a plumber
             </button>
-            {/* Compact button on smaller screens */}
+            {/* Medium screen button */}
             <button
               onClick={onOpenQuote}
               aria-label="Book a plumber"
-              className="inline-flex sm:hidden items-center justify-center px-3.5 py-1.5 rounded-full bg-[#a43716] text-white text-[12px] font-semibold hover:bg-[#c54f2c] active:scale-[0.98] transition-colors shrink-0 max-[360px]:hidden"
+              className="hidden sm:inline-flex lg:hidden items-center justify-center px-4 py-2 rounded-full bg-[#a43716] text-white text-[12px] font-semibold hover:bg-[#c54f2c] active:scale-[0.98] transition-colors shrink-0 shadow-sm"
+            >
+              Book a visit
+            </button>
+            {/* Compact button on smaller mobile */}
+            <button
+              onClick={onOpenQuote}
+              aria-label="Book a plumber"
+              className="inline-flex sm:hidden items-center justify-center px-3 py-1.5 rounded-full bg-[#a43716] text-white text-[11px] font-semibold hover:bg-[#c54f2c] active:scale-[0.98] transition-colors shrink-0 max-[320px]:hidden"
             >
               Book
             </button>
@@ -117,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
             <button
               id="nav-mobile-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-3 text-[#1d1b18] hover:text-[#a43716] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-full cursor-pointer shrink-0"
+              className="lg:hidden p-2.5 text-[#1d1b18] hover:text-[#a43716] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#a43716] rounded-full cursor-pointer shrink-0"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -133,13 +142,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         aria-hidden={!mobileMenuOpen}
         tabIndex={mobileMenuOpen ? 0 : -1}
         onClick={closeMobileMenu}
-        className={`md:hidden fixed left-0 right-0 bottom-0 top-20 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`lg:hidden fixed left-0 right-0 bottom-0 top-20 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       />
       <div
         id="nav-mobile-menu"
         ref={mobileRef}
         aria-hidden={!mobileMenuOpen}
-        className={`md:hidden fixed left-0 right-0 top-20 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)] transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
+        className={`lg:hidden fixed left-0 right-0 top-20 bottom-0 bg-[#fff8f3] border-t border-[#dfc0b7]/20 px-5 sm:px-6 py-6 shadow-xl z-50 overflow-y-auto max-h-[calc(100dvh-80px)] transition-all duration-300 ease-out ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}
       >
         <div className="flex flex-col gap-1">
               {navItems.map(([label, path]) => (

@@ -42,7 +42,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Site parameters & project objective review',
       'Preliminary timeline & feasibility guidance',
     ],
-    image: '/plumber-working-in-kitchen.jfif',
+    image: '/plumber-working-in-kitchen.webp',
     imageCaption: 'On-site technical inspection — plumber at work in kitchen, checking supply lines & routing (Abiola Way, Abeokuta base, nationwide)',
   },
   {
@@ -56,7 +56,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Coordinated pipework & construction drawings',
       'Transparent, itemized Bill of Quantities (BOQ)',
     ],
-    image: '/industrial-plumbing.jfif',
+    image: '/industrial-plumbing.webp',
     imageCaption: 'Industrial overhead pipework and manifold layout — planning risers and pressure zones before install',
   },
   {
@@ -70,7 +70,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
       'Supervised concrete, masonry & structural framing',
       'Regular photo and video progress updates',
     ],
-    image: '/plumber-laying-pipes.jfif',
+    image: '/plumber-laying-pipes.webp',
     imageCaption: 'Plumber laying pipes for new supply manifold — neat, serviceable runs before close-up',
   },
   {

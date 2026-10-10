@@ -3,11 +3,11 @@ import { ReadMore } from '../components/ReadMore';
 
 export interface AboutPageProps {}
 
-const HERO_MANIFOLD = '/plumber-laying-pipes.jfif';
-const CRAFT_INSPECT = '/close-up-of-basin-install.jfif';
-const PORTRAIT_OJ = '/plumber-working-in-kitchen.jfif';
-const PORTRAIT_BABA = '/plumber-in-kitchen.jfif';
-const PORTRAIT_CHIDIMA = '/plumbing-installation.jfif';
+const HERO_MANIFOLD = '/plumber-laying-pipes.webp';
+const CRAFT_INSPECT = '/close-up-of-basin-install.webp';
+const PORTRAIT_OJ = '/plumber-working-in-kitchen.webp';
+const PORTRAIT_BABA = '/plumber-in-kitchen.webp';
+const PORTRAIT_CHIDIMA = '/plumbing-installation.webp';
 
 export const AboutPage: React.FC<AboutPageProps> = () => {
   const rootRef = useRef<HTMLDivElement>(null);

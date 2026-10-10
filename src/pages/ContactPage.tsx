@@ -4,9 +4,9 @@ export interface ContactPageProps {
   onOpenQuote?: (serviceTitle?: string) => void;
 }
 
-const MAP_PLACEHOLDER = '/overhead-water-tank.jfif';
+const MAP_PLACEHOLDER = '/overhead-water-tank.webp';
 
-const AVATAR_IMG = '/plumber-laying-pipes.jfif';
+const AVATAR_IMG = '/plumber-laying-pipes.webp';
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuote }) => {
   const rootRef = useRef<HTMLDivElement>(null);
