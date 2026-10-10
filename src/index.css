@@ -87,12 +87,20 @@ img { text-indent: -9999px; }
 .reveal-entry.is-visible { opacity: 1; transform: translateY(0); }
 .tilt-card { transition: transform 0.2s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.3s ease; transform-style: preserve-3d; will-change: transform; }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce), print {
   .animate-kenburns, .animate-float-1, .animate-float-2 { animation: none !important; }
   .shine-button::after { animation: none !important; }
-  .reveal-entry { transition-duration: 0.35s !important; transform: translateY(8px) !important; }
-  .reveal-entry.is-visible { transform: translateY(0) !important; }
-} — commented out for now per request */
+  .reveal-entry { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-sub { opacity: 1 !important; transform: none !important; }
+  .hero-line-inner { opacity: 1 !important; transform: none !important; }
+}
+
+body.is-headless .reveal-entry,
+body[data-headless="true"] .reveal-entry {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
 
 .card-hover { transition: transform 220ms cubic-bezier(0.16,1,0.3,1), box-shadow 220ms, border-color 220ms; }
 .card-hover:hover { transform: translateY(-2px); }

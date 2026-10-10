@@ -3,24 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      (function() {
-        try {
-          var originalFetch = window.fetch;
-          var currentFetch = typeof originalFetch === 'function' ? originalFetch.bind(window) : originalFetch;
-          Object.defineProperty(window, 'fetch', {
-            get: function() {
-              return currentFetch;
-            },
-            set: function(val) {
-              currentFetch = typeof val === 'function' ? val.bind(window) : val;
-            },
-            configurable: true,
-            enumerable: true
-          });
-        } catch (_) {}
-      })();
-    </script>
     <title>OOH JAY — Plumbing &amp; Construction</title>
     <meta name="description" content="Specialized plumbing engineering and building construction in Nigeria. High-pressure water systems, plant rooms, and luxury wet areas in Lagos and Abuja." />
     <meta name="theme-color" content="#a43716" />
@@ -217,9 +199,9 @@
     }
     </script>
     <style>html{scrollbar-gutter:stable}body{margin:0;background:#fff8f3;color:#1d1b18;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}</style>
-    <link rel="preload" href="/fonts/cY9AfjOCX1hbuyalUrK4397yjA.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/cY9AfjOCX1hbuyalUrK4397yjA.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/fonts.css">
   </head>
   <body class="bg-[#fff8f3] text-[#1d1b18] antialiased selection:bg-[#ffdbd1] selection:text-[#3b0900]">
